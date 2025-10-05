@@ -1,0 +1,18 @@
+@use "variables" as *;
+
+#aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #container-sections-creation {
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 30vh;
+    height: 70vh;
+    margin: $main-margin;
+    padding: $main-padding;
+    border-radius: $main-border-radius;
+    background: $main-background-silver;
+  }
+}

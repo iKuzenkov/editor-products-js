@@ -1,0 +1,28 @@
+#grid-layout {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+  gap: 0.1rem;
+  min-height: 100vh;
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+#header {
+  grid-area: header;
+  background-color: rgb(19, 99, 99);
+}
+#aside {
+  grid-area: aside;
+  background-color: rgb(47, 56, 177);
+}
+#main {
+  grid-area: main;
+  background-color: rgb(171, 55, 175);
+}
+#footer {
+  grid-area: footer;
+  background-color: rgb(109, 33, 56);
+}
