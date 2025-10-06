@@ -5,7 +5,10 @@
   justify-content: center;
   align-items: center;
   #container-sections-creation {
+    display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
     overflow-y: auto;
     overflow-x: hidden;
     width: 30vh;
@@ -14,5 +17,20 @@
     padding: $main-padding;
     border-radius: $main-border-radius;
     background: $main-background-silver;
+
+    .btn-add-section {
+      border: none;
+      border-radius: $main-border-radius;
+      background: linear-gradient(
+        90deg,
+        rgba(57, 161, 51, 1) 0%,
+        rgba(55, 171, 103, 1) 50%,
+        rgb(100, 206, 86) 100%
+      );
+
+      &:hover {
+        background: $btn-hover-background;
+      }
+    }
   }
 }

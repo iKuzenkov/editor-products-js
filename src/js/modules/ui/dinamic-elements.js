@@ -12,5 +12,5 @@ const createBtn = (place, element, elementClass, text, title) => {
 
 export const createButton = () => {
   const container = document.querySelector("#container-sections-creation");
-  return createBtn(container, "button", "add-section", "➕", "add section");
+  return createBtn(container, "button", "btn-add-section", "➕", "add section");
 };
