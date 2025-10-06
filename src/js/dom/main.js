@@ -1,7 +1,8 @@
 import "../../styles/style.scss";
 import { createButton } from "../modules/ui/dinamic-elements";
+import { registerEvents } from "./events";
 
 document.addEventListener("DOMContentLoaded", () => {
-  createButton();
-  console.log("DOMContentLoaded");
+  const btnAddSection = createButton();
+  registerEvents(btnAddSection);
 });

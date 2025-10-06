@@ -16,12 +16,17 @@
   overflow-x: hidden;
   width: 90%;
   height: 90%;
-  margin: $main-margin;
-  padding: $main-padding;
-  border-radius: $main-border-radius;
-  background: $main-background-silver;
+  @include section-margins;
+  background: $background-container;
 
   .btn-add-section {
     @include btn-style;
+  }
+
+  .added-section {
+    width: 90%;
+    height: 2rem;
+    @include section-margins;
+    background: $background-container-section;
   }
 }

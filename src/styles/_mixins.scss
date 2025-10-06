@@ -14,3 +14,9 @@
     background: $btn-hover-background;
   }
 }
+
+@mixin section-margins {
+  margin: $main-margin;
+  padding: $main-padding;
+  border-radius: $main-border-radius;
+}
