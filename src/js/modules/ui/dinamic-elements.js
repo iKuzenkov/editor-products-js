@@ -17,6 +17,9 @@ export const createButton = () => {
 };
 
 const createBlock = (element, elementClass, place) => {
+  if (!place) {
+    return console.error("Container not found");
+  }
   const el = document.createElement(element);
   el.classList.add(elementClass);
   place.append(el);
@@ -25,4 +28,19 @@ const createBlock = (element, elementClass, place) => {
 
 export const createDiv = () => {
   return createBlock("div", "added-section", container);
+};
+
+const createInp = (element, elementClass, type, place) => {
+  if (!place) {
+    return console.error("Div (section) not found");
+  }
+  const el = document.createElement(element);
+  el.classList.add(elementClass);
+  el.type = type;
+  place.append(el);
+  return el;
+};
+
+export const createInput = (parent) => {
+  return createInp("input", "name-section", "text", parent);
 };
