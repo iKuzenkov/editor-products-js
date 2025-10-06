@@ -1,26 +1,27 @@
 @use "variables" as *;
-@use "mixin" as *;
+@use "mixins" as *;
 
 #aside {
   display: flex;
   justify-content: center;
   align-items: center;
-  #container-sections-creation {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: 30vh;
-    height: 70vh;
-    margin: $main-margin;
-    padding: $main-padding;
-    border-radius: $main-border-radius;
-    background: $main-background-silver;
+}
 
-    .btn-add-section {
-      @include btn-style;
-    }
+#container-sections-creation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 90%;
+  height: 90%;
+  margin: $main-margin;
+  padding: $main-padding;
+  border-radius: $main-border-radius;
+  background: $main-background-silver;
+
+  .btn-add-section {
+    @include btn-style;
   }
 }
