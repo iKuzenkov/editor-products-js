@@ -1,0 +1,16 @@
+@use "variables" as *;
+
+@mixin btn-style {
+  border: none;
+  border-radius: $main-border-radius;
+  background: linear-gradient(
+    90deg,
+    rgba(57, 161, 51, 1) 0%,
+    rgba(55, 171, 103, 1) 50%,
+    rgb(100, 206, 86) 100%
+  );
+
+  &:hover {
+    background: $btn-hover-background;
+  }
+}
