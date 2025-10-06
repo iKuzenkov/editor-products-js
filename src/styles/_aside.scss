@@ -13,9 +13,9 @@
   justify-content: flex-start;
   align-items: stretch;
   overflow-y: auto;
-  overflow-x: hidden;
   width: 90%;
-  height: 90%;
+  min-height: 30rem;
+  max-height: 30rem;
   @include section-margins;
   background: $background-container;
 
@@ -24,8 +24,8 @@
   }
 
   .added-section {
-    width: 90%;
-    height: 2rem;
+    max-width: 15rem;
+    min-height: 2rem;
     @include section-margins;
     background: $background-container-section;
   }
