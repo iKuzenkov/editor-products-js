@@ -1,0 +1,25 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+#main {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#container-section-created {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: auto;
+  width: 100%;
+  min-height: 30rem;
+  max-height: 50rem;
+  @include section-margins;
+  background: $background-container;
+
+  .section-created {
+    width: 100%;
+    @include section-margins;
+  }
+}
