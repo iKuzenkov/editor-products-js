@@ -1,12 +1,24 @@
 @use "variables" as *;
 
-@mixin btn-style {
+@mixin btn-main {
   border: none;
   border-radius: $primary-border-radius;
   background: $btn-background;
 
   &:hover {
     background: $btn-hover-background;
+  }
+}
+
+@mixin btn-adding-sections {
+  margin: $helper-btn-margin;
+  padding: $helper-btn-padding;
+  border: none;
+  border-radius: $helper-btn-border-radius;
+  background: $helper-btn-background;
+
+  &:hover {
+    background: $helper-btn-hover-background;
   }
 }
 

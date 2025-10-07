@@ -38,8 +38,8 @@ export const createButton = (parentBlockAddedSection) => {
   if (parentBlockAddedSection) {
     return createBtn(
       "button",
-      "btn-added-section",
-      "➕",
+      "btn-adding-section-main",
+      "+",
       "add section",
       parentBlockAddedSection
     );
@@ -48,7 +48,7 @@ export const createButton = (parentBlockAddedSection) => {
 };
 
 export const createDiv = () => {
-  return createBlock("div", "div-added-section", container);
+  return createBlock("div", "div-setting-sections", container);
 };
 
 export const createInput = (parent) => {

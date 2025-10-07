@@ -20,10 +20,13 @@
   background: $background-container;
 
   .btn-add-section {
-    @include btn-style;
+    @include btn-main;
   }
 
-  .div-added-section {
+  .div-setting-sections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 15rem;
     min-height: 2rem;
     @include section-margins;
@@ -31,7 +34,7 @@
   }
 
   .input-name-section {
-    width: 100%;
+    width: 80%;
     border: none;
     border-radius: $primary-border-radius;
 
@@ -44,5 +47,9 @@
       background: $input-focus;
       box-shadow: $input-box-shadow;
     }
+  }
+
+  .btn-adding-section-main {
+    @include btn-adding-sections;
   }
 }
