@@ -1,9 +1,19 @@
-$main-margin: 0.5rem;
-$main-padding: 0.5rem;
+$primary-margin: 0.5rem;
+$primary-padding: 0.5rem;
+$primary-border-radius: 0.5rem;
 
-$main-border-radius: 0.5rem;
-
-$main-background: #ffffff;
+$primary-background: #ffffff;
 $background-container: #c2bcbc;
 $background-container-section: #4e4c4c;
+
+$btn-background: linear-gradient(
+  90deg,
+  rgba(57, 161, 51, 1) 0%,
+  rgba(55, 171, 103, 1) 50%,
+  rgb(100, 206, 86) 100%
+);
 $btn-hover-background: #10630c;
+
+$input-hover: #d0face;
+$input-focus: #f3f3f3e1;
+$input-box-shadow: 0 0 0 0.2rem #72ca82;

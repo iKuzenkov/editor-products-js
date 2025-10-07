@@ -11,9 +11,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: stretch;
+  align-items: center;
   overflow-y: auto;
-  width: 90%;
+  width: 100%;
   min-height: 30rem;
   max-height: 30rem;
   @include section-margins;
@@ -23,10 +23,26 @@
     @include btn-style;
   }
 
-  .added-section {
+  .div-added-section {
     max-width: 15rem;
     min-height: 2rem;
     @include section-margins;
     background: $background-container-section;
+  }
+
+  .input-name-section {
+    width: 100%;
+    border: none;
+    border-radius: $primary-border-radius;
+
+    &:hover {
+      background: $input-hover;
+    }
+
+    &:focus {
+      outline: none;
+      background: $input-focus;
+      box-shadow: $input-box-shadow;
+    }
   }
 }

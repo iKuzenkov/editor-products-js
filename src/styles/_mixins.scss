@@ -2,13 +2,8 @@
 
 @mixin btn-style {
   border: none;
-  border-radius: $main-border-radius;
-  background: linear-gradient(
-    90deg,
-    rgba(57, 161, 51, 1) 0%,
-    rgba(55, 171, 103, 1) 50%,
-    rgb(100, 206, 86) 100%
-  );
+  border-radius: $primary-border-radius;
+  background: $btn-background;
 
   &:hover {
     background: $btn-hover-background;
@@ -16,7 +11,7 @@
 }
 
 @mixin section-margins {
-  margin: $main-margin;
-  padding: $main-padding;
-  border-radius: $main-border-radius;
+  margin: $primary-margin;
+  padding: $primary-padding;
+  border-radius: $primary-border-radius;
 }
