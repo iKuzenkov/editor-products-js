@@ -2,25 +2,43 @@
 @use "mixins" as *;
 
 #main {
-  display: flex;
-  justify-content: flex-start;
+  @include main-section-created;
 }
 
 #container-section-created {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  @include main-section-created;
   overflow-y: auto;
-  width: 100%;
+  width: 80%;
   min-height: 30rem;
   max-height: 50rem;
   @include section-margins;
   background: $background-container;
 
   .section-created {
+    @include main-section-created;
     width: 100%;
-    @include section-margins;
+    @include main-space-section-margins;
     background: $background-container-section;
+  }
+
+  .input-in-section {
+    width: 80%;
+    border: none;
+    margin: $main-space-primary-margin;
+    border-radius: $primary-border-radius;
+
+    &:hover {
+      background: $input-hover;
+    }
+
+    &:focus {
+      outline: none;
+      background: $input-focus;
+      box-shadow: $input-box-shadow;
+    }
+  }
+
+  .input-in-section:first-child {
+    width: 40%;
   }
 }

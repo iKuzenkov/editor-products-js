@@ -12,7 +12,11 @@ export function registerEvents(btnAddSection) {
     const btnAddingSectionWithProducts = createButton(block);
     btnAddingSectionWithProducts.addEventListener("click", () => {
       const mainConainer = document.querySelector("#container-section-created");
-      const block = createDiv(mainConainer);
+
+      const mainSection = createDiv(mainConainer);
+      for (let i = 1; i <= 2; i++) {
+        createInput(mainSection);
+      }
     });
   });
 }

@@ -45,7 +45,13 @@ export const createButton = (parentBlockAddedSection) => {
       parentBlockAddedSection
     );
   }
-  return createBtn("button", "btn-add-section", "➕", "add section", container);
+  return createBtn(
+    "button",
+    "btn-add-section",
+    "Add Section",
+    "add section",
+    container
+  );
 };
 
 export const createDiv = (mainConainer) => {
@@ -58,10 +64,10 @@ export const createDiv = (mainConainer) => {
 export const createInput = (parent) => {
   return createInp(
     "input",
-    "input-name-section",
+    "input-in-section",
     "text",
-    "name-section",
-    "Enter section name",
+    "in-section",
+    "Enter name section",
     parent
   );
 };

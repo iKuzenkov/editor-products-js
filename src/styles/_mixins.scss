@@ -11,14 +11,14 @@
 }
 
 @mixin btn-adding-sections {
-  margin: $helper-btn-margin;
-  padding: $helper-btn-padding;
+  margin: $inner-btn-margin;
+  padding: $inner-btn-padding;
   border: none;
-  border-radius: $helper-btn-border-radius;
-  background: $helper-btn-background;
+  border-radius: $inner-btn-border-radius;
+  background: $inner-btn-background;
 
   &:hover {
-    background: $helper-btn-hover-background;
+    background: $inner-btn-hover-background;
   }
 }
 
@@ -26,4 +26,17 @@
   margin: $primary-margin;
   padding: $primary-padding;
   border-radius: $primary-border-radius;
+}
+
+@mixin main-space-section-margins {
+  margin: $main-space-primary-margin;
+  padding: $main-space-primary-padding;
+  border-radius: $main-space-primary-border-radius;
+}
+
+@mixin main-section-created {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
