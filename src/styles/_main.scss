@@ -21,5 +21,6 @@
   .section-created {
     width: 100%;
     @include section-margins;
+    background: $background-container-section;
   }
 }

@@ -22,13 +22,14 @@ const createBlock = (element, elementClass, space) => {
   return el;
 };
 
-const createInp = (element, elementClass, type, placeholder, space) => {
+const createInp = (element, elementClass, type, name, placeholder, space) => {
   if (!space) {
     return console.error("Div not found (input)");
   }
   const el = document.createElement(element);
   el.classList.add(elementClass);
   el.type = type;
+  el.name = name;
   el.placeholder = placeholder;
   space.append(el);
   return el;
@@ -47,7 +48,10 @@ export const createButton = (parentBlockAddedSection) => {
   return createBtn("button", "btn-add-section", "➕", "add section", container);
 };
 
-export const createDiv = () => {
+export const createDiv = (mainConainer) => {
+  if (mainConainer) {
+    return createBlock("div", "section-created", mainConainer);
+  }
   return createBlock("div", "div-setting-sections", container);
 };
 
@@ -56,6 +60,7 @@ export const createInput = (parent) => {
     "input",
     "input-name-section",
     "text",
+    "name-section",
     "Enter section name",
     parent
   );

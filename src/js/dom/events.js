@@ -4,10 +4,15 @@ import {
   createButton,
 } from "../modules/ui/dinamic-elements";
 
-export function registerEvents(btnContainer) {
-  btnContainer.addEventListener("click", () => {
-    const section = createDiv();
-    createInput(section);
-    createButton(section);
+export function registerEvents(btnAddSection) {
+  btnAddSection.addEventListener("click", () => {
+    const block = createDiv();
+    createInput(block);
+
+    const btnAddingSectionWithProducts = createButton(block);
+    btnAddingSectionWithProducts.addEventListener("click", () => {
+      const mainConainer = document.querySelector("#container-section-created");
+      const block = createDiv(mainConainer);
+    });
   });
 }
