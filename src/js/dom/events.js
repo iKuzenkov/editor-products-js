@@ -4,19 +4,49 @@ import {
   createButton,
 } from "../modules/ui/dinamic-elements";
 
-export function registerEvents(btnAddSection) {
-  btnAddSection.addEventListener("click", () => {
-    const block = createDiv();
-    createInput(block);
+export const onClickAddSectionInAside = (containerAside) => {
+  const div = createDiv("div", "div-setting-sections", containerAside);
+  createInput(
+    "input",
+    "input-in-section",
+    "text",
+    "in-section",
+    "Enter name section",
+    div
+  );
+  const buttonCreateSectionInMain = createButton(
+    "button",
+    "btn-adding-section-main",
+    "+",
+    "add section",
+    div
+  );
+  return buttonCreateSectionInMain;
+};
 
-    const btnAddingSectionWithProducts = createButton(block);
-    btnAddingSectionWithProducts.addEventListener("click", () => {
-      const mainConainer = document.querySelector("#container-section-created");
-
-      const mainSection = createDiv(mainConainer);
-      for (let i = 1; i <= 2; i++) {
-        createInput(mainSection);
-      }
-    });
-  });
-}
+export const onClickAddSectionInMain = (containerMain) => {
+  const div = createDiv("div", "section-created", containerMain);
+  createInput(
+    "input",
+    "input-in-section",
+    "text",
+    "in-section",
+    "Enter name section",
+    div
+  );
+  createInput(
+    "input",
+    "input-in-section",
+    "text",
+    "in-section",
+    "Enter description",
+    div
+  );
+  const buttonCreateProducts = createButton(
+    "button",
+    "btn-add-section", // class need will be change, and formalaize styles
+    "Add Product",
+    "add product",
+    div
+  );
+};

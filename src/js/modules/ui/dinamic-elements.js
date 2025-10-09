@@ -1,5 +1,3 @@
-const container = document.querySelector("#container-sections-creation");
-
 const createBtn = (element, elementClass, text, title, space) => {
   if (!space) {
     return console.error("Container not found (button)");
@@ -24,7 +22,7 @@ const createBlock = (element, elementClass, space) => {
 
 const createInp = (element, elementClass, type, name, placeholder, space) => {
   if (!space) {
-    return console.error("Div not found (input)");
+    return console.error("Container not found (input)");
   }
   const el = document.createElement(element);
   el.classList.add(elementClass);
@@ -35,39 +33,6 @@ const createInp = (element, elementClass, type, name, placeholder, space) => {
   return el;
 };
 
-export const createButton = (parentBlockAddedSection) => {
-  if (parentBlockAddedSection) {
-    return createBtn(
-      "button",
-      "btn-adding-section-main",
-      "+",
-      "add section",
-      parentBlockAddedSection
-    );
-  }
-  return createBtn(
-    "button",
-    "btn-add-section",
-    "Add Section",
-    "add section",
-    container
-  );
-};
-
-export const createDiv = (mainConainer) => {
-  if (mainConainer) {
-    return createBlock("div", "section-created", mainConainer);
-  }
-  return createBlock("div", "div-setting-sections", container);
-};
-
-export const createInput = (parent) => {
-  return createInp(
-    "input",
-    "input-in-section",
-    "text",
-    "in-section",
-    "Enter name section",
-    parent
-  );
-};
+export const createButton = createBtn;
+export const createDiv = createBlock;
+export const createInput = createInp;
