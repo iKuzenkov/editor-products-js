@@ -12,17 +12,15 @@
 
 #header {
   grid-area: header;
-  background-color: rgb(19, 99, 99);
+  background: #4e4c4c;
 }
 #aside {
   grid-area: aside;
-  background-color: rgb(47, 56, 177);
 }
 #main {
   grid-area: main;
-  background-color: rgb(171, 55, 175);
 }
 #footer {
   grid-area: footer;
-  background-color: rgb(109, 33, 56);
+  background: #4e4c4c;
 }

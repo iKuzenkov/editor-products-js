@@ -1,42 +1,55 @@
 @use "variables" as *;
 
-@mixin btn-main {
-  border: none;
-  border-radius: $primary-border-radius;
-  background: $btn-background;
-
-  &:hover {
-    background: $btn-hover-background;
-  }
-}
-
-@mixin btn-adding-sections {
-  margin: $inner-btn-margin;
-  padding: $inner-btn-padding;
-  border: none;
-  border-radius: $inner-btn-border-radius;
-  background: $inner-btn-background;
-
-  &:hover {
-    background: $inner-btn-hover-background;
-  }
+@mixin container-aside-main-margins {
+  margin: $container-aside-main-margin;
+  padding-top: $container-aside-main-padding-top;
+  border-radius: $container-aside-main-border-radius;
 }
 
 @mixin section-margins {
-  margin: $primary-margin;
-  padding: $primary-padding;
-  border-radius: $primary-border-radius;
+  margin: $section-margin;
+  padding: $section-padding;
+  border-radius: $section-border-radius;
 }
 
-@mixin main-space-section-margins {
-  margin: $main-space-primary-margin;
-  padding: $main-space-primary-padding;
-  border-radius: $main-space-primary-border-radius;
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
 
-@mixin main-section-created {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+@mixin external-button-aside-main {
+  border: $inner-external-button-border-none;
+  border-radius: $inner-external-button-border-radius;
+  background: $external-button-background;
+
+  &:hover {
+    background: $external-button-hover-background;
+  }
+}
+
+@mixin inner-button {
+  margin: $inner-button-margin;
+  padding: $inner-button-padding;
+  border: $inner-external-button-border-none;
+  border-radius: $inner-external-button-border-radius;
+  background: $inner-button-background;
+
+  &:hover {
+    background: $inner-button-hover-background;
+  }
 }

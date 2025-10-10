@@ -7,12 +7,12 @@ import {
 import { onClickAddSectionInAside, onClickAddSectionInMain } from "./events";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const containerAside = document.querySelector("#container-sections-creation");
-  const containerMain = document.querySelector("#container-section-created");
+  const containerAside = document.querySelector(".container-aside");
+  const containerMain = document.querySelector(".container-main");
 
   const buttonCreateSectionInAside = createButton(
     "button",
-    "btn-add-section",
+    "external-button",
     "Add Section",
     "",
     containerAside

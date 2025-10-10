@@ -5,10 +5,10 @@ import {
 } from "../modules/ui/dinamic-elements";
 
 export const onClickAddSectionInAside = (containerAside) => {
-  const div = createDiv("div", "div-setting-sections", containerAside);
+  const div = createDiv("div", "section", containerAside);
   createInput(
     "input",
-    "input-in-section",
+    "input-section",
     "text",
     "in-section",
     "Enter name section",
@@ -16,7 +16,7 @@ export const onClickAddSectionInAside = (containerAside) => {
   );
   const buttonCreateSectionInMain = createButton(
     "button",
-    "btn-adding-section-main",
+    "inner-button",
     "+",
     "add section",
     div
@@ -25,10 +25,10 @@ export const onClickAddSectionInAside = (containerAside) => {
 };
 
 export const onClickAddSectionInMain = (containerMain) => {
-  const div = createDiv("div", "section-created", containerMain);
+  const div = createDiv("div", "section", containerMain);
   createInput(
     "input",
-    "input-in-section",
+    "input-section",
     "text",
     "in-section",
     "Enter name section",
@@ -36,7 +36,7 @@ export const onClickAddSectionInMain = (containerMain) => {
   );
   createInput(
     "input",
-    "input-in-section",
+    "input-section",
     "text",
     "in-section",
     "Enter description",
@@ -44,7 +44,7 @@ export const onClickAddSectionInMain = (containerMain) => {
   );
   const buttonCreateProducts = createButton(
     "button",
-    "btn-add-section", // class need will be change, and formalaize styles
+    "external-button",
     "Add Product",
     "add product",
     div

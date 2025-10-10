@@ -3,40 +3,46 @@
 
 #aside {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
-#container-sections-creation {
+.container-aside {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   overflow-y: auto;
+  @include container-aside-main-margins;
   width: 100%;
-  min-height: 20rem;
-  max-height: 30rem;
-  @include section-margins;
+  height: 35.6rem;
   background: $background-container;
+  @include scrollbar;
 
-  .btn-add-section {
-    @include btn-main;
+  .external-button {
+    @include external-button-aside-main;
   }
 
-  .div-setting-sections {
+  .section {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 15rem;
-    min-height: 2rem;
+    max-width: max-content;
+    min-height: 3rem;
     @include section-margins;
     background: $background-container-section;
+    cursor: pointer;
+
+    &:hover {
+      outline: $outline-section-aside-main;
+    }
   }
 
-  .input-in-section {
+  .input-section {
     width: 80%;
     border: none;
-    border-radius: $primary-border-radius;
+    border-radius: $section-border-radius;
+    cursor: text;
 
     &:hover {
       background: $input-hover;
@@ -49,7 +55,8 @@
     }
   }
 
-  .btn-adding-section-main {
-    @include btn-adding-sections;
+  .inner-button {
+    @include inner-button;
+    cursor: pointer;
   }
 }
