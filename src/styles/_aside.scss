@@ -19,7 +19,7 @@
   background: $background-container;
   @include scrollbar;
 
-  .external-button {
+  .external-button-aside {
     @include external-button-aside-main;
   }
 
