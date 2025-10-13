@@ -22,7 +22,7 @@
 
   .section {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     @include section-margins;
@@ -52,7 +52,7 @@
     }
   }
 
-  .input-section:first-child {
+  .input-section:nth-child(2) {
     width: 40%;
   }
 
