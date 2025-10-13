@@ -11,5 +11,12 @@ export const onClickAddSectionInAside = (e) => {
     "Enter name section",
     div
   );
-  createButton("button", "inner-button", "+", "add section", div);
+  createButton(
+    "button",
+    "inner-button",
+    "add-section-main",
+    "+",
+    "add section",
+    div
+  );
 };

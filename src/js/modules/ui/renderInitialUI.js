@@ -5,8 +5,9 @@ export const renderInitialUI = () => {
   createButton(
     "button",
     "external-button-aside",
+    "add-section",
     "Add Section",
-    "",
+    "Add Section",
     containerAside
   );
 };

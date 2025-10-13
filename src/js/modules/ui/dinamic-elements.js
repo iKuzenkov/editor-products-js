@@ -1,9 +1,10 @@
-const createBtn = (element, elementClass, text, title, space) => {
+const createBtn = (element, elementClass, dataAction, text, title, space) => {
   if (!space) {
     return console.error("Container not found (button)");
   }
   const el = document.createElement(element);
   el.classList.add(elementClass);
+  el.dataset.action = dataAction;
   el.textContent = text;
   el.title = title;
   space.append(el);

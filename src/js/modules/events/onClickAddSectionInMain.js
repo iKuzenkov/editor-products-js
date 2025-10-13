@@ -22,8 +22,9 @@ export const onClickAddSectionInMain = (e) => {
   createButton(
     "button",
     "external-button-main",
+    "add product-main",
     "Add Product",
-    "add product",
+    "Add Product",
     div
   );
 };
