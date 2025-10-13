@@ -5,7 +5,7 @@ export const setupDelegatedEvents = () => {
   const containerAside = document.querySelector(".container-aside");
 
   containerAside.addEventListener("click", (e) => {
-    if (e.target.closest(".external-button")) {
+    if (e.target.closest(".external-button-aside")) {
       onClickAddSectionInAside(e);
     }
     if (e.target.closest(".inner-button")) {
