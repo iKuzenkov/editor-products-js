@@ -1,15 +1,28 @@
-import { onClickAddSectionInAside } from "./onClickAddSectionInAside";
-import { onClickAddSectionInMain } from "./onClickAddSectionInMain";
+import { addSectionInAside } from "./add-section-in-aside";
+import { addSectionInMain } from "./add-section-in-main";
+import { addProductInSection } from "./add-product-in-section";
 
 export const setupDelegatedEvents = () => {
   const containerAside = document.querySelector(".container-aside");
+  const containerMain = document.querySelector(".container-main");
 
   containerAside.addEventListener("click", (e) => {
     if (e.target.closest('[data-action="add-section"]')) {
-      onClickAddSectionInAside(e);
+      addSectionInAside(e);
     }
+
     if (e.target.closest('[data-action="add-section-main"]')) {
-      onClickAddSectionInMain(e);
+      addSectionInMain(e);
     }
+  });
+
+  containerMain.addEventListener("click", (e) => {
+    if (e.target.closest('[data-action="add-product"]')) {
+      addProductInSection(e);
+    }
+
+    // if (e.target.closest('[data-action="settings"]')) {
+    //   settingProduct(e);
+    // }
   });
 };

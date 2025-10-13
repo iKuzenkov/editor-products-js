@@ -1,8 +1,9 @@
 import { createDiv, createInput, createButton } from "../ui/dinamic-elements";
 
-export const onClickAddSectionInAside = (e) => {
+export const addSectionInAside = (e) => {
   const containerAside = document.querySelector(".container-aside");
-  const div = createDiv("div", "section", containerAside);
+  const div = createDiv("div", "section-aside", containerAside);
+
   createInput(
     "input",
     "input-section",

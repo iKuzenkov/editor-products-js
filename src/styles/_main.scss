@@ -20,13 +20,28 @@
   background: $background-container;
   @include scrollbar;
 
-  .section {
+  .section-main {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     @include section-margins;
     width: 80%;
+    background: $background-container-section;
+    cursor: pointer;
+
+    &:hover {
+      outline: $outline-section-aside-main;
+    }
+  }
+
+  .product {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    @include section-margins;
+    width: 60%;
     background: $background-container-section;
     cursor: pointer;
 

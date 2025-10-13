@@ -34,6 +34,19 @@ const createInp = (element, elementClass, type, name, placeholder, space) => {
   return el;
 };
 
+const createPriceInp = (element, elementClass, type, value, name, space) => {
+  if (!space) {
+    return console.error("Container not found (input)");
+  }
+  const el = document.createElement(element);
+  el.classList.add(elementClass);
+  el.type = type;
+  el.value = value;
+  el.name = name;
+  space.append(el);
+  return el;
+};
+
 const createChk = (element, elementClass, type, name, dataAction, space) => {
   if (!space) {
     return console.error("Container not found (checkbox)");
@@ -50,4 +63,5 @@ const createChk = (element, elementClass, type, name, dataAction, space) => {
 export const createButton = createBtn;
 export const createDiv = createBlock;
 export const createInput = createInp;
+export const createInputWithPrice = createPriceInp;
 export const createCheckbox = createChk;
