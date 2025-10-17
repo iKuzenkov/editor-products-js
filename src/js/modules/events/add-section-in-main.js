@@ -6,16 +6,46 @@ import {
 } from "../ui/dinamic-elements";
 
 export const addSectionInMain = (e) => {
+  // const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
+  // const containerMain = document.querySelector(".container-main");
+  // const sections = document.querySelectorAll(".section-main");
+  // const sectionExist = Array.from(sections).some(
+  //   (el) => dynamicDataAction === el.dataset.action
+  // );
+  // if (sectionExist) {
+  //   return;
+  // }
+  const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
   const containerMain = document.querySelector(".container-main");
-  const div = createDiv("div", "section-main", containerMain);
+  const sections = document.querySelectorAll(".section-main");
+  const sectionExist = Array.from(sections).some(
+    (el) => dynamicDataAction === el.dataset.action
+  );
+  if (sectionExist) {
+    return;
+  }
 
+  const div = createDiv(
+    "div",
+    "section-main",
+    dynamicDataAction,
+    containerMain
+  );
+  createDiv("div", "section-functions", dynamicDataAction, div);
+
+  const sectionHeader = createDiv(
+    "div",
+    "section-header",
+    dynamicDataAction,
+    div
+  );
   createCheckbox(
     "input",
     "checkbox-section",
     "checkbox",
     "checkbox-section-main",
     "checkbox-main",
-    div
+    sectionHeader
   );
   createInput(
     "input",
@@ -23,7 +53,7 @@ export const addSectionInMain = (e) => {
     "text",
     "in-section",
     "Enter name",
-    div
+    sectionHeader
   );
   createInput(
     "input",
@@ -31,7 +61,7 @@ export const addSectionInMain = (e) => {
     "text",
     "in-section",
     "Enter description",
-    div
+    sectionHeader
   );
   createButton(
     "button",
@@ -39,6 +69,7 @@ export const addSectionInMain = (e) => {
     "add-product",
     "Add Product",
     "Add Product",
-    div
+    sectionHeader
   );
+  createDiv("div", "section-products", dynamicDataAction, div);
 };

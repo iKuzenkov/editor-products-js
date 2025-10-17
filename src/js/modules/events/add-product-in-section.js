@@ -7,12 +7,17 @@ import {
 } from "../ui/dinamic-elements";
 
 export const addProductInSection = (e) => {
-  //   const sectionInMain = document.querySelector(".section-main");
-  //   const div = createDiv("div", "product", sectionInMain);
-  const sectionInMain = e.target.closest(".section-main");
-  const containerMain = sectionInMain.parentNode;
-  const div = createDiv("div", "product", containerMain);
-  containerMain.insertBefore(div, sectionInMain.nextSiblings);
+  const sectionMain = e.target.closest(".section-main");
+  const dynamicDataAction = sectionMain.dataset.action;
+  const sectionProducts = sectionMain.querySelector(".section-products");
+
+  const innerProducts = sectionProducts.querySelectorAll(".product");
+  const MAX_PRODUCTS_PER_SECTION = 12;
+  if (innerProducts.length >= MAX_PRODUCTS_PER_SECTION) {
+    return;
+  }
+
+  const div = createDiv("div", "product", dynamicDataAction, sectionProducts);
   createCheckbox(
     "input",
     "checkbox-product",

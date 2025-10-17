@@ -22,57 +22,108 @@
 
   .section-main {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     @include section-margins;
-    width: 80%;
+    width: 99%;
     background: $background-container-section;
     cursor: pointer;
 
     &:hover {
       outline: $outline-section-aside-main;
     }
-  }
 
-  .product {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    @include section-margins;
-    width: 60%;
-    background: $background-container-section;
-    cursor: pointer;
+    .section-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @include section-margins;
+      width: 100%;
+      background: $background-container-section;
+      cursor: pointer;
 
-    &:hover {
-      outline: $outline-section-aside-main;
+      &:hover {
+        outline: $outline-product-in-main;
+      }
+
+      .input-section {
+        @include section-margins;
+        width: 100%;
+        border: none;
+        cursor: text;
+
+        &:hover {
+          background: $input-hover;
+        }
+
+        &:focus {
+          outline: none;
+          background: $input-focus;
+          box-shadow: $input-box-shadow;
+        }
+      }
+
+      .input-section:nth-child(2) {
+        width: 40%;
+      }
+
+      .external-button-main {
+        @include external-button-aside-main;
+        cursor: pointer;
+      }
     }
-  }
 
-  .input-section {
-    @include section-margins;
-    width: 80%;
-    border: none;
-    cursor: text;
+    .section-products {
+      margin-top: 1rem;
+      width: 100%;
+      border-radius: $section-border-radius;
+      background: $background-section-products;
 
-    &:hover {
-      background: $input-hover;
+      .product {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        @include section-margins;
+        width: 99%;
+        background: $background-container-section;
+        cursor: pointer;
+
+        &:hover {
+          outline: $outline-product-in-main;
+        }
+
+        .input-product {
+          @include section-margins;
+          width: 100%;
+          border: none;
+          cursor: text;
+
+          &:hover {
+            background: $input-hover;
+          }
+
+          &:focus {
+            outline: none;
+            background: $input-focus;
+            box-shadow: $input-box-shadow;
+          }
+        }
+
+        .input-product:nth-child(2) {
+          width: 30%;
+        }
+
+        .input-product:nth-child(4) {
+          width: 20%;
+        }
+
+        .inner-button-product {
+          @include external-button-aside-main;
+          cursor: pointer;
+        }
+      }
     }
-
-    &:focus {
-      outline: none;
-      background: $input-focus;
-      box-shadow: $input-box-shadow;
-    }
-  }
-
-  .input-section:nth-child(2) {
-    width: 40%;
-  }
-
-  .external-button-main {
-    @include external-button-aside-main;
-    cursor: pointer;
   }
 }

@@ -11,12 +11,13 @@ const createBtn = (element, elementClass, dataAction, text, title, space) => {
   return el;
 };
 
-const createBlock = (element, elementClass, space) => {
+const createBlock = (element, elementClass, dataAction, space) => {
   if (!space) {
     return console.error("Container not found (div)");
   }
   const el = document.createElement(element);
   el.classList.add(elementClass);
+  el.dataset.action = dataAction;
   space.append(el);
   return el;
 };
@@ -60,8 +61,15 @@ const createChk = (element, elementClass, type, name, dataAction, space) => {
   return el;
 };
 
+const randDataAction = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+
 export const createButton = createBtn;
 export const createDiv = createBlock;
 export const createInput = createInp;
 export const createInputWithPrice = createPriceInp;
 export const createCheckbox = createChk;
+export const randomDataAction = randDataAction;
