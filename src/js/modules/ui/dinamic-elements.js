@@ -61,10 +61,17 @@ const createChk = (element, elementClass, type, name, dataAction, space) => {
   return el;
 };
 
-const randDataAction = (min, max) => {
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) + min);
+const generateRandomDataAction = (length = 8, prefix = "id") => {
+  const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * chars.length);
+    result += chars[randomIndex];
+  }
+
+  const timestamp = Date.now().toString(36);
+  return `${prefix}-${result}-${timestamp}`;
 };
 
 export const createButton = createBtn;
@@ -72,4 +79,4 @@ export const createDiv = createBlock;
 export const createInput = createInp;
 export const createInputWithPrice = createPriceInp;
 export const createCheckbox = createChk;
-export const randomDataAction = randDataAction;
+export const randomDataAction = generateRandomDataAction;

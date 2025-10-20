@@ -15,7 +15,7 @@ export const addSectionInAside = (e) => {
   const div = createDiv(
     "div",
     "section-aside",
-    randomDataAction(1, 1000),
+    randomDataAction(),
     containerAside
   );
 
