@@ -64,14 +64,10 @@ const createChk = (element, elementClass, type, name, dataAction, space) => {
 const generateRandomDataAction = (length = 8, prefix = "id") => {
   const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
   let result = "";
-
   for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * chars.length);
-    result += chars[randomIndex];
+    result += chars[Math.floor(Math.random() * chars.length)];
   }
-
-  const timestamp = Date.now().toString(36);
-  return `${prefix}-${result}-${timestamp}`;
+  return `${prefix}-${result}-${Date.now().toString(36)}`;
 };
 
 export const createButton = createBtn;

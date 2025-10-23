@@ -1,6 +1,7 @@
 import { addSectionInAside } from "./add-section-in-aside";
 import { addSectionInMain } from "./add-section-in-main";
 import { addProductInSection } from "./add-product-in-section";
+import { settingProduct } from "../ui/modals";
 
 export const setupDelegatedEvents = () => {
   const containerAside = document.querySelector(".container-aside");
@@ -21,8 +22,8 @@ export const setupDelegatedEvents = () => {
       addProductInSection(e);
     }
 
-    // if (e.target.closest('[data-action="settings"]')) {
-    //   settingProduct(e);
-    // }
+    if (e.target.closest('[data-action="settings"]')) {
+      settingProduct(e);
+    }
   });
 };

@@ -6,15 +6,6 @@ import {
 } from "../ui/dinamic-elements";
 
 export const addSectionInMain = (e) => {
-  // const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
-  // const containerMain = document.querySelector(".container-main");
-  // const sections = document.querySelectorAll(".section-main");
-  // const sectionExist = Array.from(sections).some(
-  //   (el) => dynamicDataAction === el.dataset.action
-  // );
-  // if (sectionExist) {
-  //   return;
-  // }
   const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
   const containerMain = document.querySelector(".container-main");
   const sections = document.querySelectorAll(".section-main");
