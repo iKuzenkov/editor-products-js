@@ -1,20 +1,12 @@
 @use "variables" as *;
 
-@mixin container-aside-main-margins(
-  $container-aside-main-margin,
-  $container-aside-main-padding-top,
-  $container-aside-main-border-radius
-) {
+@mixin container-aside-main-margins {
   margin: $container-aside-main-margin;
   padding-top: $container-aside-main-padding-top;
   border-radius: $container-aside-main-border-radius;
 }
 
-@mixin section-margins(
-  $section-margin,
-  $section-padding,
-  $section-border-radius
-) {
+@mixin section-margins {
   margin: $section-margin;
   padding: $section-padding;
   border-radius: $section-border-radius;
@@ -40,12 +32,7 @@
   }
 }
 
-@mixin external-button-aside-main(
-  $inner-external-button-border-none,
-  $inner-external-button-border-radius,
-  $external-button-background,
-  $external-button-hover-background
-) {
+@mixin external-button-aside-main {
   border: $inner-external-button-border-none;
   border-radius: $inner-external-button-border-radius;
   background: $external-button-background;
@@ -55,14 +42,7 @@
   }
 }
 
-@mixin inner-button(
-  $inner-button-margin,
-  $inner-button-padding,
-  $inner-external-button-border-none,
-  $inner-external-button-border-radius,
-  $inner-button-background,
-  $inner-button-hover-background
-) {
+@mixin inner-button {
   margin: $inner-button-margin;
   padding: $inner-button-padding;
   border: $inner-external-button-border-none;
