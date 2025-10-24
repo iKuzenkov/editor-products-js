@@ -1,0 +1,37 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  .modal-content {
+    position: relative;
+    justify-content: center;
+    background: $background-section-products;
+    min-width: 30rem;
+    max-width: 35rem;
+    min-height: 30rem;
+    z-index: 2;
+    @include section-margins;
+    @include scrollbar;
+    overflow-y: auto;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}
