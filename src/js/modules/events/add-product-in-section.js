@@ -1,10 +1,4 @@
-import {
-  createDiv,
-  createInput,
-  createButton,
-  createCheckbox,
-  createInputWithPrice,
-} from "../ui/dinamic-elements";
+import { createElement } from "../ui/dinamic-elements";
 
 export const addProductInSection = (e) => {
   const sectionMain = e.target.closest(".section-main");
@@ -13,49 +7,70 @@ export const addProductInSection = (e) => {
 
   const innerProducts = sectionProducts.querySelectorAll(".product");
   const MAX_PRODUCTS_PER_SECTION = 12;
-  if (innerProducts.length >= MAX_PRODUCTS_PER_SECTION) {
-    return;
-  }
+  if (innerProducts.length >= MAX_PRODUCTS_PER_SECTION) return;
 
-  const div = createDiv("div", "product", dynamicDataAction, sectionProducts);
-  createCheckbox(
+  const div = createElement(
+    "div",
+    { classList: ["product"], attrs: { "data-action": dynamicDataAction } },
+    sectionProducts
+  );
+  createElement(
     "input",
-    "checkbox-product",
-    "checkbox",
-    "checkbox-product-section",
-    "checkbox-product",
+    {
+      classList: ["checkbox-product"],
+      attrs: {
+        type: "checkbox",
+        name: "checkbox-product-section",
+        "data-action": "checkbox-product",
+      },
+    },
     div
   );
-  createInput(
+  createElement(
     "input",
-    "input-product",
-    "text",
-    "in-product",
-    "Enter name",
+    {
+      classList: ["input-product"],
+      attrs: {
+        type: "text",
+        name: "in-product",
+        placeholder: "Enter name",
+      },
+    },
     div
   );
-  createInput(
+
+  createElement(
     "input",
-    "input-product",
-    "text",
-    "in-product",
-    "Enter description",
+    {
+      classList: ["input-product"],
+      attrs: {
+        type: "text",
+        name: "in-product",
+        placeholder: "Enter description",
+      },
+    },
     div
   );
-  createInputWithPrice(
+
+  createElement(
     "input",
-    "input-product",
-    "text",
-    `${0}`,
-    "in-product",
+    {
+      classList: ["input-product"],
+      attrs: {
+        type: "text",
+        name: "in-product",
+        placeholder: "$0.00",
+      },
+    },
     div
   );
-  createButton(
+  createElement(
     "button",
-    "inner-button-product",
-    "settings",
-    "settings",
-    "settings",
+    {
+      classList: ["inner-button-product"],
+      text: "settings",
+      attrs: { title: "settings", "data-action": "settings" },
+    },
     div
   );
 };

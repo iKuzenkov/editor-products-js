@@ -1,9 +1,4 @@
-import {
-  createDiv,
-  createInput,
-  createButton,
-  createCheckbox,
-} from "../ui/dinamic-elements";
+import { createElement } from "../ui/dinamic-elements";
 
 export const addSectionInMain = (e) => {
   const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
@@ -12,55 +7,82 @@ export const addSectionInMain = (e) => {
   const sectionExist = Array.from(sections).some(
     (el) => dynamicDataAction === el.dataset.action
   );
-  if (sectionExist) {
-    return;
-  }
+  if (sectionExist) return;
 
-  const div = createDiv(
+  const div = createElement(
     "div",
-    "section-main",
-    dynamicDataAction,
+    {
+      classList: ["section-main"],
+      attrs: { "data-action": dynamicDataAction },
+    },
     containerMain
   );
-  createDiv("div", "section-functions", dynamicDataAction, div);
 
-  const sectionHeader = createDiv(
+  const buttonsFunctionsContainer = createElement(
     "div",
-    "section-header",
-    dynamicDataAction,
+    {
+      classList: ["section-functions"],
+      attrs: { "data-action": dynamicDataAction },
+    },
     div
   );
-  createCheckbox(
+
+  const sectionHeader = createElement(
+    "div",
+    {
+      classList: ["section-header"],
+      attrs: { "data-action": dynamicDataAction },
+    },
+    div
+  );
+  createElement(
     "input",
-    "checkbox-section",
-    "checkbox",
-    "checkbox-section-main",
-    "checkbox-main",
+    {
+      classList: ["checkbox-section"],
+      attrs: {
+        type: "checkbox",
+        name: "checkbox-section-main",
+        "data-action": "checkbox-main",
+      },
+    },
     sectionHeader
   );
-  createInput(
+
+  createElement(
     "input",
-    "input-section",
-    "text",
-    "in-section",
-    "Enter name",
+    {
+      classList: ["input-section"],
+      attrs: { type: "text", name: "in-section", placeholder: "Enter name" },
+    },
     sectionHeader
   );
-  createInput(
+  createElement(
     "input",
-    "input-section",
-    "text",
-    "in-section",
-    "Enter description",
+    {
+      classList: ["input-section"],
+      attrs: {
+        type: "text",
+        name: "in-section",
+        placeholder: "Enter description",
+      },
+    },
     sectionHeader
   );
-  createButton(
+  createElement(
     "button",
-    "external-button-main",
-    "add-product",
-    "Add Product",
-    "Add Product",
+    {
+      classList: ["external-button-main"],
+      text: "Add Product",
+      attrs: { title: "Add Product", "data-action": "add-product" },
+    },
     sectionHeader
   );
-  createDiv("div", "section-products", dynamicDataAction, div);
+  createElement(
+    "div",
+    {
+      classList: ["section-products"],
+      attrs: { "data-action": dynamicDataAction },
+    },
+    div
+  );
 };

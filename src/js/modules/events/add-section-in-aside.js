@@ -1,38 +1,44 @@
 import {
-  createDiv,
-  createInput,
-  createButton,
-  randomDataAction,
+  createElement,
+  generateRandomDataAction,
 } from "../ui/dinamic-elements";
 
 export const addSectionInAside = (e) => {
   const containerAside = document.querySelector(".container-aside");
   const sectionAside = document.querySelectorAll(".section-aside");
   const MAX_SECTIONS_ASIDE = 12;
-  if (sectionAside.length >= MAX_SECTIONS_ASIDE) {
-    return;
-  }
-  const div = createDiv(
+  if (sectionAside.length >= MAX_SECTIONS_ASIDE) return;
+  const div = createElement(
     "div",
-    "section-aside",
-    randomDataAction(),
+    {
+      classList: ["section-aside"],
+      attrs: { "data-action": generateRandomDataAction() },
+    },
     containerAside
   );
 
-  createInput(
+  createElement(
     "input",
-    "input-section",
-    "text",
-    "in-section",
-    "Enter name section",
+    {
+      classList: ["input-section"],
+      attrs: {
+        type: "text",
+        name: "in-section",
+        placeholder: "Enter name section",
+      },
+    },
     div
   );
-  createButton(
+  createElement(
     "button",
-    "inner-button",
-    "add-section-main",
-    "+",
-    "add section",
+    {
+      classList: ["inner-button"],
+      text: "+",
+      attrs: {
+        title: "add section",
+        "data-action": "add-section-main",
+      },
+    },
     div
   );
 };
