@@ -27,3 +27,26 @@ export const setupDelegatedEvents = () => {
     }
   });
 };
+
+document.addEventListener("click", (e) => {
+  const wrapper = e.target.closest(".img-upload-wrapper");
+  if (wrapper) {
+    const fileInput = wrapper.querySelector(".input-img");
+    fileInput.click();
+  }
+});
+
+document.addEventListener("change", (e) => {
+  if (e.target.matches(".input-img")) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      e.target.closest(
+        ".img-upload-wrapper"
+      ).innerHTML = `<img src="${reader.result}" loading="lazy" alt="product image">`;
+    };
+    reader.readAsDataURL(file);
+  }
+});

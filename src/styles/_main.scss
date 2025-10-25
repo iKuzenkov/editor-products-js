@@ -111,48 +111,42 @@
           }
         }
 
-        .input-product:nth-child(2) {
+        .img-upload-wrapper {
+          @include img(100px, 40px);
+          background-color: $bg-img;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+
+          .img-placeholder {
+            font-size: 1.4rem;
+            color: $color-img;
+          }
+
+          .input-img {
+            display: none;
+          }
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+          }
+        }
+
+        .input-product:nth-child(3) {
           width: 30%;
         }
 
-        .input-product:nth-child(4) {
+        .input-product:nth-child(5) {
           width: 20%;
         }
 
         .inner-button-product {
           @include external-button-aside-main;
           cursor: pointer;
-        }
-
-        .modal {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: rgba(0, 0, 0, 0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-
-          .hidden {
-            display: none;
-          }
-
-          .modal-content {
-            background: $background-section-products;
-            padding: 2rem;
-            border-radius: 8px;
-            position: relative;
-
-            .modal-close {
-              position: absolute;
-              top: 0.5rem;
-              right: 0.5rem;
-              cursor: pointer;
-              font-size: 1.5rem;
-            }
-          }
         }
       }
     }

@@ -26,6 +26,31 @@ export const addProductInSection = (e) => {
     },
     div
   );
+  const imgWrapper = createElement(
+    "div",
+    { classList: ["img-upload-wrapper"] },
+    div
+  );
+
+  createElement(
+    "input",
+    {
+      classList: ["input-img"],
+      attrs: {
+        type: "file",
+        name: "in-product",
+        accept: "image/*",
+      },
+    },
+    imgWrapper
+  );
+
+  createElement(
+    "span",
+    { classList: ["img-placeholder"], text: "+" },
+    imgWrapper
+  );
+
   createElement(
     "input",
     {

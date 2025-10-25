@@ -53,3 +53,11 @@
     background: $inner-button-hover-background;
   }
 }
+
+@mixin img($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}

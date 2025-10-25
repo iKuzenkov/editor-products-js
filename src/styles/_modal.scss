@@ -16,9 +16,11 @@
   }
 
   .modal-content {
-    position: relative;
-    justify-content: center;
-    background: $background-section-products;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: $background-container-section;
     min-width: 30rem;
     max-width: 35rem;
     min-height: 30rem;
@@ -26,12 +28,86 @@
     @include section-margins;
     @include scrollbar;
     overflow-y: auto;
-  }
 
-  .close-modal {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
+    &:hover {
+      outline: $outline-section-aside-main;
+    }
+
+    .modal-general-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      gap: 0.3rem;
+
+      .img-upload-wrapper {
+        @include img(300px, 200px);
+        background-color: $bg-img;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        .img-placeholder {
+          font-size: 1.4rem;
+          color: $color-img;
+        }
+
+        .input-img {
+          display: none;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+      }
+    }
+
+    .fields-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .field-styles {
+        @include section-margins;
+        width: 100%;
+        border: none;
+        cursor: text;
+
+        &:hover {
+          background: $input-hover;
+        }
+
+        &:focus {
+          outline: none;
+          background: $input-focus;
+          box-shadow: $input-box-shadow;
+        }
+      }
+    }
+
+    .field-styles:nth-child(4) {
+      width: 30%;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.3rem;
+
+      .close-modal,
+      .save-modal {
+        @include external-button-aside-main;
+        cursor: pointer;
+      }
+    }
   }
 }

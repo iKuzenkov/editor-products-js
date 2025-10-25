@@ -30,16 +30,123 @@ export const settingProduct = (e) => {
     },
     modal
   );
+  const generalContainer = createElement(
+    "div",
+    {
+      classList: ["modal-general-container"],
+    },
+    modalContent
+  );
+
+  const imgWrapper = createElement(
+    "div",
+    { classList: ["img-upload-wrapper"] },
+    generalContainer
+  );
+
+  createElement(
+    "input",
+    {
+      classList: ["input-img"],
+      attrs: {
+        type: "file",
+        name: "in-product",
+        accept: "image/*",
+      },
+    },
+    imgWrapper
+  );
+
+  createElement(
+    "span",
+    { classList: ["img-placeholder"], text: "+" },
+    imgWrapper
+  );
+  const containerFields = createElement(
+    "div",
+    {
+      classList: ["fields-container"],
+    },
+    generalContainer
+  );
+  createElement(
+    "input",
+    {
+      classList: ["input-modal", "field-styles"],
+      attrs: {
+        placeholder: "Enter name",
+        type: "text",
+        name: "product-name",
+      },
+    },
+    containerFields
+  );
+
+  createElement(
+    "textarea",
+    {
+      classList: ["modal-textarea", "field-styles"],
+      attrs: {
+        placeholder: "Enter description",
+        rows: "5",
+        cols: "30",
+        maxlength: "300",
+        name: "product-description",
+      },
+    },
+    containerFields
+  );
+  createElement(
+    "textarea",
+    {
+      classList: ["characteristics-textarea", "field-styles"],
+      attrs: {
+        placeholder: "Enter characteristics",
+        rows: "5",
+        cols: "30",
+        maxlength: "600",
+        name: "product-characteristics",
+      },
+    },
+    containerFields
+  );
+  createElement(
+    "input",
+    {
+      classList: ["modal-price", "field-styles"],
+      attrs: {
+        placeholder: "$0.00",
+        name: "product-price",
+      },
+    },
+    containerFields
+  );
+  const containerButton = createElement(
+    "div",
+    {
+      classList: ["button-container"],
+    },
+    modalContent
+  );
 
   const closeButton = createElement(
     "button",
     {
       classList: ["close-modal"],
-      text: "close",
+      text: "Close",
     },
-    modalContent
+    containerButton
+  );
+  const saveButton = createElement(
+    "button",
+    {
+      classList: ["save-modal"],
+      text: "Save",
+    },
+    containerButton
   );
 
   overlay.addEventListener("click", () => modal.remove());
   closeButton.addEventListener("click", () => modal.remove());
+  // saveButton.addEventListener("click", () => );
 };
