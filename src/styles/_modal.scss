@@ -18,16 +18,15 @@
   .modal-content {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     background: $background-container-section;
-    min-width: 30rem;
-    max-width: 35rem;
-    min-height: 30rem;
+    width: 30rem;
+    height: max-content;
+    gap: 0.3rem;
     z-index: 2;
     @include section-margins;
     @include scrollbar;
-    overflow-y: auto;
 
     &:hover {
       outline: $outline-section-aside-main;
@@ -35,7 +34,7 @@
 
     .modal-general-container {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       align-items: center;
       width: 100%;
@@ -65,35 +64,46 @@
           display: block;
         }
       }
-    }
-
-    .fields-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-
-      .field-styles {
-        @include section-margins;
+      .fields-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 100%;
-        border: none;
-        cursor: text;
 
-        &:hover {
-          background: $input-hover;
-        }
+        .field-styles {
+          @include section-margins;
+          width: 100%;
+          border: none;
+          cursor: text;
 
-        &:focus {
-          outline: none;
-          background: $input-focus;
-          box-shadow: $input-box-shadow;
+          &:hover {
+            background: $input-hover;
+          }
+
+          &:focus {
+            outline: none;
+            background: $input-focus;
+            box-shadow: $input-box-shadow;
+          }
         }
+      }
+
+      .field-styles:nth-child(3) {
+        width: 30%;
       }
     }
 
-    .field-styles:nth-child(4) {
-      width: 30%;
+    .options-modal {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      min-height: 1rem;
+      border-radius: $section-border-radius;
+      gap: 0.3rem;
+      background: $background-section-products;
     }
 
     .button-container {

@@ -103,20 +103,6 @@ export const settingProduct = (e) => {
     containerFields
   );
   createElement(
-    "textarea",
-    {
-      classList: ["characteristics-textarea", "field-styles"],
-      attrs: {
-        placeholder: "Enter characteristics",
-        rows: "5",
-        cols: "30",
-        maxlength: "600",
-        name: "product-characteristics",
-      },
-    },
-    containerFields
-  );
-  createElement(
     "input",
     {
       classList: ["modal-price", "field-styles"],
@@ -126,6 +112,48 @@ export const settingProduct = (e) => {
       },
     },
     containerFields
+  );
+  const containerOptions = createElement(
+    "div",
+    {
+      classList: ["options-modal"],
+      text: "Options: ",
+    },
+    modalContent
+  );
+  createElement(
+    "input",
+    {
+      classList: ["checkbox-modal"],
+      attrs: { id: 1, type: "checkbox" },
+    },
+    containerOptions
+  );
+  createElement(
+    "label",
+    {
+      classList: ["label-modal"],
+      text: "Add Option 1",
+      attrs: { for: 1, type: "checkbox" },
+    },
+    containerOptions
+  );
+  createElement(
+    "input",
+    {
+      classList: ["checkbox-modal"],
+      attrs: { id: 2, type: "checkbox" },
+    },
+    containerOptions
+  );
+  createElement(
+    "label",
+    {
+      classList: ["label-modal"],
+      text: "Add Option 2",
+      attrs: { for: 2, type: "checkbox" },
+    },
+    containerOptions
   );
   const containerButton = createElement(
     "div",
