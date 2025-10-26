@@ -28,7 +28,10 @@ export const addProductInSection = (e) => {
   );
   const imgWrapper = createElement(
     "div",
-    { classList: ["img-upload-wrapper"] },
+    {
+      classList: ["img-upload-wrapper"],
+      attrs: { "data-action": "image-product" },
+    },
     div
   );
 
@@ -40,6 +43,7 @@ export const addProductInSection = (e) => {
         type: "file",
         name: "in-product",
         accept: "image/*",
+        "data-action": "loading-image-product",
       },
     },
     imgWrapper

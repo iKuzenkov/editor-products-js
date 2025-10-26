@@ -40,7 +40,10 @@ export const settingProduct = (e) => {
 
   const imgWrapper = createElement(
     "div",
-    { classList: ["img-upload-wrapper"] },
+    {
+      classList: ["img-upload-wrapper"],
+      attrs: { "data-action": "image-product" },
+    },
     generalContainer
   );
 
@@ -52,6 +55,7 @@ export const settingProduct = (e) => {
         type: "file",
         name: "in-product",
         accept: "image/*",
+        "data-action": "loading-image-product",
       },
     },
     imgWrapper

@@ -1,6 +1,7 @@
 import { addSectionInAside } from "./add-section-in-aside";
 import { addSectionInMain } from "./add-section-in-main";
 import { addProductInSection } from "./add-product-in-section";
+import { upLoadImages, loadingImages } from "./loading-images";
 import { settingProduct } from "../ui/modals";
 
 export const setupDelegatedEvents = () => {
@@ -26,27 +27,16 @@ export const setupDelegatedEvents = () => {
       settingProduct(e);
     }
   });
+
+  document.addEventListener("click", (e) => {
+    if (e.target.closest('[data-action="image-product"]')) {
+      upLoadImages(e);
+    }
+  });
+
+  document.addEventListener("change", (e) => {
+    if (e.target.matches('[data-action="loading-image-product"]')) {
+      loadingImages(e);
+    }
+  });
 };
-
-document.addEventListener("click", (e) => {
-  const wrapper = e.target.closest(".img-upload-wrapper");
-  if (wrapper) {
-    const fileInput = wrapper.querySelector(".input-img");
-    fileInput.click();
-  }
-});
-
-document.addEventListener("change", (e) => {
-  if (e.target.matches(".input-img")) {
-    const file = e.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = () => {
-      e.target.closest(
-        ".img-upload-wrapper"
-      ).innerHTML = `<img src="${reader.result}" loading="lazy" alt="product image">`;
-    };
-    reader.readAsDataURL(file);
-  }
-});
