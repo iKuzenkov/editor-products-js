@@ -17,7 +17,7 @@ export const loadingImages = (e) => {
     reader.onload = () => {
       e.target.closest(
         '[data-action="image-product"]'
-      ).innerHTML = `<img src="${reader.result}" loading="lazy" alt="product image">`;
+      ).innerHTML = `<img src="${reader.result}">`;
     };
     reader.readAsDataURL(file);
   }

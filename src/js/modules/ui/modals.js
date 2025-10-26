@@ -55,6 +55,8 @@ export const settingProduct = (e) => {
         type: "file",
         name: "in-product",
         accept: "image/*",
+        loading: "lazy",
+        alt: "product image",
         "data-action": "loading-image-product",
       },
     },
