@@ -21,7 +21,7 @@ export const addProductInSection = (e) => {
       attrs: {
         type: "checkbox",
         name: "checkbox-product-section",
-        "data-action": "checkbox-product",
+        "data-action": dynamicDataAction,
       },
     },
     div

@@ -42,7 +42,7 @@ export const addSectionInMain = (e) => {
       attrs: {
         type: "checkbox",
         name: "checkbox-section-main",
-        "data-action": "checkbox-main",
+        "data-action": dynamicDataAction,
       },
     },
     sectionHeader
