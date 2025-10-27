@@ -97,7 +97,8 @@
     .options-modal {
       display: flex;
       flex-direction: row;
-      justify-content: flex-start;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
       width: 100%;
       min-height: 1rem;

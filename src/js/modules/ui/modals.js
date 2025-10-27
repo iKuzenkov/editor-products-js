@@ -117,7 +117,6 @@ export const settingProduct = (e) => {
     "div",
     {
       classList: ["options-modal"],
-      text: "Options: ",
     },
     modalContent
   );
@@ -133,7 +132,7 @@ export const settingProduct = (e) => {
     "label",
     {
       classList: ["label-modal"],
-      text: "Add Option 1",
+      text: "Apply discount |",
       attrs: { for: 1, type: "checkbox" },
     },
     containerOptions
@@ -150,8 +149,42 @@ export const settingProduct = (e) => {
     "label",
     {
       classList: ["label-modal"],
-      text: "Add Option 2",
+      text: "Out of stock |",
       attrs: { for: 2, type: "checkbox" },
+    },
+    containerOptions
+  );
+  createElement(
+    "input",
+    {
+      classList: ["checkbox-modal"],
+      attrs: { id: 3, type: "checkbox" },
+    },
+    containerOptions
+  );
+  createElement(
+    "label",
+    {
+      classList: ["label-modal"],
+      text: "Delivery |",
+      attrs: { for: 3, type: "checkbox" },
+    },
+    containerOptions
+  );
+  createElement(
+    "input",
+    {
+      classList: ["checkbox-modal"],
+      attrs: { id: 4, type: "checkbox" },
+    },
+    containerOptions
+  );
+  createElement(
+    "label",
+    {
+      classList: ["label-modal"],
+      text: "Pick-up |",
+      attrs: { for: 4, type: "checkbox" },
     },
     containerOptions
   );
