@@ -62,7 +62,7 @@ export const addSectionInMain = (e) => {
       attrs: {
         id: 3,
         type: "button",
-        title: "Remove the Text",
+        title: "Delete the Text",
         "data-action": dynamicDataAction,
       },
     },
