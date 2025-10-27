@@ -18,13 +18,97 @@ export const addSectionInMain = (e) => {
     containerMain
   );
 
-  const buttonsFunctionsContainer = createElement(
+  const logicButtonHandler = createElement(
     "div",
     {
-      classList: ["section-functions"],
+      classList: ["product-functions"],
       attrs: { "data-action": dynamicDataAction },
     },
     div
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "⬅️",
+      attrs: {
+        id: 1,
+        type: "button",
+        title: "Add Text in Start",
+        "data-action": dynamicDataAction,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "➡️",
+      attrs: {
+        id: 2,
+        type: "button",
+        title: "Add Text in End",
+        "data-action": dynamicDataAction,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "🗑️",
+      attrs: {
+        id: 3,
+        type: "button",
+        title: "Remove the Text",
+        "data-action": dynamicDataAction,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "🔁",
+      attrs: {
+        id: 4,
+        type: "button",
+        title: "Replace the Text",
+        "data-action": dynamicDataAction,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "🎨",
+      attrs: {
+        id: 5,
+        type: "button",
+        title: "Highlight the Text",
+        "data-action": dynamicDataAction,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "⚙️",
+      attrs: {
+        id: 6,
+        type: "button",
+        title: "auto fix",
+        "data-action": dynamicDataAction,
+      },
+    },
+    logicButtonHandler
   );
 
   const sectionHeader = createElement(
