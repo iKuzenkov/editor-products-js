@@ -40,7 +40,24 @@
       justify-content: center;
       align-items: center;
       width: max-content;
-      gap: 0.1rem;
+      border-bottom: 1px solid #c0c0c0;
+
+      .input-function {
+        @include section-margins;
+        width: 100%;
+        border: none;
+        cursor: text;
+
+        &:hover {
+          background: $input-hover;
+        }
+
+        &:focus {
+          outline: none;
+          background: $input-focus;
+          box-shadow: $input-box-shadow;
+        }
+      }
     }
 
     .section-header {

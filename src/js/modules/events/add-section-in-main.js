@@ -110,6 +110,17 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+  createElement(
+    "input",
+    {
+      classList: ["input-section", "input-function"],
+      attrs: {
+        type: "text",
+        placeholder: "Enter text",
+      },
+    },
+    logicButtonHandler
+  );
 
   const sectionHeader = createElement(
     "div",

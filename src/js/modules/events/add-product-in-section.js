@@ -65,6 +65,7 @@ export const addProductInSection = (e) => {
         type: "text",
         name: "in-product",
         placeholder: "Enter name",
+        "data-action": dynamicDataAction,
       },
     },
     div
