@@ -1,13 +1,22 @@
+/**
+ * Adds a value from .input-function
+ * to all .input-product with data-action inside the section
+ * @param {Event} e - add button click event
+ * @returns {void} - returns nothing
+ */
 export const addTextStart = (e) => {
   const section = e.target.closest(".section-main");
-  const inputValue = section.querySelector(".input-function").value;
-  const productInputs = Array.from(section.querySelectorAll(".input-product"));
-  const filteredInputs = productInputs.filter((el) => el.dataset.action);
-  const unitedValue = filteredInputs
-    .map((el) => el.value.trim())
-    .filter((el) => el !== "")
-    .map((val) => `${val} ${inputValue}`);
-  filteredInputs.forEach((input, i) => {
-    input.value = unitedValue[i];
-  });
+  if (!section) return;
+
+  const inputValue = section.querySelector(".input-function");
+  if (!inputValue) return;
+  const valueToAdd = inputValue.value.trim();
+
+  const actionInputs = Array.from(
+    section.querySelectorAll(".input-product[data-action]")
+  );
+
+  actionInputs.forEach((el) => (el.value = `${valueToAdd} ${el.value.trim()}`));
+
+  inputValue.value = "";
 };
