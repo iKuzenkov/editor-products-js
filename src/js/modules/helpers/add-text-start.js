@@ -15,6 +15,7 @@ export const addTextStart = (e) => {
   const actionInputs = Array.from(
     section.querySelectorAll(".input-product[data-action]")
   );
+  if (!actionInputs) return;
 
   actionInputs.forEach((el) => (el.value = `${valueToAdd} ${el.value.trim()}`));
 
