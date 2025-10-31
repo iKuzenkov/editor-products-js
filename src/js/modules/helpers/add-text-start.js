@@ -1,9 +1,23 @@
+import { clearInputValue } from "./utils/clearElements";
+
 /**
- * Adds a value from .input-function
- * to all .input-product with data-action inside the section
- * @param {Event} e - add button click event
- * @returns {void} - returns nothing
+ * Adds a value in start the input from .input-function
+ * across all .input-product[data-action] inside the current section
+ * @param {HTMLInputElement[]} actionInputs
+ * @param {string} valueToAdd
+ *  @returns {void}
  */
+
+const replaceValuesInInputs = (actionInputs, valueToAdd) => {
+  actionInputs.forEach((el) => (el.value = `${valueToAdd} ${el.value.trim()}`));
+};
+
+/**
+ * After working the cleaning the helper elements
+ * @param {Event} e - button click event
+ * @returns {void}
+ */
+
 export const addTextStart = (e) => {
   const section = e.target.closest(".section-main");
   if (!section) return;
@@ -17,7 +31,6 @@ export const addTextStart = (e) => {
   );
   if (!actionInputs) return;
 
-  actionInputs.forEach((el) => (el.value = `${valueToAdd} ${el.value.trim()}`));
-
-  inputValue.value = "";
+  replaceValuesInInputs(actionInputs, valueToAdd);
+  clearInputValue(inputValue);
 };

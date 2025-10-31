@@ -1,4 +1,10 @@
 import { createElement } from "../ui/dinamic-elements";
+import { clearInputValue } from "./utils/clearElements";
+
+/**
+ * @param {HTMLElement} functionSpace - container for input + button
+ * @returns {void}
+ */
 
 const dynamicElements = (functionSpace) => {
   createElement(
@@ -28,6 +34,11 @@ const dynamicElements = (functionSpace) => {
   );
 };
 
+/**
+ * adds dynamic elements input + button
+ * @param {Event} e - button click
+ * @returns {Void}
+ */
 export const helperElements = (e) => {
   const section = e.target.closest(".section-main");
   if (!section) return;
@@ -38,6 +49,12 @@ export const helperElements = (e) => {
   dynamicElements(functionSpace);
 };
 
+/**
+ * @param {HTMLInputElement[]} actionInputs - target input elements
+ * @param {string} valueToSetUp - new value for setup to inputs
+ * @param {string} valueToReplace - old value which will be replaced
+ * @returns {void}
+ */
 const replaceValuesInInputs = (actionInputs, valueToSetUp, valueToReplace) => {
   actionInputs.forEach((el) =>
     el.value.includes(valueToReplace)
@@ -46,12 +63,21 @@ const replaceValuesInInputs = (actionInputs, valueToSetUp, valueToReplace) => {
   );
 };
 
-const clearAfterWork = (inputValue) => (inputValue.value = "");
-
+/**
+ * @param  {HTMLElement[]} - ...elements - will be removed input + button, after work function
+ * @returns {void}
+ */
 const deletedElementsAfterWork = (...elements) => {
   for (const el of elements) el.remove?.();
 };
 
+/**
+ * replaces a text value (from .input-replace) with another value (from .input-function)
+ * across all (.input-product[data-action]) inside the current section
+ * After working cleaning and removed the helper elements
+ * @param {Event} e - button click
+ * @returns {void}
+ */
 export const replaceText = (e) => {
   const section = e.target.closest(".section-main");
   if (!section) return;
@@ -72,6 +98,6 @@ export const replaceText = (e) => {
   );
 
   replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);
-  clearAfterWork(inputValue);
+  clearInputValue(inputValue);
   deletedElementsAfterWork(inputValueForReplace, buttonForReplace);
 };

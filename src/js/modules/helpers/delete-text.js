@@ -1,8 +1,25 @@
+import { clearInputValue } from "./utils/clearElements";
+
 /**
  * Removes a value from .input-function
- * to all .input-product with data-action inside the section
- * @param {Event} e - add button click event
- * @returns {void} - returns nothing
+ * across all .input-product[data-action] inside the current section
+ * @param {HTMLInputElement[]} actionInputs
+ * @param {string} valueToDelete
+ * @returns {void}
+ */
+
+const replaceValuesInInputs = (actionInputs, valueToDelete) => {
+  actionInputs.forEach((el) =>
+    el.value.includes(valueToDelete)
+      ? (el.value = el.value.split(valueToDelete).join(""))
+      : null
+  );
+};
+
+/**
+ * After working the cleaning the helper elements
+ * @param {Event} e - button click event
+ * @returns {void}
  */
 
 export const deleteText = (e) => {
@@ -18,11 +35,6 @@ export const deleteText = (e) => {
   );
   if (!actionInputs) return;
 
-  actionInputs.forEach((el) =>
-    el.value.includes(valueToDelete)
-      ? (el.value = el.value.split(valueToDelete).join(""))
-      : null
-  );
-
-  inputValue.value = "";
+  replaceValuesInInputs(actionInputs, valueToDelete);
+  clearInputValue(inputValue);
 };
