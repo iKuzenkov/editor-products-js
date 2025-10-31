@@ -113,9 +113,10 @@ export const addSectionInMain = (e) => {
   createElement(
     "input",
     {
-      classList: ["input-section", "input-function"],
+      classList: ["input-function"],
       attrs: {
         type: "text",
+        name: "in-section",
         placeholder: "Enter text",
       },
     },

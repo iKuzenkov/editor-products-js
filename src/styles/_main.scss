@@ -42,7 +42,8 @@
       width: max-content;
       border-bottom: 1px solid #c0c0c0;
 
-      .input-function {
+      .input-function,
+      .input-replace {
         @include section-margins;
         width: 100%;
         border: none;
@@ -57,6 +58,11 @@
           background: $input-focus;
           box-shadow: $input-box-shadow;
         }
+      }
+
+      .button-replace {
+        @include external-button-aside-main;
+        cursor: pointer;
       }
     }
 

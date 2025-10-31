@@ -4,6 +4,7 @@ import { addProductInSection } from "./add-product-in-section";
 import { addTextStart } from "../helpers/add-text-start";
 import { addTextEnd } from "../helpers/add-text-end";
 import { deleteText } from "../helpers/delete-text";
+import { helperElements } from "../helpers/replace-text";
 import { replaceText } from "../helpers/replace-text";
 import { hightlightText } from "../helpers/hightlight-text";
 import { autoFixText } from "../helpers/auto-fix-text";
@@ -46,6 +47,10 @@ export const setupDelegatedEvents = () => {
     }
 
     if (e.target.closest('[id="4"]')) {
+      helperElements(e);
+    }
+
+    if (e.target.closest('[id="7"]')) {
       replaceText(e);
     }
 
