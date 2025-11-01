@@ -64,6 +64,7 @@ export const addProductInSection = (e) => {
       attrs: {
         type: "text",
         name: "in-product",
+        value: "",
         placeholder: "Enter name",
         "data-action": dynamicDataAction,
       },

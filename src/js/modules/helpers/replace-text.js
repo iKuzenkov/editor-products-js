@@ -96,6 +96,7 @@ export const replaceText = (e) => {
   const actionInputs = Array.from(
     section.querySelectorAll(".input-product[data-action]")
   );
+  if (!actionInputs.length) return;
 
   replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);
   clearInputValue(inputValue);

@@ -13,7 +13,8 @@ const replaceValuesInInputs = (actionInputs, valueToAdd) => {
 };
 
 /**
- * After working the cleaning the helper elements
+ * Getting DOM elements
+ * After working the cleaning input value
  * @param {Event} e - button click event
  * @returns {void}
  */
@@ -29,7 +30,7 @@ export const addTextEnd = (e) => {
   const actionInputs = Array.from(
     section.querySelectorAll(".input-product[data-action]")
   );
-  if (!actionInputs) return;
+  if (!actionInputs.length) return;
 
   replaceValuesInInputs(actionInputs, valueToAdd);
   clearInputValue(inputValue);

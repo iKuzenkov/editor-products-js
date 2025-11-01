@@ -143,6 +143,10 @@
           }
         }
 
+        .input-product.border-orange {
+          border-bottom: 3px solid orange;
+        }
+
         .img-upload-wrapper {
           @include img(100px, 40px);
           background-color: $bg-img;
