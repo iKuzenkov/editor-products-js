@@ -106,4 +106,18 @@ export const addProductInSection = (e) => {
     },
     div
   );
+  createElement(
+    "button",
+    {
+      classList: ["inner-button-product"],
+      text: "❌",
+      attrs: {
+        id: 7,
+        type: "button",
+        title: "Remove Product",
+        "data-action": dynamicDataAction,
+      },
+    },
+    div
+  );
 };
