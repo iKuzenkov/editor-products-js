@@ -19,6 +19,7 @@ const replaceValuesInInputs = (actionInputs, valueToDelete) => {
 /**
  * Getting DOM elements
  * After working the cleaning input value
+ * .trim() to input.value, not need, - the user should be able to enter a space
  * @param {Event} e - button click event
  * @returns {void}
  */

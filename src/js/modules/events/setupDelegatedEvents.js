@@ -7,8 +7,7 @@ import { deleteText } from "../helpers/delete-text";
 import { helperElements } from "../helpers/replace-text";
 import { replaceText } from "../helpers/replace-text";
 import { highlightText } from "../helpers/hightlight-text";
-import { autoFixText } from "../helpers/auto-fix-text";
-import { upLoadImages, loadingImages } from "./loading-images";
+import { upLoadImages, loadingImages } from "../helpers/loading-images";
 import { settingProduct } from "../ui/modals";
 
 export const setupDelegatedEvents = () => {
@@ -56,10 +55,6 @@ export const setupDelegatedEvents = () => {
 
     if (e.target.closest('[id="5"]')) {
       highlightText(e);
-    }
-
-    if (e.target.closest('[id="6"]')) {
-      autoFixText(e);
     }
   });
 
