@@ -67,13 +67,13 @@ export const setupDelegatedEvents = () => {
     }
   });
 
-  document.addEventListener("click", (e) => {
+  containerMain.addEventListener("click", (e) => {
     if (e.target.closest('[data-action="image-product"]')) {
       upLoadImages(e);
     }
   });
 
-  document.addEventListener("change", (e) => {
+  containerMain.addEventListener("change", (e) => {
     if (e.target.matches('[data-action="loading-image-product"]')) {
       loadingImages(e);
     }

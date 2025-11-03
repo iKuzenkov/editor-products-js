@@ -2,6 +2,7 @@ import { createElement } from "../ui/dinamic-elements";
 
 export const addSectionInMain = (e) => {
   const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
+  const inputAsideValue = document.querySelector(".input-section").value;
   const containerMain = document.querySelector(".container-main");
   const sections = document.querySelectorAll(".section-main");
   const sectionExist = Array.from(sections).some(
@@ -148,7 +149,12 @@ export const addSectionInMain = (e) => {
     "input",
     {
       classList: ["input-section"],
-      attrs: { type: "text", name: "in-section", placeholder: "Enter name" },
+      attrs: {
+        type: "text",
+        name: "in-section",
+        placeholder: "Enter name",
+        value: `${inputAsideValue}`,
+      },
     },
     sectionHeader
   );
