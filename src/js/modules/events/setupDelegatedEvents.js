@@ -7,6 +7,7 @@ import { deleteText } from "../helpers/delete-text";
 import { helperElements } from "../helpers/replace-text";
 import { replaceText } from "../helpers/replace-text";
 import { highlightText } from "../helpers/hightlight-text";
+import { removeSection } from "../helpers/remove-section";
 import { upLoadImages, loadingImages } from "../helpers/loading-images";
 import { settingProduct } from "../ui/modals";
 
@@ -55,6 +56,10 @@ export const setupDelegatedEvents = () => {
 
     if (e.target.closest('[id="5"]')) {
       highlightText(e);
+    }
+
+    if (e.target.closest('[id="6"]')) {
+      removeSection(e);
     }
   });
 
