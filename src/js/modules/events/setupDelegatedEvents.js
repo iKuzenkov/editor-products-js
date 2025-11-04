@@ -11,6 +11,7 @@ import { removeSection } from "../helpers/remove-section";
 import { removeProduct } from "../helpers/remove-product";
 import { upLoadImages, loadingImages } from "../helpers/loading-images";
 import { settingProduct } from "../ui/modals";
+import { getDataInModal } from "../helpers/get-data-in-modal";
 
 export const setupDelegatedEvents = () => {
   const containerAside = document.querySelector(".container-aside");
@@ -32,7 +33,7 @@ export const setupDelegatedEvents = () => {
     }
 
     if (e.target.closest('[data-action="settings"]')) {
-      settingProduct(e);
+      settingProduct(e), getDataInModal(e);
     }
 
     if (e.target.closest('[id="1"]')) {
@@ -67,13 +68,13 @@ export const setupDelegatedEvents = () => {
     }
   });
 
-  containerMain.addEventListener("click", (e) => {
+  document.addEventListener("click", (e) => {
     if (e.target.closest('[data-action="image-product"]')) {
       upLoadImages(e);
     }
   });
 
-  containerMain.addEventListener("change", (e) => {
+  document.addEventListener("change", (e) => {
     if (e.target.matches('[data-action="loading-image-product"]')) {
       loadingImages(e);
     }

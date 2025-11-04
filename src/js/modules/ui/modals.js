@@ -38,36 +38,36 @@ export const settingProduct = (e) => {
     modalContent
   );
 
-  const imgWrapper = createElement(
-    "div",
-    {
-      classList: ["img-upload-wrapper"],
-      attrs: { "data-action": "image-product" },
-    },
-    generalContainer
-  );
+  // const imgWrapper = createElement(
+  //   "div",
+  //   {
+  //     classList: ["img-upload-wrapper"],
+  //     attrs: { "data-action": "image-product" },
+  //   },
+  //   generalContainer
+  // );
 
-  createElement(
-    "input",
-    {
-      classList: ["input-img"],
-      attrs: {
-        type: "file",
-        name: "in-product",
-        accept: "image/*",
-        loading: "lazy",
-        alt: "product image",
-        "data-action": "loading-image-product",
-      },
-    },
-    imgWrapper
-  );
+  // createElement(
+  //   "input",
+  //   {
+  //     classList: ["input-img"],
+  //     attrs: {
+  //       type: "file",
+  //       name: "in-product",
+  //       accept: "image/*",
+  //       loading: "lazy",
+  //       alt: "product image",
+  //       "data-action": "loading-image-product",
+  //     },
+  //   },
+  //   imgWrapper
+  // );
 
-  createElement(
-    "span",
-    { classList: ["img-placeholder"], text: "+" },
-    imgWrapper
-  );
+  // createElement(
+  //   "span",
+  //   { classList: ["img-placeholder"], text: "+" },
+  //   imgWrapper
+  // );
   const containerFields = createElement(
     "div",
     {

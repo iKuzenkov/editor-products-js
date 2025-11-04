@@ -60,7 +60,7 @@ export const addProductInSection = (e) => {
   createElement(
     "input",
     {
-      classList: ["input-product"],
+      classList: ["input-product", "input-name"],
       attrs: {
         type: "text",
         name: "in-product",
@@ -75,7 +75,7 @@ export const addProductInSection = (e) => {
   createElement(
     "input",
     {
-      classList: ["input-product"],
+      classList: ["input-product", "input-description"],
       attrs: {
         type: "text",
         name: "in-product",
@@ -88,7 +88,7 @@ export const addProductInSection = (e) => {
   createElement(
     "input",
     {
-      classList: ["input-product"],
+      classList: ["input-product", "input-price"],
       attrs: {
         type: "text",
         name: "in-product",
@@ -102,7 +102,7 @@ export const addProductInSection = (e) => {
     {
       classList: ["inner-button-product"],
       text: "settings",
-      attrs: { title: "settings", "data-action": "settings" },
+      attrs: { type: "button", title: "settings", "data-action": "settings" },
     },
     div
   );
