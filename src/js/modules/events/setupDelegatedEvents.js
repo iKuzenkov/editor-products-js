@@ -9,7 +9,11 @@ import { replaceText } from "../helpers/replace-text";
 import { highlightText } from "../helpers/hightlight-text";
 import { removeSection } from "../helpers/remove-section";
 import { removeProduct } from "../helpers/remove-product";
-import { upLoadImages, loadingImages } from "../helpers/loading-images";
+import {
+  upLoadImages,
+  loadingImages,
+  removeImages,
+} from "../helpers/loading-images";
 import { settingProduct } from "../ui/modals";
 import { getDataInModal } from "../helpers/get-data-in-modal";
 
@@ -63,6 +67,7 @@ export const setupDelegatedEvents = () => {
     if (e.target.closest('[id="6"]')) {
       removeSection(e);
     }
+
     if (e.target.closest('[id="7"]')) {
       removeProduct(e);
     }
@@ -77,6 +82,12 @@ export const setupDelegatedEvents = () => {
   document.addEventListener("change", (e) => {
     if (e.target.matches('[data-action="loading-image-product"]')) {
       loadingImages(e);
+    }
+  });
+
+  document.addEventListener("dblclick", (e) => {
+    if (e.target.closest('[data-action="image-product"]')) {
+      removeImages(e);
     }
   });
 };
