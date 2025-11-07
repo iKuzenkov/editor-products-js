@@ -9,6 +9,7 @@ import { replaceText } from "../helpers/replace-text";
 import { highlightText } from "../helpers/hightlight-text";
 import { removeSection } from "../helpers/remove-section";
 import { removeProduct } from "../helpers/remove-product";
+import { hideShow } from "../helpers/hide";
 import {
   upLoadImages,
   loadingImages,
@@ -70,6 +71,9 @@ export const setupDelegatedEvents = () => {
 
     if (e.target.closest('[id="7"]')) {
       removeProduct(e);
+    }
+    if (e.target.closest('[id="8"]')) {
+      hideShow(e);
     }
   });
 

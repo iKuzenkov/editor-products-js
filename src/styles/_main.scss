@@ -107,10 +107,15 @@
     }
 
     .section-products {
+      display: block;
       margin-top: 1rem;
       width: 100%;
       border-radius: $section-border-radius;
       background: $background-section-products;
+
+      &.hide {
+        display: none;
+      }
 
       .product {
         display: flex;

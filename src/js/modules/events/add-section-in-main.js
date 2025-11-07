@@ -112,6 +112,20 @@ export const addSectionInMain = (e) => {
     logicButtonHandler
   );
   createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "☝️",
+      attrs: {
+        id: 8,
+        type: "button",
+        title: "Hide",
+        "data-action": dynamicDataAction,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
     "input",
     {
       classList: ["input-function"],
