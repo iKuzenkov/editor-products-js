@@ -1,16 +1,12 @@
 import { createElement } from "../ui/dinamic-elements";
 
-export const settingProduct = (e) => {
-  const product = e.target.closest(".inner-button-product");
-  const dynamicDataAction = product.dataset.action;
-
+export const settingProduct = () => {
   const modal = createElement(
     "div",
     {
       classList: ["modal"],
       attrs: {
         id: "modal",
-        "data-action": dynamicDataAction,
       },
     },
     document.body

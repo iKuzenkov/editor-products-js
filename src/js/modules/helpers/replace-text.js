@@ -67,8 +67,8 @@ const replaceValuesInInputs = (actionInputs, valueToSetUp, valueToReplace) => {
  * @param  {HTMLElement[]} - ...elements - will be removed input + button, after work function
  * @returns {void}
  */
-const deletedElementsAfterWork = (...elements) => {
-  for (const el of elements) el.remove?.();
+const deletedInputElementsAfterWork = (...elements) => {
+  for (const el of elements) el?.remove();
 };
 
 /**
@@ -87,8 +87,8 @@ export const replaceText = (e) => {
   const inputValueForReplace = section.querySelector(".input-replace");
   if (!inputValueForReplace) return;
 
-  const buttonForReplace = section.querySelector(".button-replace");
-  if (!buttonForReplace) return;
+  // const buttonForReplace = section.querySelector(".button-replace");
+  // if (!buttonForReplace) return;
 
   let valueToSetUp = inputValue.value;
   let valueToReplace = inputValueForReplace.value;
@@ -100,5 +100,5 @@ export const replaceText = (e) => {
 
   replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);
   clearInputValue(inputValue);
-  deletedElementsAfterWork(inputValueForReplace, buttonForReplace);
+  deletedInputElementsAfterWork(inputValueForReplace);
 };

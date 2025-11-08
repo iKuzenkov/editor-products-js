@@ -12,7 +12,7 @@ export const upLoadImages = (e) => {
     '[data-action="loading-image-product"]'
   );
   if (!fileInput) return;
-  fileInput.click();
+  fileInput?.click();
 };
 
 /**

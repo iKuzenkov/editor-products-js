@@ -1,11 +1,15 @@
 import { createElement } from "../ui/dinamic-elements";
 
 export const addSectionInMain = (e) => {
-  const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
-  const inputAsideValue = document.querySelector(".input-section").value;
+  // const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
+
+  const section = e.target.closest(".section-aside");
+  const dynamicDataAction = section.dataset.action;
+  const inputAsideValue = section.querySelector(".input-section").value;
+
   const containerMain = document.querySelector(".container-main");
-  const sections = document.querySelectorAll(".section-main");
-  const sectionExist = Array.from(sections).some(
+  const sections = Array.from(document.querySelectorAll(".section-main"));
+  const sectionExist = sections.some(
     (el) => dynamicDataAction === el.dataset.action
   );
   if (sectionExist) return;
@@ -158,7 +162,6 @@ export const addSectionInMain = (e) => {
     },
     sectionHeader
   );
-
   createElement(
     "input",
     {

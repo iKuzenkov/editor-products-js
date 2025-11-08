@@ -1,7 +1,4 @@
-import {
-  createElement,
-  generateRandomDataAction,
-} from "../ui/dinamic-elements";
+import { createElement, generateRandomId } from "../ui/dinamic-elements";
 
 export const addSectionInAside = (e) => {
   const containerAside = document.querySelector(".container-aside");
@@ -12,7 +9,7 @@ export const addSectionInAside = (e) => {
     "div",
     {
       classList: ["section-aside"],
-      attrs: { "data-action": generateRandomDataAction() },
+      attrs: { "data-action": generateRandomId() },
     },
     containerAside
   );

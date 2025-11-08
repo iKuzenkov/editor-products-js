@@ -9,7 +9,7 @@
 const removeSectionHandler = (aside, main) => {
   if (!aside.length && !main) return;
   aside.find((el) => {
-    if (el.dataset.action === main.dataset.action) el.remove(), main.remove();
+    if (el.dataset.action === main.dataset.action) el?.remove(), main?.remove();
   });
 };
 

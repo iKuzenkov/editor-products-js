@@ -1,3 +1,10 @@
+/**
+ * creates elements, accepts arguments (tag, attrs, parent)
+ * @param {HTMLElement} tag - tag name
+ * @param {Object} options - object includes attrb, properties (depends on the parameters passed)
+ * @param {HTMLElement} parent - space to add
+ * @returns {void}
+ */
 export const createElement = (tag, options = {}, parent) => {
   if (!parent) {
     console.log("Container not found: ", tag);
@@ -12,7 +19,13 @@ export const createElement = (tag, options = {}, parent) => {
   return el;
 };
 
-export const generateRandomDataAction = (length = 8, prefix = "id") => {
+/**
+ * generate random id, - to bind elements to each other
+ * @param {string} length - chars which created from random
+ * @param {string} prefix - role as label
+ * @returns {void}
+ */
+export const generateRandomId = (length = 8, prefix = "id") => {
   const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
   let result = "";
   for (let i = 0; i < length; i++) {
