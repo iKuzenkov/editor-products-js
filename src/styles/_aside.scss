@@ -39,6 +39,11 @@
     }
   }
 
+  .section-aside-number {
+    margin: 0.2rem;
+    @include number-section(1.5px solid #2929c9, 20%, #4c8dac);
+  }
+
   .input-section {
     width: 80%;
     border: none;

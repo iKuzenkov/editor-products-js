@@ -34,6 +34,12 @@
       outline: $outline-section-aside-main;
     }
 
+    .section-main-number {
+      position: relative;
+      right: 55%;
+      @include number-section(1.5px solid #2929c9, 20%, #4c8dac);
+    }
+
     .product-functions {
       display: flex;
       flex-direction: row;

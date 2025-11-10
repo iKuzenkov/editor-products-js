@@ -61,3 +61,9 @@
   overflow: hidden;
   position: relative;
 }
+
+@mixin number-section($border, $border-radius, $bg) {
+  border: $border;
+  border-radius: $border-radius;
+  background: $bg;
+}

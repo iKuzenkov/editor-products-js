@@ -1,12 +1,10 @@
 import { createElement } from "../ui/dinamic-elements";
 
 export const addSectionInMain = (e) => {
-  // const dynamicDataAction = e.target.closest(".section-aside").dataset.action;
-
   const section = e.target.closest(".section-aside");
   const dynamicDataAction = section.dataset.action;
+  const numberSection = section.querySelector("span").textContent;
   const inputAsideValue = section.querySelector(".input-section").value;
-
   const containerMain = document.querySelector(".container-main");
   const sections = Array.from(document.querySelectorAll(".section-main"));
   const sectionExist = sections.some(
@@ -22,7 +20,6 @@ export const addSectionInMain = (e) => {
     },
     containerMain
   );
-
   const logicButtonHandler = createElement(
     "div",
     {
@@ -30,6 +27,14 @@ export const addSectionInMain = (e) => {
       attrs: { "data-action": dynamicDataAction },
     },
     div
+  );
+  createElement(
+    "div",
+    {
+      classList: ["section-main-number"],
+      text: numberSection,
+    },
+    logicButtonHandler
   );
   createElement(
     "button",
