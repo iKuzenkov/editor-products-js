@@ -29,7 +29,7 @@ export const addSectionInMain = (e) => {
     div
   );
   createElement(
-    "div",
+    "span",
     {
       classList: ["section-main-number"],
       text: numberSection,

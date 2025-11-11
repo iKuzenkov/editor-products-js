@@ -51,4 +51,6 @@ export const addSectionInAside = (e) => {
     },
     div
   );
+
+  localStorage.setItem("arrayOfSecionAside", JSON.stringify(sectionAside));
 };
