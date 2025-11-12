@@ -1,9 +1,9 @@
 const updateName = (id, newName) => {
-  let data = JSON.parse(localStorage.getItem("data") || "[]");
+  let data = JSON.parse(localStorage.getItem("dataFromAside") || "[]");
   data = data.map((item) =>
     item.id === id ? { ...item, name: newName } : item
   );
-  localStorage.setItem("data", JSON.stringify(data));
+  localStorage.setItem("dataFromAside", JSON.stringify(data));
 };
 
 export const updateNameInLS = (e) => {
