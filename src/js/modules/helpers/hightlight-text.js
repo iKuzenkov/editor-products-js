@@ -39,7 +39,9 @@ export const highlightText = (e) => {
 
   const inputValue = section.querySelector(".input-function");
   if (!inputValue) return;
+
   const text = inputValue.value.trim();
+  if (text === "") return;
 
   const inputs = Array.from(
     section.querySelectorAll(".input-product[data-action]")

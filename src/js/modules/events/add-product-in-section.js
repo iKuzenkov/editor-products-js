@@ -112,7 +112,7 @@ export const addProductInSection = (e) => {
       classList: ["inner-button-product"],
       text: "❌",
       attrs: {
-        id: 7,
+        id: 9,
         type: "button",
         title: "Remove Product",
         "data-action": dynamicDataAction,

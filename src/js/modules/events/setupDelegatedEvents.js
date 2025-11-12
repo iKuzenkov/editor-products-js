@@ -17,6 +17,7 @@ import {
 } from "../helpers/loading-images";
 import { settingProduct } from "../ui/modals";
 import { getDataInModal } from "../helpers/get-data-in-modal";
+import { updateNameInLS } from "../local-storage/update-name-local-storage";
 
 export const setupDelegatedEvents = () => {
   const containerAside = document.querySelector(".container-aside");
@@ -69,12 +70,16 @@ export const setupDelegatedEvents = () => {
       removeSection(e);
     }
 
-    if (e.target.closest('[id="7"]')) {
+    if (e.target.closest('[id="9"]')) {
       removeProduct(e);
     }
     if (e.target.closest('[id="8"]')) {
       hideShow(e);
     }
+  });
+
+  containerAside.addEventListener("input", (e) => {
+    updateNameInLS(e);
   });
 
   document.addEventListener("click", (e) => {

@@ -46,6 +46,10 @@ export const helperElements = (e) => {
   const functionSpace = section.querySelector(".product-functions");
   if (!functionSpace) return;
 
+  const inputReplace = section.querySelector(".input-replace");
+  const buttonReplace = section.querySelector(".button-replace");
+  if (buttonReplace && inputReplace) return;
+
   dynamicElements(functionSpace);
 };
 
@@ -64,12 +68,19 @@ const replaceValuesInInputs = (actionInputs, valueToSetUp, valueToReplace) => {
 };
 
 /**
- * @param  {HTMLElement[]} - ...elements - will be removed input + button, after work function
+ * @param  {HTMLElement[]} - ...elements - will be removed input, after work function
  * @returns {void}
  */
-const deletedInputElementsAfterWork = (...elements) => {
+const deletedElementsAfterWork = (...elements) => {
   for (const el of elements) el?.remove();
 };
+
+// /**
+//  * @param  {HTMLButtonElement} - will be removed button, after work function
+//  * @returns {void}
+//  */
+// const deletedButtonElementAfterWork = (buttonReplace) =>
+//   buttonReplace?.remove();
 
 /**
  * replaces a text value (from .input-replace) with another value (from .input-function)
@@ -87,8 +98,8 @@ export const replaceText = (e) => {
   const inputValueForReplace = section.querySelector(".input-replace");
   if (!inputValueForReplace) return;
 
-  // const buttonForReplace = section.querySelector(".button-replace");
-  // if (!buttonForReplace) return;
+  const buttonReplace = section.querySelector(".button-replace");
+  if (!buttonReplace) return;
 
   let valueToSetUp = inputValue.value;
   let valueToReplace = inputValueForReplace.value;
@@ -100,5 +111,6 @@ export const replaceText = (e) => {
 
   replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);
   clearInputValue(inputValue);
-  deletedInputElementsAfterWork(inputValueForReplace);
+  deletedElementsAfterWork(inputValueForReplace, buttonReplace);
+  // deletedButtonElementAfterWork(buttonReplace);
 };

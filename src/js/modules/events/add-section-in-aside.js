@@ -1,19 +1,23 @@
 import { createElement, generateRandomId } from "../ui/dinamic-elements";
+import { saveToLS } from "../local-storage/local-storage";
 
 export const addSectionInAside = (e) => {
   const containerAside = document.querySelector(".container-aside");
-  const sectionAside = Array.from(document.querySelectorAll(".section-aside"));
+  const sectionAside = Array.from(
+    containerAside.querySelectorAll(".section-aside")
+  );
+
+  const randomID = generateRandomId();
+  const numberSection = sectionAside.length + 1;
 
   const MAX_SECTIONS_ASIDE = 12;
   if (sectionAside.length >= MAX_SECTIONS_ASIDE) return;
-
-  let numberSection = sectionAside.length + 1;
 
   const div = createElement(
     "div",
     {
       classList: ["section-aside"],
-      attrs: { "data-action": generateRandomId() },
+      attrs: { "data-action": randomID },
     },
     containerAside
   );
@@ -52,5 +56,10 @@ export const addSectionInAside = (e) => {
     div
   );
 
-  localStorage.setItem("arrayOfSecionAside", JSON.stringify(sectionAside));
+  const data = {
+    id: randomID,
+    name: "",
+    number: numberSection,
+  };
+  saveToLS(data);
 };
