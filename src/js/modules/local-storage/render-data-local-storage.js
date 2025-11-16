@@ -1,0 +1,375 @@
+import { createElement } from "../ui/dinamic-elements";
+
+export const renderAsideData = ({ id, name, number }) => {
+  const containerAside = document.querySelector(".container-aside");
+  const div = createElement(
+    "div",
+    {
+      classList: ["section-aside"],
+      attrs: { "data-action": id },
+    },
+    containerAside
+  );
+
+  createElement(
+    "span",
+    {
+      classList: ["section-aside-number"],
+      text: number,
+    },
+    div
+  );
+
+  createElement(
+    "input",
+    {
+      classList: ["input-section"],
+      attrs: {
+        value: name,
+        type: "text",
+        name: "in-section",
+        placeholder: "Enter name section",
+      },
+    },
+    div
+  );
+  createElement(
+    "button",
+    {
+      classList: ["inner-button"],
+      text: "+",
+      attrs: {
+        title: "add section",
+        "data-action": "add-section-main",
+      },
+    },
+    div
+  );
+};
+
+export const renderMainData = ({ id, name, description, number }) => {
+  const containerMain = document.querySelector(".container-main");
+
+  const div = createElement(
+    "div",
+    {
+      classList: ["section-main"],
+      attrs: { "data-action": id },
+    },
+    containerMain
+  );
+  const logicButtonHandler = createElement(
+    "div",
+    {
+      classList: ["product-functions"],
+      attrs: { "data-action": id },
+    },
+    div
+  );
+  createElement(
+    "span",
+    {
+      classList: ["section-main-number"],
+      text: number,
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "⬅️",
+      attrs: {
+        id: 1,
+        type: "button",
+        title: "Add Text in Start",
+        "data-action": id,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "➡️",
+      attrs: {
+        id: 2,
+        type: "button",
+        title: "Add Text in End",
+        "data-action": id,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "🗑️",
+      attrs: {
+        id: 3,
+        type: "button",
+        title: "Delete the Text",
+        "data-action": id,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "🔁",
+      attrs: {
+        id: 4,
+        type: "button",
+        title: "Replace the Text",
+        "data-action": id,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "🎨",
+      attrs: {
+        id: 5,
+        type: "button",
+        title: "Highlight the Text",
+        "data-action": id,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "❌",
+      attrs: {
+        id: 6,
+        type: "button",
+        title: "Remove Section",
+        "data-action": id,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "button",
+    {
+      classList: ["button-functions"],
+      text: "☝️",
+      attrs: {
+        id: 8,
+        type: "button",
+        title: "Hide",
+        "data-action": id,
+      },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "input",
+    {
+      classList: ["input-function"],
+      attrs: {
+        type: "text",
+        name: "in-section",
+        placeholder: "Enter text",
+      },
+    },
+    logicButtonHandler
+  );
+
+  const sectionHeader = createElement(
+    "div",
+    {
+      classList: ["section-header"],
+      attrs: { "data-action": id },
+    },
+    div
+  );
+  createElement(
+    "input",
+    {
+      classList: ["checkbox-section"],
+      attrs: {
+        type: "checkbox",
+        name: "checkbox-section-main",
+        "data-action": id,
+      },
+    },
+    sectionHeader
+  );
+  createElement(
+    "input",
+    {
+      classList: ["input-section"],
+      attrs: {
+        value: name,
+        type: "text",
+        name: "in-section",
+        placeholder: "Enter name",
+      },
+    },
+    sectionHeader
+  );
+  createElement(
+    "input",
+    {
+      classList: ["input-section"],
+      attrs: {
+        value: description,
+        type: "text",
+        name: "in-section",
+        placeholder: "Enter description",
+      },
+    },
+    sectionHeader
+  );
+  createElement(
+    "button",
+    {
+      classList: ["external-button-main"],
+      text: "Add Product",
+      attrs: { title: "Add Product", "data-action": "add-product" },
+    },
+    sectionHeader
+  );
+  createElement(
+    "div",
+    {
+      classList: ["section-products"],
+      attrs: { "data-action": id },
+    },
+    div
+  );
+};
+
+export const renderProductData = ({
+  secid,
+  productID,
+  name,
+  description,
+  price,
+  image,
+}) => {
+  const sectionMain = document.querySelector(
+    `.section-main[data-action="${secid}"]`
+  );
+  if (!sectionMain) return;
+  const sectionProducts = sectionMain.querySelector(".section-products");
+
+  const div = createElement(
+    "div",
+    { classList: ["product"], attrs: { "data-action": secid, id: productID } },
+    sectionProducts
+  );
+
+  const imgWrapper = createElement(
+    "div",
+    {
+      classList: ["img-upload-wrapper"],
+      attrs: { "data-action": "image-product" },
+    },
+    div
+  );
+
+  if (image) {
+    imgWrapper.innerHTML = `<img src="${image}" alt="product image">`;
+  } else {
+    createElement(
+      "input",
+      {
+        classList: ["input-img"],
+        attrs: {
+          type: "file",
+          name: "in-product",
+          accept: "image/*",
+          loading: "lazy",
+          alt: "product image",
+          "data-action": "loading-image-product",
+        },
+      },
+      imgWrapper
+    );
+
+    createElement(
+      "span",
+      { classList: ["img-placeholder"], text: "+" },
+      imgWrapper
+    );
+  }
+
+  createElement(
+    "input",
+    {
+      classList: ["input-product", "input-name"],
+      attrs: {
+        type: "text",
+        name: "in-product",
+        value: name,
+        placeholder: "Enter name",
+        "data-action": secid,
+      },
+    },
+    div
+  );
+
+  createElement(
+    "input",
+    {
+      classList: ["input-product", "input-description"],
+      attrs: {
+        type: "text",
+        name: "in-product",
+        value: description,
+        placeholder: "Enter description",
+      },
+    },
+    div
+  );
+
+  createElement(
+    "input",
+    {
+      classList: ["input-product", "input-price"],
+      attrs: {
+        type: "text",
+        name: "in-product",
+        value: price,
+        placeholder: "$0.00",
+      },
+    },
+    div
+  );
+
+  createElement(
+    "button",
+    {
+      classList: ["inner-button-product"],
+      text: "settings",
+      attrs: { type: "button", title: "settings", "data-action": "settings" },
+    },
+    div
+  );
+
+  createElement(
+    "button",
+    {
+      classList: ["inner-button-product"],
+      text: "❌",
+      attrs: {
+        id: 9,
+        type: "button",
+        title: "Remove Product",
+        "data-action": secid,
+      },
+    },
+    div
+  );
+};

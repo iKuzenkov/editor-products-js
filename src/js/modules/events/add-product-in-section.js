@@ -1,9 +1,11 @@
-import { createElement } from "../ui/dinamic-elements";
+import { createElement, generateRandomId } from "../ui/dinamic-elements";
+import { saveToProductLS } from "../local-storage/local-storage";
 
 export const addProductInSection = (e) => {
   const sectionMain = e.target.closest(".section-main");
-  const dynamicDataAction = sectionMain.dataset.action;
+  const sectionID = sectionMain.dataset.action;
   const sectionProducts = sectionMain.querySelector(".section-products");
+  const productID = generateRandomId();
 
   const innerProducts = sectionProducts.querySelectorAll(".product");
   const MAX_PRODUCTS_PER_SECTION = 12;
@@ -11,21 +13,13 @@ export const addProductInSection = (e) => {
 
   const div = createElement(
     "div",
-    { classList: ["product"], attrs: { "data-action": dynamicDataAction } },
+    {
+      classList: ["product"],
+      attrs: { "data-action": sectionID, id: productID },
+    },
     sectionProducts
   );
-  createElement(
-    "input",
-    {
-      classList: ["checkbox-product"],
-      attrs: {
-        type: "checkbox",
-        name: "checkbox-product-section",
-        "data-action": dynamicDataAction,
-      },
-    },
-    div
-  );
+
   const imgWrapper = createElement(
     "div",
     {
@@ -66,7 +60,7 @@ export const addProductInSection = (e) => {
         name: "in-product",
         value: "",
         placeholder: "Enter name",
-        "data-action": dynamicDataAction,
+        "data-action": sectionID,
       },
     },
     div
@@ -115,9 +109,17 @@ export const addProductInSection = (e) => {
         id: 9,
         type: "button",
         title: "Remove Product",
-        "data-action": dynamicDataAction,
+        "data-action": sectionID,
       },
     },
     div
   );
+  const data = {
+    secid: sectionID,
+    id: productID,
+    name: "",
+    description: "",
+    price: "",
+  };
+  saveToProductLS(data);
 };

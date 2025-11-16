@@ -27,9 +27,18 @@ export const loadingImages = (e) => {
 
     const reader = new FileReader();
     reader.onload = () => {
-      e.target.closest(
+      const product = e.target.closest(".product");
+      const base64 = reader.result;
+
+      product.querySelector(
         '[data-action="image-product"]'
-      ).innerHTML = `<img src="${reader.result}" alt="product image">`;
+      ).innerHTML = `<img src="${base64}" alt="product image">`;
+
+      let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
+      data = data.map((item) =>
+        item.id === product.id ? { ...item, image: base64 } : item
+      );
+      localStorage.setItem("dataMainProduct", JSON.stringify(data));
     };
     reader.readAsDataURL(file);
   }
@@ -76,6 +85,12 @@ export const removeImages = (e) => {
   let parentImage = product.querySelector('[data-action="image-product"]');
   let image = product.querySelector("img");
   image?.remove();
+
+  let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
+  data = data.map((item) =>
+    item.id === product.id ? { ...item, image: null } : item
+  );
+  localStorage.setItem("dataMainProduct", JSON.stringify(data));
 
   repairTags(parentImage);
 };

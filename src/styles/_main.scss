@@ -102,8 +102,8 @@
         }
       }
 
-      .input-section:nth-child(2) {
-        width: 40%;
+      .input-section:nth-child(1) {
+        width: 30%;
       }
 
       .external-button-main {
@@ -160,7 +160,7 @@
         }
 
         .img-upload-wrapper {
-          @include img(100px, 40px);
+          @include img(80px, 40px);
           background-color: $bg-img;
           display: flex;
           align-items: center;
@@ -184,12 +184,16 @@
           }
         }
 
-        .input-product:nth-child(3) {
+        .input-product:nth-child(2) {
           width: 30%;
         }
 
-        .input-product:nth-child(5) {
-          width: 20%;
+        .input-product:nth-child(3) {
+          width: 70%;
+        }
+
+        .input-product:nth-child(4) {
+          width: 10%;
         }
 
         .inner-button-product {

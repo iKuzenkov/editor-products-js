@@ -17,7 +17,11 @@ import {
 } from "../helpers/loading-images";
 import { settingProduct } from "../ui/modals";
 import { getDataInModal } from "../helpers/get-data-in-modal";
-import { updateNameInLS } from "../local-storage/update-name-local-storage";
+import {
+  updateNameAsideInLS,
+  updateNameMainInLS,
+  updateNameProductInLS,
+} from "../local-storage/update-name-local-storage";
 
 export const setupDelegatedEvents = () => {
   const containerAside = document.querySelector(".container-aside");
@@ -79,7 +83,12 @@ export const setupDelegatedEvents = () => {
   });
 
   containerAside.addEventListener("input", (e) => {
-    updateNameInLS(e);
+    updateNameAsideInLS(e);
+  });
+
+  containerMain.addEventListener("input", (e) => {
+    updateNameMainInLS(e);
+    updateNameProductInLS(e);
   });
 
   document.addEventListener("click", (e) => {

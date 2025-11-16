@@ -112,5 +112,4 @@ export const replaceText = (e) => {
   replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);
   clearInputValue(inputValue);
   deletedElementsAfterWork(inputValueForReplace, buttonReplace);
-  // deletedButtonElementAfterWork(buttonReplace);
 };

@@ -1,5 +1,5 @@
 import { createElement, generateRandomId } from "../ui/dinamic-elements";
-import { saveToLS } from "../local-storage/local-storage";
+import { saveToAsideLS } from "../local-storage/local-storage";
 
 export const addSectionInAside = (e) => {
   const containerAside = document.querySelector(".container-aside");
@@ -34,7 +34,7 @@ export const addSectionInAside = (e) => {
   createElement(
     "input",
     {
-      classList: ["input-section"],
+      classList: ["input-section", "local-storage"],
       attrs: {
         type: "text",
         name: "in-section",
@@ -61,5 +61,5 @@ export const addSectionInAside = (e) => {
     name: "",
     number: numberSection,
   };
-  saveToLS(data);
+  saveToAsideLS(data);
 };

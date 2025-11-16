@@ -1,4 +1,5 @@
 import { createElement } from "../ui/dinamic-elements";
+import { saveToMainLS } from "../local-storage/local-storage";
 
 export const addSectionInMain = (e) => {
   const section = e.target.closest(".section-aside");
@@ -158,19 +159,7 @@ export const addSectionInMain = (e) => {
   createElement(
     "input",
     {
-      classList: ["checkbox-section"],
-      attrs: {
-        type: "checkbox",
-        name: "checkbox-section-main",
-        "data-action": dynamicDataAction,
-      },
-    },
-    sectionHeader
-  );
-  createElement(
-    "input",
-    {
-      classList: ["input-section"],
+      classList: ["input-section", "name-section"],
       attrs: {
         type: "text",
         name: "in-section",
@@ -183,7 +172,7 @@ export const addSectionInMain = (e) => {
   createElement(
     "input",
     {
-      classList: ["input-section"],
+      classList: ["input-section", "description-section"],
       attrs: {
         type: "text",
         name: "in-section",
@@ -209,4 +198,12 @@ export const addSectionInMain = (e) => {
     },
     div
   );
+
+  const data = {
+    id: dynamicDataAction,
+    name: "",
+    description: "",
+    number: numberSection,
+  };
+  saveToMainLS(data);
 };
