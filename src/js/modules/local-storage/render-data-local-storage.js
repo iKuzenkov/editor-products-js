@@ -252,7 +252,7 @@ export const renderMainData = ({ id, name, description, number }) => {
 
 export const renderProductData = ({
   secid,
-  productID,
+  id,
   name,
   description,
   price,
@@ -266,7 +266,7 @@ export const renderProductData = ({
 
   const div = createElement(
     "div",
-    { classList: ["product"], attrs: { "data-action": secid, id: productID } },
+    { classList: ["product"], attrs: { "data-action": secid, id } },
     sectionProducts
   );
 
