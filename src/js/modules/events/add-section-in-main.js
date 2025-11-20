@@ -1,8 +1,9 @@
-import { createElement } from "../ui/dinamic-elements";
+import { createElement, generateRandomId } from "../ui/dinamic-elements";
 import { saveToMainLS } from "../local-storage/local-storage";
 
 export const addSectionInMain = (e) => {
   const section = e.target.closest(".section-aside");
+  const sectionID = generateRandomId();
   const dynamicDataAction = section.dataset.action;
   const numberSection = section.querySelector("span").textContent;
   const inputAsideValue = section.querySelector(".input-section").value;
@@ -17,7 +18,7 @@ export const addSectionInMain = (e) => {
     "div",
     {
       classList: ["section-main"],
-      attrs: { "data-action": dynamicDataAction },
+      attrs: { "data-action": dynamicDataAction, id: sectionID },
     },
     containerMain
   );
@@ -200,7 +201,8 @@ export const addSectionInMain = (e) => {
   );
 
   const data = {
-    id: dynamicDataAction,
+    section_data_action: dynamicDataAction,
+    id: sectionID,
     name: "",
     description: "",
     number: numberSection,

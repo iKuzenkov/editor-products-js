@@ -3,16 +3,16 @@
  * @param {HTMLDivElement} product
  * @returns {void}
  */
-const deleteProduct = (product) => product.remove();
+const deleteProduct = (product) => product?.remove();
 
 /**
  * Updates the array, removes the object from LS
  * @param {id} productID
  * @returns {void}
  */
-const updateLS = (productID) => {
+const updateLS = (id) => {
   let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
-  data = data.filter((item) => item.id !== productID);
+  data = data.filter((item) => item.id !== id);
   localStorage.setItem("dataMainProduct", JSON.stringify(data));
 };
 
@@ -24,9 +24,9 @@ const updateLS = (productID) => {
 export const removeProduct = (e) => {
   const product = e.target.closest(".product");
   if (!product) return;
-  const productID = product.id;
-  if (!productID) return;
+  const id = product.id;
+  if (!id) return;
 
   deleteProduct(product);
-  updateLS(productID);
+  updateLS(id);
 };

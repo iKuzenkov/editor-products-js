@@ -1,12 +1,12 @@
 import { createElement } from "../ui/dinamic-elements";
 
-export const renderAsideData = ({ id, name, number }) => {
+export const renderAsideData = ({ aside_data_action, id, name, number }) => {
   const containerAside = document.querySelector(".container-aside");
   const div = createElement(
     "div",
     {
       classList: ["section-aside"],
-      attrs: { "data-action": id },
+      attrs: { "data-action": aside_data_action, id },
     },
     containerAside
   );
@@ -47,14 +47,20 @@ export const renderAsideData = ({ id, name, number }) => {
   );
 };
 
-export const renderMainData = ({ id, name, description, number }) => {
+export const renderMainData = ({
+  section_data_action,
+  id,
+  name,
+  description,
+  number,
+}) => {
   const containerMain = document.querySelector(".container-main");
 
   const div = createElement(
     "div",
     {
       classList: ["section-main"],
-      attrs: { "data-action": id },
+      attrs: { "data-action": section_data_action, id },
     },
     containerMain
   );
@@ -62,7 +68,7 @@ export const renderMainData = ({ id, name, description, number }) => {
     "div",
     {
       classList: ["product-functions"],
-      attrs: { "data-action": id },
+      attrs: { "data-action": section_data_action },
     },
     div
   );
@@ -83,7 +89,7 @@ export const renderMainData = ({ id, name, description, number }) => {
         id: 1,
         type: "button",
         title: "Add Text in Start",
-        "data-action": id,
+        "data-action": section_data_action,
       },
     },
     logicButtonHandler
@@ -97,7 +103,7 @@ export const renderMainData = ({ id, name, description, number }) => {
         id: 2,
         type: "button",
         title: "Add Text in End",
-        "data-action": id,
+        "data-action": section_data_action,
       },
     },
     logicButtonHandler
@@ -111,7 +117,7 @@ export const renderMainData = ({ id, name, description, number }) => {
         id: 3,
         type: "button",
         title: "Delete the Text",
-        "data-action": id,
+        "data-action": section_data_action,
       },
     },
     logicButtonHandler
@@ -125,7 +131,7 @@ export const renderMainData = ({ id, name, description, number }) => {
         id: 4,
         type: "button",
         title: "Replace the Text",
-        "data-action": id,
+        "data-action": section_data_action,
       },
     },
     logicButtonHandler
@@ -139,7 +145,7 @@ export const renderMainData = ({ id, name, description, number }) => {
         id: 5,
         type: "button",
         title: "Highlight the Text",
-        "data-action": id,
+        "data-action": section_data_action,
       },
     },
     logicButtonHandler
@@ -153,7 +159,7 @@ export const renderMainData = ({ id, name, description, number }) => {
         id: 6,
         type: "button",
         title: "Remove Section",
-        "data-action": id,
+        "data-action": section_data_action,
       },
     },
     logicButtonHandler
@@ -167,7 +173,7 @@ export const renderMainData = ({ id, name, description, number }) => {
         id: 8,
         type: "button",
         title: "Hide",
-        "data-action": id,
+        "data-action": section_data_action,
       },
     },
     logicButtonHandler
@@ -189,7 +195,7 @@ export const renderMainData = ({ id, name, description, number }) => {
     "div",
     {
       classList: ["section-header"],
-      attrs: { "data-action": id },
+      attrs: { "data-action": section_data_action },
     },
     div
   );
@@ -200,7 +206,7 @@ export const renderMainData = ({ id, name, description, number }) => {
       attrs: {
         type: "checkbox",
         name: "checkbox-section-main",
-        "data-action": id,
+        "data-action": section_data_action,
       },
     },
     sectionHeader
@@ -244,7 +250,7 @@ export const renderMainData = ({ id, name, description, number }) => {
     "div",
     {
       classList: ["section-products"],
-      attrs: { "data-action": id },
+      attrs: { "data-action": section_data_action },
     },
     div
   );

@@ -7,7 +7,8 @@ export const addSectionInAside = (e) => {
     containerAside.querySelectorAll(".section-aside")
   );
 
-  const randomID = generateRandomId();
+  const dynamicDataAction = generateRandomId();
+  const asideID = generateRandomId();
   const numberSection = sectionAside.length + 1;
 
   const MAX_SECTIONS_ASIDE = 12;
@@ -17,7 +18,7 @@ export const addSectionInAside = (e) => {
     "div",
     {
       classList: ["section-aside"],
-      attrs: { "data-action": randomID },
+      attrs: { "data-action": dynamicDataAction, id: asideID },
     },
     containerAside
   );
@@ -57,7 +58,8 @@ export const addSectionInAside = (e) => {
   );
 
   const data = {
-    id: randomID,
+    aside_data_action: dynamicDataAction,
+    id: asideID,
     name: "",
     number: numberSection,
   };
