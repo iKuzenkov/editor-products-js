@@ -46,6 +46,30 @@ const updateMainLS = (mainID) => {
 };
 
 /**
+ * Recalculation of section numbers after deletion (aside block)
+ */
+const updateNumberAsideSections = () => {
+  const asideSection = Array.from(document.querySelectorAll(".section-aside"));
+
+  asideSection.forEach((el, i) => {
+    const numberSection = el.querySelector(".section-aside-number");
+    numberSection.textContent = i + 1;
+  });
+};
+
+/**
+ * Recalculation of section numbers after deletion (main block)
+ */
+const updateNumberMainSections = () => {
+  const mainSection = Array.from(document.querySelectorAll(".section-main"));
+
+  mainSection.forEach((el, i) => {
+    const numberSection = el.querySelector(".section-main-number");
+    numberSection.textContent = i + 1;
+  });
+};
+
+/**
  * Getting container aside and main sections
  * @param {Event} e - button click
  * @returns {void}
@@ -59,4 +83,6 @@ export const removeSection = (e) => {
   updateProductLS(mainSection);
   updateMainLS(mainID);
   updateAsideLS(mainSection);
+  updateNumberAsideSections();
+  updateNumberMainSections();
 };
