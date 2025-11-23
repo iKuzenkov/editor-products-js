@@ -157,6 +157,20 @@ export const addSectionInMain = (e) => {
     },
     div
   );
+
+  createElement(
+    "input",
+    {
+      classList: ["input-section", "header-checkbox"],
+      attrs: {
+        type: "checkbox",
+
+        name: "in-header",
+      },
+    },
+    sectionHeader
+  );
+
   createElement(
     "input",
     {

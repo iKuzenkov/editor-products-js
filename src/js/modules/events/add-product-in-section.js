@@ -8,7 +8,7 @@ export const addProductInSection = (e) => {
   const productID = generateRandomId();
 
   const innerProducts = sectionProducts.querySelectorAll(".product");
-  const MAX_PRODUCTS_PER_SECTION = 12;
+  const MAX_PRODUCTS_PER_SECTION = 20;
   if (innerProducts.length >= MAX_PRODUCTS_PER_SECTION) return;
 
   const div = createElement(
