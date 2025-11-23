@@ -20,6 +20,18 @@ export const addProductInSection = (e) => {
     sectionProducts
   );
 
+  createElement(
+    "input",
+    {
+      classList: ["input-product", "product-checkbox"],
+      attrs: {
+        type: "checkbox",
+        name: "in-product",
+      },
+    },
+    div
+  );
+
   const imgWrapper = createElement(
     "div",
     {
