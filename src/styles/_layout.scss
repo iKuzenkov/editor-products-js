@@ -1,17 +1,19 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 #grid-layout {
   display: grid;
   grid-template-areas:
     "header header header"
     "aside main main"
     "footer footer footer";
-  height: 100vh;
   grid-template-rows: 1fr 8fr 1fr;
   grid-template-columns: 1fr 2fr 2fr;
 }
 
 #header {
   grid-area: header;
-  background: #4e4c4c;
+  background: $background-header-footer;
 }
 #aside {
   grid-area: aside;
@@ -21,5 +23,5 @@
 }
 #footer {
   grid-area: footer;
-  background: #4e4c4c;
+  background: $background-header-footer;
 }
