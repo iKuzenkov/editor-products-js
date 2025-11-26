@@ -8,6 +8,8 @@ export const addProductInSection = (e) => {
   const productID = generateRandomId();
 
   const innerProducts = sectionProducts.querySelectorAll(".product");
+  const numberProduct = innerProducts.length + 1;
+
   const MAX_PRODUCTS_PER_SECTION = 20;
   if (innerProducts.length >= MAX_PRODUCTS_PER_SECTION) return;
 
@@ -20,6 +22,23 @@ export const addProductInSection = (e) => {
     sectionProducts
   );
 
+  const layout = createElement(
+    "div",
+    {
+      classList: ["number-checkbox-layout"],
+    },
+    div
+  );
+
+  createElement(
+    "span",
+    {
+      classList: ["product-number"],
+      text: numberProduct,
+    },
+    layout
+  );
+
   createElement(
     "input",
     {
@@ -29,7 +48,7 @@ export const addProductInSection = (e) => {
         name: "in-product",
       },
     },
-    div
+    layout
   );
 
   const imgWrapper = createElement(
@@ -132,6 +151,7 @@ export const addProductInSection = (e) => {
     name: "",
     description: "",
     price: "",
+    numberProduct,
   };
   saveToProductLS(data);
 };

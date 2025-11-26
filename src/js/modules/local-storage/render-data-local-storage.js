@@ -263,6 +263,7 @@ export const renderProductData = ({
   description,
   price,
   image,
+  numberProduct,
 }) => {
   const sectionMain = document.querySelector(
     `.section-main[data-action="${secid}"]`
@@ -274,6 +275,35 @@ export const renderProductData = ({
     "div",
     { classList: ["product"], attrs: { "data-action": secid, id } },
     sectionProducts
+  );
+
+  const layout = createElement(
+    "div",
+    {
+      classList: ["number-checkbox-layout"],
+    },
+    div
+  );
+
+  createElement(
+    "span",
+    {
+      classList: ["product-number"],
+      text: numberProduct,
+    },
+    layout
+  );
+
+  createElement(
+    "input",
+    {
+      classList: ["input-product", "product-checkbox"],
+      attrs: {
+        type: "checkbox",
+        name: "in-product",
+      },
+    },
+    layout
   );
 
   const imgWrapper = createElement(

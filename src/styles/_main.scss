@@ -162,6 +162,20 @@
           outline: $outline-product-in-main;
         }
 
+        .number-checkbox-layout {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          border: $color-bd;
+          @include section-margins;
+        }
+
+        .product-number {
+          position: relative;
+          @include number-section(1.5px solid #83df2e, 20%, #c1e426);
+        }
+
         .input-product {
           @include section-margins;
           width: 100%;
@@ -208,7 +222,7 @@
           }
         }
 
-        .input-product:nth-child(1) {
+        .input-product:nth-child(2) {
           width: 15px;
         }
 
@@ -234,10 +248,6 @@
           flex-direction: column;
           width: 48%;
 
-          .input-product:nth-child(1) {
-            width: 20%;
-          }
-
           .img-upload-wrapper {
             @include img(120px, 80px);
           }
@@ -251,7 +261,7 @@
           }
 
           .input-product:nth-child(5) {
-            width: 50%;
+            width: 30%;
           }
 
           .inner-button-product {
