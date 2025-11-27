@@ -46,6 +46,46 @@ const updateMainLS = (mainID) => {
 };
 
 /**
+ * Rendering of the new (last state) section numbers after refreshing the browser page.
+ *  * @returns {void}
+ */
+const savingStateNumbersAsideLS = () => {
+  const asideSections = Array.from(document.querySelectorAll(".section-aside"));
+  const number = asideSections.map(
+    (el) => el.querySelector(".section-aside-number").textContent
+  );
+
+  let data = JSON.parse(localStorage.getItem("dataAside") || "[]");
+  data = data.map((el, i) => {
+    return {
+      ...el,
+      number: number[i],
+    };
+  });
+  localStorage.setItem("dataAside", JSON.stringify(data));
+};
+
+/**
+ * Rendering of the new (last state) section numbers after refreshing the browser page.
+ *  * @returns {void}
+ */
+const savingStateNumbersMainLS = () => {
+  const mainSections = Array.from(document.querySelectorAll(".section-main"));
+  const number = mainSections.map(
+    (el) => el.querySelector(".section-main-number").textContent
+  );
+
+  let data = JSON.parse(localStorage.getItem("dataMain") || "[]");
+  data = data.map((el, i) => {
+    return {
+      ...el,
+      number: number[i],
+    };
+  });
+  localStorage.setItem("dataMain", JSON.stringify(data));
+};
+
+/**
  * Sections are numbered from main elements (creating a Section)
  * @param {[]} - asideSection
  * @returns {void}
@@ -65,6 +105,8 @@ const updateNumberMainSections = (asideSection) => {
 
     main.querySelector(".section-main-number").textContent = asideNumber;
   });
+  savingStateNumbersAsideLS();
+  savingStateNumbersMainLS();
 };
 
 /**
@@ -95,5 +137,4 @@ export const removeSection = (e) => {
   updateMainLS(mainID);
   updateAsideLS(mainSection);
   updateNumberAsideSections();
-  // updateNumberMainSections();
 };
