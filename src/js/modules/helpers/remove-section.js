@@ -46,6 +46,28 @@ const updateMainLS = (mainID) => {
 };
 
 /**
+ * Sections are numbered from main elements (creating a Section)
+ * @param {[]} - asideSection
+ * @returns {void}
+ */
+const updateNumberMainSections = (asideSection) => {
+  const mainSections = Array.from(document.querySelectorAll(".section-main"));
+
+  mainSections.forEach((main) => {
+    const mainAction = main.dataset.action;
+    const asideElement = asideSection.find(
+      (el) => el.dataset.action === mainAction
+    );
+
+    const asideNumber = asideElement.querySelector(
+      ".section-aside-number"
+    ).textContent;
+
+    main.querySelector(".section-main-number").textContent = asideNumber;
+  });
+};
+
+/**
  * Recalculation of section numbers after deletion (aside block)
  */
 const updateNumberAsideSections = () => {
@@ -55,18 +77,7 @@ const updateNumberAsideSections = () => {
     const numberSection = el.querySelector(".section-aside-number");
     numberSection.textContent = i + 1;
   });
-};
-
-/**
- * Recalculation of section numbers after deletion (main block)
- */
-const updateNumberMainSections = () => {
-  const mainSection = Array.from(document.querySelectorAll(".section-main"));
-
-  mainSection.forEach((el, i) => {
-    const numberSection = el.querySelector(".section-main-number");
-    numberSection.textContent = i + 1;
-  });
+  updateNumberMainSections(asideSection);
 };
 
 /**
@@ -84,5 +95,5 @@ export const removeSection = (e) => {
   updateMainLS(mainID);
   updateAsideLS(mainSection);
   updateNumberAsideSections();
-  updateNumberMainSections();
+  // updateNumberMainSections();
 };
