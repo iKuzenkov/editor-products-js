@@ -146,7 +146,7 @@ export const addProductInSection = (e) => {
     div
   );
   const data = {
-    secid: sectionID,
+    product_data_action: sectionID,
     id: productID,
     name: "",
     description: "",

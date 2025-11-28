@@ -164,7 +164,6 @@ export const addSectionInMain = (e) => {
       classList: ["input-section", "header-checkbox"],
       attrs: {
         type: "checkbox",
-
         name: "in-header",
       },
     },

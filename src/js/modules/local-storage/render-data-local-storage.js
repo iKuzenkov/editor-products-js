@@ -214,7 +214,7 @@ export const renderMainData = ({
   createElement(
     "input",
     {
-      classList: ["input-section"],
+      classList: ["input-section", "name-section"],
       attrs: {
         value: name,
         type: "text",
@@ -227,7 +227,7 @@ export const renderMainData = ({
   createElement(
     "input",
     {
-      classList: ["input-section"],
+      classList: ["input-section", "description-section"],
       attrs: {
         value: description,
         type: "text",
@@ -257,7 +257,7 @@ export const renderMainData = ({
 };
 
 export const renderProductData = ({
-  secid,
+  product_data_action,
   id,
   name,
   description,
@@ -266,14 +266,17 @@ export const renderProductData = ({
   numberProduct,
 }) => {
   const sectionMain = document.querySelector(
-    `.section-main[data-action="${secid}"]`
+    `.section-main[data-action="${product_data_action}"]`
   );
   if (!sectionMain) return;
   const sectionProducts = sectionMain.querySelector(".section-products");
 
   const div = createElement(
     "div",
-    { classList: ["product"], attrs: { "data-action": secid, id } },
+    {
+      classList: ["product"],
+      attrs: { "data-action": product_data_action, id },
+    },
     sectionProducts
   );
 
@@ -350,7 +353,7 @@ export const renderProductData = ({
         name: "in-product",
         value: name,
         placeholder: "Enter name",
-        "data-action": secid,
+        "data-action": product_data_action,
       },
     },
     div
@@ -403,7 +406,7 @@ export const renderProductData = ({
         id: 9,
         type: "button",
         title: "Remove Product",
-        "data-action": secid,
+        "data-action": product_data_action,
       },
     },
     div

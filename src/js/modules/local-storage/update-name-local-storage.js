@@ -1,7 +1,7 @@
-const updateAsideName = (id, newName) => {
+const updateAsideName = (dataAction, newName) => {
   let data = JSON.parse(localStorage.getItem("dataAside") || "[]");
   data = data.map((item) =>
-    item.id === id ? { ...item, name: newName } : item
+    item.aside_data_action === dataAction ? { ...item, name: newName } : item
   );
   localStorage.setItem("dataAside", JSON.stringify(data));
 };
@@ -9,15 +9,15 @@ const updateAsideName = (id, newName) => {
 export const updateNameAsideInLS = (e) => {
   if (!e.target.classList.contains("input-section")) return;
   const section = e.target.closest(".section-aside");
-  const id = section.dataset.action;
+  const dataAction = section.dataset.action;
   const value = e.target.value;
-  updateAsideName(id, value);
+  updateAsideName(dataAction, value);
 };
 
-const updateMainName = (id, newName, newDescription) => {
+const updateMainName = (dataAction, newName, newDescription) => {
   let data = JSON.parse(localStorage.getItem("dataMain") || "[]");
   data = data.map((item) =>
-    item.id === id
+    item.section_data_action === dataAction
       ? { ...item, name: newName, description: newDescription }
       : item
   );
@@ -27,10 +27,10 @@ const updateMainName = (id, newName, newDescription) => {
 export const updateNameMainInLS = (e) => {
   if (!e.target.classList.contains("input-section")) return;
   const section = e.target.closest(".section-main");
-  const id = section.dataset.action;
+  const dataAction = section.dataset.action;
   const nameValue = section.querySelector(".name-section").value;
   const descriptionValue = section.querySelector(".description-section").value;
-  updateMainName(id, nameValue, descriptionValue);
+  updateMainName(dataAction, nameValue, descriptionValue);
 };
 
 const updateProductName = (id, newName, newDescription, newPrice) => {

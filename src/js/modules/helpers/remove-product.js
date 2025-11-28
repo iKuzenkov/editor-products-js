@@ -18,12 +18,17 @@ const updateLS = (id) => {
 
 /**
  * Saving to local storage.
+ * @param {randomDataAction} dataAction
  * @param {[]} newNumberProducts
  */
-const updateProductNumberLS = (newNumberProducts) => {
+const updateProductNumberLS = (sectionDataAction, newNumberProducts) => {
   let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
-  data = data.map((el, i) => {
-    return { ...el, numberProduct: newNumberProducts[i] };
+  let counter = 0;
+  data = data.map((el) => {
+    if (el.product_data_action === sectionDataAction) {
+      return { ...el, numberProduct: newNumberProducts[counter++] };
+    }
+    return el;
   });
   localStorage.setItem("dataMainProduct", JSON.stringify(data));
 };
@@ -34,17 +39,18 @@ const updateProductNumberLS = (newNumberProducts) => {
  * @returns {void}
  */
 const updateProductNumber = (sectionMain) => {
+  const sectionDataAction = sectionMain.dataset.action;
   const sectionProducts = Array.from(sectionMain.querySelectorAll(".product"));
-  if (!sectionProducts) return;
+  if (!sectionProducts.length) return;
 
   const newNumberProducts = sectionProducts.map((el, i) => {
     const productNumber = el.querySelector(".product-number");
-    if (!productNumber) return;
-    productNumber.textContent = i + 1;
-    return productNumber.textContent;
+    const num = i + 1;
+    if (productNumber) productNumber.textContent = num;
+    return num;
   });
 
-  updateProductNumberLS(newNumberProducts);
+  updateProductNumberLS(sectionDataAction, newNumberProducts);
 };
 
 /**
@@ -53,10 +59,12 @@ const updateProductNumber = (sectionMain) => {
  * @returns {void}
  */
 export const removeProduct = (e) => {
-  const sectionMain = e.target.closest(".section-main");
-  if (!sectionMain) return;
   const product = e.target.closest(".product");
   if (!product) return;
+
+  const sectionMain = product.closest(".section-main");
+  if (!sectionMain) return;
+
   const id = product.id;
   if (!id) return;
 
