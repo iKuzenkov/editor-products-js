@@ -1,4 +1,4 @@
-import { createElement } from "../ui/dinamic-elements";
+import { createElement } from "../patterns/create-elements";
 
 export const settingProduct = () => {
   const modal = createElement(

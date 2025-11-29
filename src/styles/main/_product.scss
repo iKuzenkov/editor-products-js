@@ -1,0 +1,125 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  @include section-margins;
+  width: 99%;
+  background: $background-container-section;
+  gap: 0.2rem;
+  cursor: pointer;
+
+  &:hover {
+    outline: $outline-product-in-main;
+  }
+
+  .number-checkbox-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: $color-bd;
+    @include section-margins;
+  }
+
+  .product-number {
+    position: relative;
+    @include number-section(1.5px solid #83df2e, 20%, #c1e426);
+  }
+
+  .input-product {
+    @include section-margins;
+    width: 100%;
+    border: none;
+    cursor: text;
+
+    &:hover {
+      background: $input-hover;
+    }
+
+    &:focus {
+      outline: none;
+      background: $input-focus;
+      box-shadow: $input-box-shadow;
+    }
+  }
+
+  .input-product.border-orange {
+    border-bottom: 3px solid orange;
+  }
+
+  .img-upload-wrapper {
+    @include img(80px, 40px);
+    background-color: $bg-img;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .img-placeholder {
+      font-size: 1.4rem;
+      color: $color-img;
+    }
+
+    .input-img {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .input-product:nth-child(2) {
+    width: 15px;
+  }
+
+  .input-product:nth-child(3) {
+    width: 30%;
+  }
+
+  .input-product:nth-child(4) {
+    width: 60%;
+  }
+
+  .input-product:nth-child(5) {
+    width: 10%;
+  }
+
+  .inner-button-product {
+    @include external-button-aside-main;
+    cursor: pointer;
+  }
+}
+@media (max-width: 1200px) {
+  .product {
+    flex-direction: column;
+    width: 48%;
+
+    .img-upload-wrapper {
+      @include img(120px, 80px);
+    }
+
+    .input-product:nth-child(3) {
+      width: 100%;
+    }
+
+    .input-product:nth-child(4) {
+      width: 100%;
+    }
+
+    .input-product:nth-child(5) {
+      width: 30%;
+    }
+
+    .inner-button-product {
+      width: 100%;
+    }
+  }
+}

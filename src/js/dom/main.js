@@ -1,6 +1,6 @@
 import "../../styles/style.scss";
-import { renderInitialUI } from "../modules/ui/renderInitialUI";
-import { setupDelegatedEvents } from "../modules/events/setupDelegatedEvents";
+import { renderInitialUI } from "../modules/ui/render-initial-ui";
+import { setupDelegatedEvents } from "../modules/events/setup-delegated-events";
 import {
   renderAsideLocalStorage,
   renderMainLocalStorage,

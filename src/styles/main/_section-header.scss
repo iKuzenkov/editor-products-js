@@ -1,0 +1,59 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.section-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  @include section-margins;
+  width: 100%;
+  background: $background-container-section;
+  cursor: pointer;
+
+  &:hover {
+    outline: $outline-product-in-main;
+  }
+
+  .input-section {
+    @include section-margins;
+    width: 100%;
+    border: none;
+    cursor: text;
+
+    &:hover {
+      background: $input-hover;
+    }
+
+    &:focus {
+      outline: none;
+      background: $input-focus;
+      box-shadow: $input-box-shadow;
+    }
+  }
+
+  .input-section:nth-child(1) {
+    width: 15px;
+  }
+
+  .input-section:nth-child(2) {
+    width: 40%;
+  }
+
+  .input-section:nth-child(3) {
+    width: 60%;
+  }
+
+  .external-button-main {
+    @include external-button-aside-main;
+    cursor: pointer;
+  }
+}
+@media (max-width: 1200px) {
+  .section-header {
+    flex-direction: column;
+
+    .input-section:nth-child(1) {
+      width: 15px;
+    }
+  }
+}

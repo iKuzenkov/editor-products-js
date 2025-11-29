@@ -1,4 +1,5 @@
-import { createElement, generateRandomId } from "../ui/dinamic-elements";
+import { createElement } from "../patterns/create-elements";
+import { generateRandomId } from "../patterns/random-id";
 import { saveToMainLS } from "../local-storage/local-storage";
 
 export const addSectionInMain = (e) => {

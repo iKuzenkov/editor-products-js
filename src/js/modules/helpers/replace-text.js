@@ -1,4 +1,4 @@
-import { createElement } from "../ui/dinamic-elements";
+import { createElement } from "../patterns/create-elements";
 import { clearInputValue } from "./utils/clearElements";
 
 /**
@@ -74,13 +74,6 @@ const replaceValuesInInputs = (actionInputs, valueToSetUp, valueToReplace) => {
 const deletedElementsAfterWork = (...elements) => {
   for (const el of elements) el?.remove();
 };
-
-// /**
-//  * @param  {HTMLButtonElement} - will be removed button, after work function
-//  * @returns {void}
-//  */
-// const deletedButtonElementAfterWork = (buttonReplace) =>
-//   buttonReplace?.remove();
 
 /**
  * replaces a text value (from .input-replace) with another value (from .input-function)

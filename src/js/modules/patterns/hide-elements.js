@@ -1,44 +1,9 @@
 /**
- * creates elements, accepts arguments (tag, attrs, parent)
- * @param {HTMLElement} tag - tag name
- * @param {Object} options - object includes attrb, properties (depends on the parameters passed)
- * @param {HTMLElement} parent - space to add
- * @returns {void}
- */
-export const createElement = (tag, options = {}, parent) => {
-  if (!parent) {
-    console.log("Container not found: ", tag);
-    return null;
-  }
-  const el = document.createElement(tag);
-  if (options.classList) el.classList.add(...options.classList);
-  if (options.text) el.textContent = options.text;
-  if (options.attrs)
-    Object.entries(options.attrs).forEach(([k, v]) => el.setAttribute(k, v));
-  if (parent) parent?.append(el);
-  return el;
-};
-
-/**
- * generate random id, - to bind elements to each other
- * @param {string} length - chars which created from random
- * @param {string} prefix - role as label
- * @returns {void}
- */
-export const generateRandomId = (length = 8, prefix = "id") => {
-  const chars = "abcdefghijklmnopqrstuvwxyz0123456789";
-  let result = "";
-  for (let i = 0; i < length; i++) {
-    result += chars[Math.floor(Math.random() * chars.length)];
-  }
-  return `${prefix}-${result}-${Date.now().toString(36)}`;
-};
-
-/**
  * class switch on an element
  * @param {HTMLDivElement} child - child element class
  * @returns {void}
  */
+
 const hideHandler = (child) => child?.classList.toggle("hide");
 
 /**
@@ -47,6 +12,7 @@ const hideHandler = (child) => child?.classList.toggle("hide");
  *@param {HTMLButtonElement} buttonElement - click button
  *@param {Object} options , - used to the swich patterns
  */
+
 const textHandler = (child, buttonElement, options) => {
   const isHidden = !child?.classList.contains("hide");
   const state = isHidden ? "hide" : "show";
@@ -61,6 +27,7 @@ const textHandler = (child, buttonElement, options) => {
  * @param {HTMLDivElement} childClass  - child element class, - parent on which the click was made
  * @param {Object} options - options for changing the state
  */
+
 export const hideElements = (e, parentClass, childClass, options = {}) => {
   const buttonElement = e.target;
   const parent = e.target.closest(parentClass);

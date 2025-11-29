@@ -1,4 +1,4 @@
-import { createElement } from "./dinamic-elements";
+import { createElement } from "../patterns/create-elements";
 
 export const renderInitialUI = () => {
   const containerAside = document.querySelector(".container-aside");

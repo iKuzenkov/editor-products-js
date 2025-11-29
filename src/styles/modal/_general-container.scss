@@ -1,0 +1,40 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.modal-general-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.3rem;
+
+  .fields-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .field-styles {
+      @include section-margins;
+      width: 100%;
+      border: none;
+      cursor: text;
+
+      &:hover {
+        background: $input-hover;
+      }
+
+      &:focus {
+        outline: none;
+        background: $input-focus;
+        box-shadow: $input-box-shadow;
+      }
+    }
+  }
+
+  .field-styles:nth-child(3) {
+    width: 30%;
+  }
+}

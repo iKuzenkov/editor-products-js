@@ -1,0 +1,11 @@
+#main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80vw;
+}
+@media (max-width: 992px) {
+  #main {
+    width: 75vw;
+  }
+}

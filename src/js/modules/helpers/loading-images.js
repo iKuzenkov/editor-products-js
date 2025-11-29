@@ -1,4 +1,4 @@
-import { createElement } from "../ui/dinamic-elements";
+import { createElement } from "../patterns/create-elements";
 
 /**
  * opening the window when clicking the img (choose img from local folder)
