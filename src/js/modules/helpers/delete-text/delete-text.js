@@ -7,11 +7,10 @@ import { clearInputValue } from "../utils/clearElements";
  * @param {string} valueToDelete
  * @returns {void}
  */
-
 const replaceValuesInInputs = (actionInputs, valueToDelete) => {
   actionInputs.forEach((el) =>
     el.value.includes(valueToDelete)
-      ? (el.value = el.value.split(valueToDelete).join(""))
+      ? (el.value = el.value.replaceAll(valueToDelete, ""))
       : null
   );
 };
@@ -23,19 +22,16 @@ const replaceValuesInInputs = (actionInputs, valueToDelete) => {
  * @param {Event} e - button click event
  * @returns {void}
  */
-
 export const deleteText = (e) => {
   const section = e.target.closest(".section-main");
   if (!section) return;
 
   const inputValue = section.querySelector(".input-function");
-  if (!inputValue) return;
   let valueToDelete = inputValue.value;
 
   const actionInputs = Array.from(
     section.querySelectorAll(".input-product[data-action]")
   );
-  if (!actionInputs.length) return;
 
   replaceValuesInInputs(actionInputs, valueToDelete);
   clearInputValue(inputValue);

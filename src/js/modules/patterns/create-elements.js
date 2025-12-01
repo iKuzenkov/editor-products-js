@@ -16,6 +16,6 @@ export const createElement = (tag, options = {}, parent) => {
   if (options.text) el.textContent = options.text;
   if (options.attrs)
     Object.entries(options.attrs).forEach(([k, v]) => el.setAttribute(k, v));
-  if (parent) parent?.append(el);
+  if (parent) parent.append(el);
   return el;
 };

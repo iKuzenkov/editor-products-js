@@ -38,15 +38,12 @@ export const highlightText = (e) => {
   if (!section) return;
 
   const inputValue = section.querySelector(".input-function");
-  if (!inputValue) return;
-
   const text = inputValue.value.trim();
   if (text === "") return;
 
   const inputs = Array.from(
     section.querySelectorAll(".input-product[data-action]")
   );
-  if (!inputs.length) return;
 
   replaceValuesInInputs(inputs, text);
   clearInputValue(inputValue);

@@ -4,9 +4,11 @@ import { saveToProductLS } from "../local-storage/local-storage";
 
 export const addProductInSection = (e) => {
   const sectionMain = e.target.closest(".section-main");
-  const sectionID = sectionMain.dataset.action;
+  if (!sectionMain) return;
+
+  const dataAction = sectionMain.dataset.action;
+  const productID = generateRandomId(8, "id", 36);
   const sectionProducts = sectionMain.querySelector(".section-products");
-  const productID = generateRandomId();
 
   const innerProducts = sectionProducts.querySelectorAll(".product");
   const numberProduct = innerProducts.length + 1;
@@ -18,7 +20,7 @@ export const addProductInSection = (e) => {
     "div",
     {
       classList: ["product"],
-      attrs: { "data-action": sectionID, id: productID },
+      attrs: { "data-action": dataAction, id: productID },
     },
     sectionProducts
   );
@@ -92,7 +94,7 @@ export const addProductInSection = (e) => {
         name: "in-product",
         value: "",
         placeholder: "Enter name",
-        "data-action": sectionID,
+        "data-action": dataAction,
       },
     },
     div
@@ -141,13 +143,13 @@ export const addProductInSection = (e) => {
         id: 9,
         type: "button",
         title: "Remove Product",
-        "data-action": sectionID,
+        "data-action": dataAction,
       },
     },
     div
   );
   const data = {
-    product_data_action: sectionID,
+    product_data_action: dataAction,
     id: productID,
     name: "",
     description: "",

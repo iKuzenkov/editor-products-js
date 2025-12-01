@@ -4,21 +4,24 @@ import { saveToMainLS } from "../local-storage/local-storage";
 
 export const addSectionInMain = (e) => {
   const section = e.target.closest(".section-aside");
-  const sectionID = generateRandomId();
-  const dynamicDataAction = section.dataset.action;
+  if (!section) return;
+
+  const sectionID = generateRandomId(8, "id", 36);
+  const dataAction = section.dataset.action;
   const numberSection = section.querySelector("span").textContent;
+
   const containerMain = document.querySelector(".container-main");
+  if (!containerMain) return console.error("No .container-main in Dom");
+
   const sections = Array.from(document.querySelectorAll(".section-main"));
-  const sectionExist = sections.some(
-    (el) => dynamicDataAction === el.dataset.action
-  );
+  const sectionExist = sections.some((el) => dataAction === el.dataset.action);
   if (sectionExist) return;
 
   const div = createElement(
     "div",
     {
       classList: ["section-main"],
-      attrs: { "data-action": dynamicDataAction, id: sectionID },
+      attrs: { "data-action": dataAction, id: sectionID },
     },
     containerMain
   );
@@ -26,7 +29,7 @@ export const addSectionInMain = (e) => {
     "div",
     {
       classList: ["product-functions"],
-      attrs: { "data-action": dynamicDataAction },
+      attrs: { "data-action": dataAction },
     },
     div
   );
@@ -47,7 +50,7 @@ export const addSectionInMain = (e) => {
         id: 1,
         type: "button",
         title: "Add Text in Start",
-        "data-action": dynamicDataAction,
+        "data-action": dataAction,
       },
     },
     logicButtonHandler
@@ -61,7 +64,7 @@ export const addSectionInMain = (e) => {
         id: 2,
         type: "button",
         title: "Add Text in End",
-        "data-action": dynamicDataAction,
+        "data-action": dataAction,
       },
     },
     logicButtonHandler
@@ -75,7 +78,7 @@ export const addSectionInMain = (e) => {
         id: 3,
         type: "button",
         title: "Delete the Text",
-        "data-action": dynamicDataAction,
+        "data-action": dataAction,
       },
     },
     logicButtonHandler
@@ -89,7 +92,7 @@ export const addSectionInMain = (e) => {
         id: 4,
         type: "button",
         title: "Replace the Text",
-        "data-action": dynamicDataAction,
+        "data-action": dataAction,
       },
     },
     logicButtonHandler
@@ -103,7 +106,7 @@ export const addSectionInMain = (e) => {
         id: 5,
         type: "button",
         title: "Highlight the Text",
-        "data-action": dynamicDataAction,
+        "data-action": dataAction,
       },
     },
     logicButtonHandler
@@ -117,7 +120,7 @@ export const addSectionInMain = (e) => {
         id: 6,
         type: "button",
         title: "Remove Section",
-        "data-action": dynamicDataAction,
+        "data-action": dataAction,
       },
     },
     logicButtonHandler
@@ -131,7 +134,7 @@ export const addSectionInMain = (e) => {
         id: 8,
         type: "button",
         title: "Hide",
-        "data-action": dynamicDataAction,
+        "data-action": dataAction,
       },
     },
     logicButtonHandler
@@ -153,7 +156,7 @@ export const addSectionInMain = (e) => {
     "div",
     {
       classList: ["section-header"],
-      attrs: { "data-action": dynamicDataAction },
+      attrs: { "data-action": dataAction },
     },
     div
   );
@@ -207,13 +210,13 @@ export const addSectionInMain = (e) => {
     "div",
     {
       classList: ["section-products"],
-      attrs: { "data-action": dynamicDataAction },
+      attrs: { "data-action": dataAction },
     },
     div
   );
 
   const data = {
-    section_data_action: dynamicDataAction,
+    section_data_action: dataAction,
     id: sectionID,
     name: "",
     description: "",

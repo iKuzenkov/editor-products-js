@@ -5,7 +5,6 @@ import { hideElements } from "../../patterns/hide-elements";
  * @param {Event} e - button click
  * @returns {void}
  */
-
 export const hideShow = (e) => {
   hideElements(e, ".section-main", ".section-products", {
     text: { hide: "☝️", show: "👇" },

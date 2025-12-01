@@ -1,4 +1,4 @@
-import { updateLS, updateProductNumberLS } from "./remove-products-ls";
+import { updateProductLS, updateProductNumberLS } from "./remove-products-ls";
 
 /**
  * Removes the element from DOM
@@ -43,6 +43,6 @@ export const removeProduct = (e) => {
   if (!id) return;
 
   deleteProduct(product);
-  updateLS(id);
+  updateProductLS(id);
   updateProductNumber(sectionMain);
 };

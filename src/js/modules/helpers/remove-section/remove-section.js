@@ -16,7 +16,7 @@ import {
 const removeSectionHandler = (aside, main) => {
   if (!aside.length && !main) return;
   aside.forEach((el) => {
-    if (el.dataset.action === main.dataset.action) el?.remove(), main?.remove();
+    if (el.dataset.action === main.dataset.action) el.remove(), main.remove();
   });
 };
 

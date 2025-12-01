@@ -175,6 +175,7 @@ export const settingProduct = () => {
     {
       classList: ["save-modal"],
       text: "Save",
+      attrs: { disabled: "" },
     },
     containerButton
   );

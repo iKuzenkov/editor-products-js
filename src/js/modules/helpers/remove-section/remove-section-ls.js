@@ -4,7 +4,9 @@
  */
 export const updateProductLS = (mainSection) => {
   let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
-  data = data.filter((item) => item.secid !== mainSection.dataset.action);
+  data = data.filter(
+    (item) => item.product_data_action !== mainSection.dataset.action
+  );
   localStorage.setItem("dataMainProduct", JSON.stringify(data));
 };
 

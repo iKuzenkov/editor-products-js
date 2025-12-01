@@ -3,6 +3,4 @@
  * @param {HTMLInputElement} inputValue
  * @returns {void}
  */
-export const clearInputValue = (inputValue) => {
-  inputValue.value = "";
-};
+export const clearInputValue = (inputValue) => (inputValue.value = "");

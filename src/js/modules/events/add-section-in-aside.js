@@ -4,13 +4,15 @@ import { saveToAsideLS } from "../local-storage/local-storage";
 
 export const addSectionInAside = (e) => {
   const containerAside = document.querySelector(".container-aside");
+  if (!containerAside) return console.error("No .container-aside in DOM");
+
   const sectionAside = Array.from(
     containerAside.querySelectorAll(".section-aside")
   );
-
-  const dynamicDataAction = generateRandomId();
-  const asideID = generateRandomId();
   const numberSection = sectionAside.length + 1;
+
+  const dataAction = generateRandomId(8, "da", 32);
+  const asideID = generateRandomId(8, "id", 36);
 
   const MAX_SECTIONS_ASIDE = 20;
   if (sectionAside.length >= MAX_SECTIONS_ASIDE) return;
@@ -19,7 +21,7 @@ export const addSectionInAside = (e) => {
     "div",
     {
       classList: ["section-aside"],
-      attrs: { "data-action": dynamicDataAction, id: asideID },
+      attrs: { "data-action": dataAction, id: asideID },
     },
     containerAside
   );
@@ -59,7 +61,7 @@ export const addSectionInAside = (e) => {
   );
 
   const data = {
-    aside_data_action: dynamicDataAction,
+    aside_data_action: dataAction,
     id: asideID,
     name: "",
     number: numberSection,

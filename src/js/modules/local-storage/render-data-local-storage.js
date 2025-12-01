@@ -2,6 +2,8 @@ import { createElement } from "../patterns/create-elements";
 
 export const renderAsideData = ({ aside_data_action, id, name, number }) => {
   const containerAside = document.querySelector(".container-aside");
+  if (!containerAside) return console.error("No .container-aside in DOM");
+
   const div = createElement(
     "div",
     {
@@ -55,6 +57,7 @@ export const renderMainData = ({
   number,
 }) => {
   const containerMain = document.querySelector(".container-main");
+  if (!containerMain) return console.error("No .container-main in DOM");
 
   const div = createElement(
     "div",

@@ -21,94 +21,49 @@ import {
   updateNameAsideInLS,
   updateNameMainInLS,
   updateNameProductInLS,
-} from "../local-storage/update-name-local-storage";
+} from "../local-storage/update-name-local-storage-ls";
 
 export const setupDelegatedEvents = () => {
   const containerAside = document.querySelector(".container-aside");
+  if (!containerAside) return console.error("No .container-aside in DOM");
   const containerMain = document.querySelector(".container-main");
+  if (!containerMain) return console.error("No .container-main in DOM");
 
   containerAside.addEventListener("click", (e) => {
-    if (e.target.closest('[data-action="add-section"]')) {
-      addSectionInAside(e);
-    }
-
-    if (e.target.closest('[data-action="add-section-main"]')) {
+    if (e.target.closest('[data-action="add-section"]')) addSectionInAside(e);
+    if (e.target.closest('[data-action="add-section-main"]'))
       addSectionInMain(e);
-    }
   });
 
   containerMain.addEventListener("click", (e) => {
-    if (e.target.closest('[data-action="add-product"]')) {
-      addProductInSection(e);
-    }
-
-    if (e.target.closest('[data-action="settings"]')) {
+    if (e.target.closest('[data-action="add-product"]')) addProductInSection(e);
+    if (e.target.closest('[data-action="settings"]'))
       settingProduct(e), getDataInModal(e);
-    }
-
-    if (e.target.closest('[id="1"]')) {
-      addTextStart(e);
-    }
-
-    if (e.target.closest('[id="2"]')) {
-      addTextEnd(e);
-    }
-
-    if (e.target.closest('[id="3"]')) {
-      deleteText(e);
-    }
-
-    if (e.target.closest('[id="4"]')) {
-      helperElements(e);
-    }
-
-    if (e.target.closest('[id="7"]')) {
-      replaceText(e);
-    }
-
-    if (e.target.closest('[id="5"]')) {
-      highlightText(e);
-    }
-
-    if (e.target.closest('[id="6"]')) {
-      removeSection(e);
-    }
-
-    if (e.target.closest('[id="9"]')) {
-      removeProduct(e);
-    }
-    if (e.target.closest('[id="8"]')) {
-      hideShow(e);
-    }
+    if (e.target.closest('[id="1"]')) addTextStart(e);
+    if (e.target.closest('[id="2"]')) addTextEnd(e);
+    if (e.target.closest('[id="3"]')) deleteText(e);
+    if (e.target.closest('[id="4"]')) helperElements(e);
+    if (e.target.closest('[id="7"]')) replaceText(e);
+    if (e.target.closest('[id="5"]')) highlightText(e);
+    if (e.target.closest('[id="6"]')) removeSection(e);
+    if (e.target.closest('[id="9"]')) removeProduct(e);
+    if (e.target.closest('[id="8"]')) hideShow(e);
   });
 
-  containerAside.addEventListener("input", (e) => {
-    updateNameAsideInLS(e);
-  });
-
-  containerMain.addEventListener("input", (e) => {
-    updateNameProductInLS(e);
-  });
-
-  containerMain.addEventListener("input", (e) => {
-    updateNameMainInLS(e);
-  });
+  containerAside.addEventListener("input", (e) => updateNameAsideInLS(e));
+  containerMain.addEventListener("input", (e) => updateNameProductInLS(e));
+  containerMain.addEventListener("input", (e) => updateNameMainInLS(e));
 
   document.addEventListener("click", (e) => {
-    if (e.target.closest('[data-action="image-product"]')) {
-      upLoadImages(e);
-    }
+    if (e.target.closest('[data-action="image-product"]')) upLoadImages(e);
   });
 
   document.addEventListener("change", (e) => {
-    if (e.target.matches('[data-action="loading-image-product"]')) {
+    if (e.target.matches('[data-action="loading-image-product"]'))
       loadingImages(e);
-    }
   });
 
   document.addEventListener("dblclick", (e) => {
-    if (e.target.closest('[data-action="image-product"]')) {
-      removeImages(e);
-    }
+    if (e.target.closest('[data-action="image-product"]')) removeImages(e);
   });
 };

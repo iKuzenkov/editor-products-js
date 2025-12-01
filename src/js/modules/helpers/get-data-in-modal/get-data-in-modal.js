@@ -1,13 +1,25 @@
+/**
+ * Array of selector (index 0 - from, 1 - to)
+ */
+const pairs = [
+  [".input-name", ".input-modal"],
+  [".input-description", ".modal-textarea"],
+  [".input-price", ".modal-price"],
+];
+
+/**
+ * Getting data from the product, and assigning it to a modal window.
+ * @param {Event} e - button click
+ * @returns {void}
+ */
 export const getDataInModal = (e) => {
   const product = e.target.closest(".product");
-  let nameProduct = product.querySelector(".input-name");
-  let descriptionProduct = product.querySelector(".input-description");
-  let priceProduct = product.querySelector(".input-price");
-  let nameModal = document.querySelector(".input-modal");
-  let descriptionModal = document.querySelector(".modal-textarea");
-  let priceModal = document.querySelector(".modal-price");
+  if (!product) return;
 
-  nameModal.value = nameProduct.value;
-  descriptionModal.value = descriptionProduct.value;
-  priceModal.value = priceProduct.value;
+  pairs.forEach(([from, to]) => {
+    const getData = product.querySelector(from);
+    const assignData = document.querySelector(to);
+
+    if (getData && assignData) assignData.value = getData.value;
+  });
 };

@@ -35,6 +35,7 @@ const dynamicElements = (functionSpace) => {
 
 /**
  * adds dynamic elements input + button
+ * buttonReplace && inputReplace - protection against re-addition
  * @param {Event} e - button click
  * @returns {Void}
  */
@@ -71,7 +72,7 @@ const replaceValuesInInputs = (actionInputs, valueToSetUp, valueToReplace) => {
  * @returns {void}
  */
 const deletedElementsAfterWork = (...elements) => {
-  for (const el of elements) el?.remove();
+  for (const el of elements) el.remove();
 };
 
 /**
@@ -86,12 +87,8 @@ export const replaceText = (e) => {
   if (!section) return;
 
   const inputValue = section.querySelector(".input-function");
-  if (!inputValue) return;
   const inputValueForReplace = section.querySelector(".input-replace");
-  if (!inputValueForReplace) return;
-
   const buttonReplace = section.querySelector(".button-replace");
-  if (!buttonReplace) return;
 
   let valueToSetUp = inputValue.value;
   let valueToReplace = inputValueForReplace.value;
@@ -99,7 +96,6 @@ export const replaceText = (e) => {
   const actionInputs = Array.from(
     section.querySelectorAll(".input-product[data-action]")
   );
-  if (!actionInputs.length) return;
 
   replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);
   clearInputValue(inputValue);

@@ -3,7 +3,7 @@
  * @param {id} productID
  * @returns {void}
  */
-export const updateLS = (id) => {
+export const updateProductLS = (id) => {
   let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
   data = data.filter((item) => item.id !== id);
   localStorage.setItem("dataMainProduct", JSON.stringify(data));

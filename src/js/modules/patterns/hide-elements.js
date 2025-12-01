@@ -4,7 +4,7 @@
  * @returns {void}
  */
 
-const hideHandler = (child) => child?.classList.toggle("hide");
+const hideHandler = (child) => child.classList.toggle("hide");
 
 /**
  * checks if a class exists
@@ -14,7 +14,7 @@ const hideHandler = (child) => child?.classList.toggle("hide");
  */
 
 const textHandler = (child, buttonElement, options) => {
-  const isHidden = !child?.classList.contains("hide");
+  const isHidden = !child.classList.contains("hide");
   const state = isHidden ? "hide" : "show";
   buttonElement.textContent = options.text[state];
   buttonElement.title = options.attrs.title[state];
@@ -31,7 +31,7 @@ const textHandler = (child, buttonElement, options) => {
 export const hideElements = (e, parentClass, childClass, options = {}) => {
   const buttonElement = e.target;
   const parent = e.target.closest(parentClass);
-  const child = parent?.querySelector(childClass);
+  const child = parent.querySelector(childClass);
   hideHandler(child);
   textHandler(child, buttonElement, options);
 };

@@ -81,7 +81,7 @@ export const removeImages = (e) => {
   const product = e.target.closest(".product");
   let parentImage = product.querySelector('[data-action="image-product"]');
   let image = product.querySelector("img");
-  image?.remove();
+  image.remove();
 
   removeImagesLS(product);
   repairTags(parentImage);
