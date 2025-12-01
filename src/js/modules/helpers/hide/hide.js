@@ -1,4 +1,4 @@
-import { hideElements } from "../patterns/hide-elements";
+import { hideElements } from "../../patterns/hide-elements";
 
 /**
  * hideElements()- send the arguments to the pattern

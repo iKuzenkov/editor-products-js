@@ -1,11 +1,10 @@
-import { createElement } from "../patterns/create-elements";
-import { clearInputValue } from "./utils/clearElements";
+import { createElement } from "../../patterns/create-elements";
+import { clearInputValue } from "../utils/clearElements";
 
 /**
  * @param {HTMLElement} functionSpace - container for input + button
  * @returns {void}
  */
-
 const dynamicElements = (functionSpace) => {
   createElement(
     "input",
@@ -14,7 +13,7 @@ const dynamicElements = (functionSpace) => {
       attrs: {
         type: "text",
         name: "in-section",
-        placeholder: "Enter a value, for replaced",
+        placeholder: "Value, for replace",
       },
     },
     functionSpace

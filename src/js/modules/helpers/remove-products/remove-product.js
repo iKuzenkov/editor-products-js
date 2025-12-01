@@ -1,37 +1,11 @@
+import { updateLS, updateProductNumberLS } from "./remove-products-ls";
+
 /**
  * Removes the element from DOM
  * @param {HTMLDivElement} product
  * @returns {void}
  */
 const deleteProduct = (product) => product?.remove();
-
-/**
- * Updates the array, removes the object from LS
- * @param {id} productID
- * @returns {void}
- */
-const updateLS = (id) => {
-  let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
-  data = data.filter((item) => item.id !== id);
-  localStorage.setItem("dataMainProduct", JSON.stringify(data));
-};
-
-/**
- * Saving to local storage.
- * @param {randomDataAction} dataAction
- * @param {[]} newNumberProducts
- */
-const updateProductNumberLS = (sectionDataAction, newNumberProducts) => {
-  let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
-  let counter = 0;
-  data = data.map((el) => {
-    if (el.product_data_action === sectionDataAction) {
-      return { ...el, numberProduct: newNumberProducts[counter++] };
-    }
-    return el;
-  });
-  localStorage.setItem("dataMainProduct", JSON.stringify(data));
-};
 
 /**
  * Recalculating product numbers after deleting an item.

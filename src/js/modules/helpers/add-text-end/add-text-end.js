@@ -1,4 +1,4 @@
-import { clearInputValue } from "./utils/clearElements";
+import { clearInputValue } from "../utils/clearElements";
 
 /**
  * Adds a value in end the input from .input-function

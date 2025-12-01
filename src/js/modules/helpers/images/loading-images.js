@@ -1,4 +1,5 @@
-import { createElement } from "../patterns/create-elements";
+import { createElement } from "../../patterns/create-elements";
+import { loadingImagesLS, removeImagesLS } from "./loading-images-ls";
 
 /**
  * opening the window when clicking the img (choose img from local folder)
@@ -30,15 +31,11 @@ export const loadingImages = (e) => {
       const product = e.target.closest(".product");
       const base64 = reader.result;
 
-      product.querySelector(
+      const createTagImage = (product.querySelector(
         '[data-action="image-product"]'
-      ).innerHTML = `<img src="${base64}" alt="product image">`;
+      ).innerHTML = `<img src="${base64}" alt="product image">`);
 
-      let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
-      data = data.map((item) =>
-        item.id === product.id ? { ...item, image: base64 } : item
-      );
-      localStorage.setItem("dataMainProduct", JSON.stringify(data));
+      loadingImagesLS(product, base64);
     };
     reader.readAsDataURL(file);
   }
@@ -86,11 +83,6 @@ export const removeImages = (e) => {
   let image = product.querySelector("img");
   image?.remove();
 
-  let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
-  data = data.map((item) =>
-    item.id === product.id ? { ...item, image: null } : item
-  );
-  localStorage.setItem("dataMainProduct", JSON.stringify(data));
-
+  removeImagesLS(product);
   repairTags(parentImage);
 };

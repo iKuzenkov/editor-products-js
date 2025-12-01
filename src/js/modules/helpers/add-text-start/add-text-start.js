@@ -1,42 +1,37 @@
-import { clearInputValue } from "./utils/clearElements";
+import { clearInputValue } from "../utils/clearElements";
 
 /**
- * Removes a value from .input-function
+ * Adds a value in start the input from .input-function
  * across all .input-product[data-action] inside the current section
  * @param {HTMLInputElement[]} actionInputs
- * @param {string} valueToDelete
- * @returns {void}
+ * @param {string} valueToAdd
+ *  @returns {void}
  */
 
-const replaceValuesInInputs = (actionInputs, valueToDelete) => {
-  actionInputs.forEach((el) =>
-    el.value.includes(valueToDelete)
-      ? (el.value = el.value.split(valueToDelete).join(""))
-      : null
-  );
+const replaceValuesInInputs = (actionInputs, valueToAdd) => {
+  actionInputs.forEach((el) => (el.value = `${valueToAdd} ${el.value.trim()}`));
 };
 
 /**
  * Getting DOM elements
  * After working the cleaning input value
- * .trim() to input.value, not need, - the user should be able to enter a space
  * @param {Event} e - button click event
  * @returns {void}
  */
 
-export const deleteText = (e) => {
+export const addTextStart = (e) => {
   const section = e.target.closest(".section-main");
   if (!section) return;
 
   const inputValue = section.querySelector(".input-function");
   if (!inputValue) return;
-  let valueToDelete = inputValue.value;
+  const valueToAdd = inputValue.value.trim();
 
   const actionInputs = Array.from(
     section.querySelectorAll(".input-product[data-action]")
   );
   if (!actionInputs.length) return;
 
-  replaceValuesInInputs(actionInputs, valueToDelete);
+  replaceValuesInInputs(actionInputs, valueToAdd);
   clearInputValue(inputValue);
 };

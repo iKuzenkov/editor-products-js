@@ -7,7 +7,6 @@ export const addSectionInMain = (e) => {
   const sectionID = generateRandomId();
   const dynamicDataAction = section.dataset.action;
   const numberSection = section.querySelector("span").textContent;
-  const inputAsideValue = section.querySelector(".input-section").value;
   const containerMain = document.querySelector(".container-main");
   const sections = Array.from(document.querySelectorAll(".section-main"));
   const sectionExist = sections.some(
@@ -179,7 +178,6 @@ export const addSectionInMain = (e) => {
         type: "text",
         name: "in-section",
         placeholder: "Enter name",
-        value: `${inputAsideValue}`,
       },
     },
     sectionHeader

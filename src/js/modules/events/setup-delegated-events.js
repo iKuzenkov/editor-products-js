@@ -1,22 +1,22 @@
 import { addSectionInAside } from "./add-section-in-aside";
 import { addSectionInMain } from "./add-section-in-main";
 import { addProductInSection } from "./add-product-in-section";
-import { addTextStart } from "../helpers/add-text-start";
-import { addTextEnd } from "../helpers/add-text-end";
-import { deleteText } from "../helpers/delete-text";
-import { helperElements } from "../helpers/replace-text";
-import { replaceText } from "../helpers/replace-text";
-import { highlightText } from "../helpers/hightlight-text";
-import { removeSection } from "../helpers/remove-section";
-import { removeProduct } from "../helpers/remove-product";
-import { hideShow } from "../helpers/hide";
+import { addTextStart } from "../helpers/add-text-start/add-text-start";
+import { addTextEnd } from "../helpers/add-text-end/add-text-end";
+import { deleteText } from "../helpers/delete-text/delete-text";
+import { helperElements } from "../helpers/replace-text/replace-text";
+import { replaceText } from "../helpers/replace-text/replace-text";
+import { highlightText } from "../helpers/hightlight-text/hightlight-text";
+import { removeSection } from "../helpers/remove-section/remove-section";
+import { removeProduct } from "../helpers/remove-products/remove-product";
+import { hideShow } from "../helpers/hide/hide";
 import {
   upLoadImages,
   loadingImages,
   removeImages,
-} from "../helpers/loading-images";
+} from "../helpers/images/loading-images";
 import { settingProduct } from "../ui/modals";
-import { getDataInModal } from "../helpers/get-data-in-modal";
+import { getDataInModal } from "../helpers/get-data-in-modal/get-data-in-modal";
 import {
   updateNameAsideInLS,
   updateNameMainInLS,
@@ -87,8 +87,11 @@ export const setupDelegatedEvents = () => {
   });
 
   containerMain.addEventListener("input", (e) => {
-    updateNameMainInLS(e);
     updateNameProductInLS(e);
+  });
+
+  containerMain.addEventListener("input", (e) => {
+    updateNameMainInLS(e);
   });
 
   document.addEventListener("click", (e) => {
