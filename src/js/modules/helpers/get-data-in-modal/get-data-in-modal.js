@@ -2,9 +2,12 @@
  * Array of selector (index 0 - from, 1 - to)
  */
 const pairs = [
-  [".input-name", ".input-modal"],
-  [".input-description", ".modal-textarea"],
-  [".input-price", ".modal-price"],
+  ["[data-name='name']", "[data-name='name-in-modal']"],
+  [
+    "[data-description='description']",
+    "[data-description='description-in-modal']",
+  ],
+  ["[data-price='price']", "[data-price='price-in-modal']"],
 ];
 
 /**

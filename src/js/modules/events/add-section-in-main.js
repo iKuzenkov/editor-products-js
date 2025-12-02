@@ -3,25 +3,25 @@ import { generateRandomId } from "../patterns/random-id";
 import { saveToMainLS } from "../local-storage/local-storage";
 
 export const addSectionInMain = (e) => {
-  const section = e.target.closest(".section-aside");
+  const section = e.target.closest('[data-name="aside"]');
   if (!section) return;
 
   const sectionID = generateRandomId(8, "id", 36);
   const dataAction = section.dataset.action;
   const numberSection = section.querySelector("span").textContent;
 
-  const containerMain = document.querySelector(".container-main");
-  if (!containerMain) return console.error("No .container-main in Dom");
+  const containerMain = document.querySelector("#container-main");
+  if (!containerMain) return console.error("No #container-main in Dom");
 
-  const sections = Array.from(document.querySelectorAll(".section-main"));
+  const sections = Array.from(document.querySelectorAll('[data-name="main"]'));
   const sectionExist = sections.some((el) => dataAction === el.dataset.action);
   if (sectionExist) return;
 
-  const div = createElement(
-    "div",
+  const sectionTag = createElement(
+    "section",
     {
       classList: ["section-main"],
-      attrs: { "data-action": dataAction, id: sectionID },
+      attrs: { "data-action": dataAction, "data-name": "main", id: sectionID },
     },
     containerMain
   );
@@ -29,15 +29,16 @@ export const addSectionInMain = (e) => {
     "div",
     {
       classList: ["product-functions"],
-      attrs: { "data-action": dataAction },
+      attrs: { "data-action": dataAction, "data-functions": "panel-functions" },
     },
-    div
+    sectionTag
   );
   createElement(
     "span",
     {
       classList: ["section-main-number"],
       text: numberSection,
+      attrs: { "data-main-number": "number" },
     },
     logicButtonHandler
   );
@@ -147,6 +148,7 @@ export const addSectionInMain = (e) => {
         type: "text",
         name: "in-section",
         placeholder: "Enter text",
+        "data-name": "input-in-functions",
       },
     },
     logicButtonHandler
@@ -158,7 +160,7 @@ export const addSectionInMain = (e) => {
       classList: ["section-header"],
       attrs: { "data-action": dataAction },
     },
-    div
+    sectionTag
   );
 
   createElement(
@@ -181,6 +183,8 @@ export const addSectionInMain = (e) => {
         type: "text",
         name: "in-section",
         placeholder: "Enter name",
+        "data-input": "main",
+        "data-name": "name",
       },
     },
     sectionHeader
@@ -193,6 +197,7 @@ export const addSectionInMain = (e) => {
         type: "text",
         name: "in-section",
         placeholder: "Enter description",
+        "data-description": "description",
       },
     },
     sectionHeader
@@ -210,9 +215,9 @@ export const addSectionInMain = (e) => {
     "div",
     {
       classList: ["section-products"],
-      attrs: { "data-action": dataAction },
+      attrs: { "data-action": dataAction, "data-name": "all-products" },
     },
-    div
+    sectionTag
   );
 
   const data = {

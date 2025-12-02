@@ -3,14 +3,18 @@ import { generateRandomId } from "../patterns/random-id";
 import { saveToProductLS } from "../local-storage/local-storage";
 
 export const addProductInSection = (e) => {
-  const sectionMain = e.target.closest(".section-main");
+  const sectionMain = e.target.closest('[data-name="main"]');
   if (!sectionMain) return;
 
   const dataAction = sectionMain.dataset.action;
   const productID = generateRandomId(8, "id", 36);
-  const sectionProducts = sectionMain.querySelector(".section-products");
+  const sectionProducts = sectionMain.querySelector(
+    '[data-name="all-products"]'
+  );
 
-  const innerProducts = sectionProducts.querySelectorAll(".product");
+  const innerProducts = sectionProducts.querySelectorAll(
+    '[data-name="product"]'
+  );
   const numberProduct = innerProducts.length + 1;
 
   const MAX_PRODUCTS_PER_SECTION = 20;
@@ -20,7 +24,11 @@ export const addProductInSection = (e) => {
     "div",
     {
       classList: ["product"],
-      attrs: { "data-action": dataAction, id: productID },
+      attrs: {
+        "data-action": dataAction,
+        "data-name": "product",
+        id: productID,
+      },
     },
     sectionProducts
   );
@@ -38,6 +46,7 @@ export const addProductInSection = (e) => {
     {
       classList: ["product-number"],
       text: numberProduct,
+      attrs: { "data-number": "number" },
     },
     layout
   );
@@ -95,6 +104,7 @@ export const addProductInSection = (e) => {
         value: "",
         placeholder: "Enter name",
         "data-action": dataAction,
+        "data-name": "name",
       },
     },
     div
@@ -108,6 +118,7 @@ export const addProductInSection = (e) => {
         type: "text",
         name: "in-product",
         placeholder: "Enter description",
+        "data-description": "description",
       },
     },
     div
@@ -121,6 +132,7 @@ export const addProductInSection = (e) => {
         type: "text",
         name: "in-product",
         placeholder: "$0.00",
+        "data-price": "price",
       },
     },
     div

@@ -6,7 +6,7 @@ import { hideElements } from "../../patterns/hide-elements";
  * @returns {void}
  */
 export const hideShow = (e) => {
-  hideElements(e, ".section-main", ".section-products", {
+  hideElements(e, '[data-name="main"]', '[data-name="all-products"]', {
     text: { hide: "☝️", show: "👇" },
     attrs: { title: { hide: "hide", show: "show" } },
   });

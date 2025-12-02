@@ -3,11 +3,11 @@ import { generateRandomId } from "../patterns/random-id";
 import { saveToAsideLS } from "../local-storage/local-storage";
 
 export const addSectionInAside = (e) => {
-  const containerAside = document.querySelector(".container-aside");
-  if (!containerAside) return console.error("No .container-aside in DOM");
+  const containerAside = document.querySelector("#container-aside");
+  if (!containerAside) return console.error("No #container-aside in DOM");
 
   const sectionAside = Array.from(
-    containerAside.querySelectorAll(".section-aside")
+    containerAside.querySelectorAll('[data-name="aside"]')
   );
   const numberSection = sectionAside.length + 1;
 
@@ -21,7 +21,7 @@ export const addSectionInAside = (e) => {
     "div",
     {
       classList: ["section-aside"],
-      attrs: { "data-action": dataAction, id: asideID },
+      attrs: { "data-action": dataAction, "data-name": "aside", id: asideID },
     },
     containerAside
   );
@@ -31,6 +31,7 @@ export const addSectionInAside = (e) => {
     {
       classList: ["section-aside-number"],
       text: numberSection,
+      attrs: { "data-aside-number": "number" },
     },
     div
   );
@@ -43,6 +44,7 @@ export const addSectionInAside = (e) => {
         type: "text",
         name: "in-section",
         placeholder: "Enter name section",
+        "data-input": "aside",
       },
     },
     div

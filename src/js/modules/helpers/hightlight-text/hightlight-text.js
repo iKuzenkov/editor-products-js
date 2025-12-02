@@ -34,16 +34,14 @@ const replaceValuesInInputs = (inputs, text) => {
  * @returns {void}
  */
 export const highlightText = (e) => {
-  const section = e.target.closest(".section-main");
+  const section = e.target.closest('[data-name="main"]');
   if (!section) return;
 
-  const inputValue = section.querySelector(".input-function");
+  const inputValue = section.querySelector('[data-name="input-in-functions"]');
   const text = inputValue.value.trim();
   if (text === "") return;
 
-  const inputs = Array.from(
-    section.querySelectorAll(".input-product[data-action]")
-  );
+  const inputs = Array.from(section.querySelectorAll('[data-name="name"]'));
 
   replaceValuesInInputs(inputs, text);
   clearInputValue(inputValue);

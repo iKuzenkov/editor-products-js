@@ -5,7 +5,7 @@ import { updateProductLS, updateProductNumberLS } from "./remove-products-ls";
  * @param {HTMLDivElement} product
  * @returns {void}
  */
-const deleteProduct = (product) => product?.remove();
+const deleteProduct = (product) => product.remove();
 
 /**
  * Recalculating product numbers after deleting an item.
@@ -14,11 +14,13 @@ const deleteProduct = (product) => product?.remove();
  */
 const updateProductNumber = (sectionMain) => {
   const sectionDataAction = sectionMain.dataset.action;
-  const sectionProducts = Array.from(sectionMain.querySelectorAll(".product"));
+  const sectionProducts = Array.from(
+    sectionMain.querySelectorAll('[data-name="product"]')
+  );
   if (!sectionProducts.length) return;
 
   const newNumberProducts = sectionProducts.map((el, i) => {
-    const productNumber = el.querySelector(".product-number");
+    const productNumber = el.querySelector('[data-number="number"]');
     const num = i + 1;
     if (productNumber) productNumber.textContent = num;
     return num;
@@ -33,10 +35,10 @@ const updateProductNumber = (sectionMain) => {
  * @returns {void}
  */
 export const removeProduct = (e) => {
-  const product = e.target.closest(".product");
+  const product = e.target.closest('[data-name="product"]');
   if (!product) return;
 
-  const sectionMain = product.closest(".section-main");
+  const sectionMain = product.closest('[data-name="main"]');
   if (!sectionMain) return;
 
   const id = product.id;

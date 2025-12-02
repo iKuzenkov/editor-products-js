@@ -28,7 +28,7 @@ export const loadingImages = (e) => {
 
     const reader = new FileReader();
     reader.onload = () => {
-      const product = e.target.closest(".product");
+      const product = e.target.closest('[data-name="product"]');
       const base64 = reader.result;
 
       const createTagImage = (product.querySelector(
@@ -78,7 +78,7 @@ const repairTags = (parentImage) => {
  * @returns {void}
  */
 export const removeImages = (e) => {
-  const product = e.target.closest(".product");
+  const product = e.target.closest('[data-name="product"]');
   let parentImage = product.querySelector('[data-action="image-product"]');
   let image = product.querySelector("img");
   image.remove();

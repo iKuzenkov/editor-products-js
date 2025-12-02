@@ -7,7 +7,7 @@ import {
   renderAsideData,
   renderMainData,
   renderProductData,
-} from "./render-data-local-storage";
+} from "./render-data";
 
 export const renderAsideLocalStorage = () => {
   const data = loadAsideFromLS();

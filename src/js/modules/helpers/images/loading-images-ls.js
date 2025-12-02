@@ -5,11 +5,11 @@
  * @return {void}
  */
 export const loadingImagesLS = (product, base64) => {
-  let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
+  let data = JSON.parse(localStorage.getItem("data_product") || "[]");
   data = data.map((item) =>
     item.id === product.id ? { ...item, image: base64 } : item
   );
-  localStorage.setItem("dataMainProduct", JSON.stringify(data));
+  localStorage.setItem("data_product", JSON.stringify(data));
 };
 
 /**
@@ -18,9 +18,9 @@ export const loadingImagesLS = (product, base64) => {
  * @return {void}
  */
 export const removeImagesLS = (product) => {
-  let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
+  let data = JSON.parse(localStorage.getItem("data_product") || "[]");
   data = data.map((item) =>
     item.id === product.id ? { ...item, image: null } : item
   );
-  localStorage.setItem("dataMainProduct", JSON.stringify(data));
+  localStorage.setItem("data_product", JSON.stringify(data));
 };

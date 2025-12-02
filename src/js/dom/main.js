@@ -5,7 +5,7 @@ import {
   renderAsideLocalStorage,
   renderMainLocalStorage,
   renderProductLocalStorage,
-} from "../modules/local-storage/get-data-local-storage";
+} from "../modules/local-storage/get-data";
 
 document.addEventListener("DOMContentLoaded", () => {
   renderInitialUI();

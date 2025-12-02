@@ -4,9 +4,9 @@
  * @returns {void}
  */
 export const updateProductLS = (id) => {
-  let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
+  let data = JSON.parse(localStorage.getItem("data_product") || "[]");
   data = data.filter((item) => item.id !== id);
-  localStorage.setItem("dataMainProduct", JSON.stringify(data));
+  localStorage.setItem("data_product", JSON.stringify(data));
 };
 
 /**
@@ -15,7 +15,7 @@ export const updateProductLS = (id) => {
  * @param {[]} newNumberProducts
  */
 export const updateProductNumberLS = (sectionDataAction, newNumberProducts) => {
-  let data = JSON.parse(localStorage.getItem("dataMainProduct") || "[]");
+  let data = JSON.parse(localStorage.getItem("data_product") || "[]");
   let counter = 0;
   data = data.map((el) => {
     if (el.product_data_action === sectionDataAction) {
@@ -23,5 +23,5 @@ export const updateProductNumberLS = (sectionDataAction, newNumberProducts) => {
     }
     return el;
   });
-  localStorage.setItem("dataMainProduct", JSON.stringify(data));
+  localStorage.setItem("data_product", JSON.stringify(data));
 };

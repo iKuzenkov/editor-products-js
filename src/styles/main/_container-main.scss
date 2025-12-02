@@ -1,7 +1,7 @@
 @use "../variables/variables" as *;
 @use "../mixins/mixins" as *;
 
-.container-main {
+#container-main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

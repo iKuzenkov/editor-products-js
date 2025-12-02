@@ -1,8 +1,8 @@
 import { createElement } from "../patterns/create-elements";
 
 export const renderInitialUI = () => {
-  const containerAside = document.querySelector(".container-aside");
-  if (!containerAside) return console.error("No .container-aside in DOM");
+  const containerAside = document.querySelector("#container-aside");
+  if (!containerAside) return console.error("No #container-aside in DOM");
 
   createElement(
     "button",

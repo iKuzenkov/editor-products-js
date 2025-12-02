@@ -1,14 +1,14 @@
 import { createElement } from "../patterns/create-elements";
 
 export const renderAsideData = ({ aside_data_action, id, name, number }) => {
-  const containerAside = document.querySelector(".container-aside");
-  if (!containerAside) return console.error("No .container-aside in DOM");
+  const containerAside = document.querySelector("#container-aside");
+  if (!containerAside) return console.error("No #container-aside in DOM");
 
   const div = createElement(
     "div",
     {
       classList: ["section-aside"],
-      attrs: { "data-action": aside_data_action, id },
+      attrs: { "data-action": aside_data_action, "data-name": "aside", id },
     },
     containerAside
   );
@@ -18,6 +18,7 @@ export const renderAsideData = ({ aside_data_action, id, name, number }) => {
     {
       classList: ["section-aside-number"],
       text: number,
+      attrs: { "data-aside-number": "number" },
     },
     div
   );
@@ -31,6 +32,7 @@ export const renderAsideData = ({ aside_data_action, id, name, number }) => {
         type: "text",
         name: "in-section",
         placeholder: "Enter name section",
+        "data-input": "aside",
       },
     },
     div
@@ -56,14 +58,14 @@ export const renderMainData = ({
   description,
   number,
 }) => {
-  const containerMain = document.querySelector(".container-main");
-  if (!containerMain) return console.error("No .container-main in DOM");
+  const containerMain = document.querySelector("#container-main");
+  if (!containerMain) return console.error("No #container-main in DOM");
 
   const div = createElement(
     "div",
     {
       classList: ["section-main"],
-      attrs: { "data-action": section_data_action, id },
+      attrs: { "data-action": section_data_action, "data-name": "main", id },
     },
     containerMain
   );
@@ -71,7 +73,10 @@ export const renderMainData = ({
     "div",
     {
       classList: ["product-functions"],
-      attrs: { "data-action": section_data_action },
+      attrs: {
+        "data-action": section_data_action,
+        "data-functions": "panel-functions",
+      },
     },
     div
   );
@@ -80,6 +85,7 @@ export const renderMainData = ({
     {
       classList: ["section-main-number"],
       text: number,
+      attrs: { "data-main-number": "number" },
     },
     logicButtonHandler
   );
@@ -189,6 +195,7 @@ export const renderMainData = ({
         type: "text",
         name: "in-section",
         placeholder: "Enter text",
+        "data-name": "input-in-functions",
       },
     },
     logicButtonHandler
@@ -223,6 +230,8 @@ export const renderMainData = ({
         type: "text",
         name: "in-section",
         placeholder: "Enter name",
+        "data-input": "main",
+        "data-name": "name",
       },
     },
     sectionHeader
@@ -236,6 +245,7 @@ export const renderMainData = ({
         type: "text",
         name: "in-section",
         placeholder: "Enter description",
+        "data-description": "description",
       },
     },
     sectionHeader
@@ -253,7 +263,10 @@ export const renderMainData = ({
     "div",
     {
       classList: ["section-products"],
-      attrs: { "data-action": section_data_action },
+      attrs: {
+        "data-action": section_data_action,
+        "data-name": "all-products",
+      },
     },
     div
   );
@@ -269,16 +282,18 @@ export const renderProductData = ({
   numberProduct,
 }) => {
   const sectionMain = document.querySelector(
-    `.section-main[data-action="${product_data_action}"]`
+    `[data-name="main"][data-action="${product_data_action}"]`
   );
   if (!sectionMain) return;
-  const sectionProducts = sectionMain.querySelector(".section-products");
+  const sectionProducts = sectionMain.querySelector(
+    '[data-name="all-products"]'
+  );
 
   const div = createElement(
     "div",
     {
       classList: ["product"],
-      attrs: { "data-action": product_data_action, id },
+      attrs: { "data-action": product_data_action, "data-name": "product", id },
     },
     sectionProducts
   );
@@ -296,6 +311,7 @@ export const renderProductData = ({
     {
       classList: ["product-number"],
       text: numberProduct,
+      attrs: { "data-number": "number" },
     },
     layout
   );
@@ -357,6 +373,7 @@ export const renderProductData = ({
         value: name,
         placeholder: "Enter name",
         "data-action": product_data_action,
+        "data-name": "name",
       },
     },
     div
@@ -371,6 +388,7 @@ export const renderProductData = ({
         name: "in-product",
         value: description,
         placeholder: "Enter description",
+        "data-description": "description",
       },
     },
     div
@@ -385,6 +403,7 @@ export const renderProductData = ({
         name: "in-product",
         value: price,
         placeholder: "$0.00",
+        "data-price": "price",
       },
     },
     div

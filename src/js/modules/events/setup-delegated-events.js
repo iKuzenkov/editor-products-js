@@ -21,13 +21,13 @@ import {
   updateNameAsideInLS,
   updateNameMainInLS,
   updateNameProductInLS,
-} from "../local-storage/update-name-local-storage-ls";
+} from "../local-storage/update-name-ls";
 
 export const setupDelegatedEvents = () => {
-  const containerAside = document.querySelector(".container-aside");
-  if (!containerAside) return console.error("No .container-aside in DOM");
-  const containerMain = document.querySelector(".container-main");
-  if (!containerMain) return console.error("No .container-main in DOM");
+  const containerAside = document.querySelector("#container-aside");
+  if (!containerAside) return console.error("No #container-aside in DOM");
+  const containerMain = document.querySelector("#container-main");
+  if (!containerMain) return console.error("No #container-main in DOM");
 
   containerAside.addEventListener("click", (e) => {
     if (e.target.closest('[data-action="add-section"]')) addSectionInAside(e);

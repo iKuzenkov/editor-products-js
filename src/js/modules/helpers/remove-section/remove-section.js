@@ -26,7 +26,9 @@ const removeSectionHandler = (aside, main) => {
  * @returns {void}
  */
 const updateNumberMainSections = (asideSection) => {
-  const mainSections = Array.from(document.querySelectorAll(".section-main"));
+  const mainSections = Array.from(
+    document.querySelectorAll('[data-name="main"]')
+  );
 
   mainSections.forEach((main) => {
     const mainAction = main.dataset.action;
@@ -35,10 +37,10 @@ const updateNumberMainSections = (asideSection) => {
     );
 
     const asideNumber = asideElement.querySelector(
-      ".section-aside-number"
+      '[data-aside-number="number"]'
     ).textContent;
 
-    main.querySelector(".section-main-number").textContent = asideNumber;
+    main.querySelector('[data-main-number="number"]').textContent = asideNumber;
   });
   savingStateNumbersAsideLS();
   savingStateNumbersMainLS();
@@ -48,10 +50,12 @@ const updateNumberMainSections = (asideSection) => {
  * Recalculation of section numbers after deletion (aside block)
  */
 const updateNumberAsideSections = () => {
-  const asideSection = Array.from(document.querySelectorAll(".section-aside"));
+  const asideSection = Array.from(
+    document.querySelectorAll('[data-name="aside"]')
+  );
 
   asideSection.forEach((el, i) => {
-    const numberSection = el.querySelector(".section-aside-number");
+    const numberSection = el.querySelector('[data-aside-number="number"]');
     numberSection.textContent = i + 1;
   });
   updateNumberMainSections(asideSection);
@@ -63,8 +67,10 @@ const updateNumberAsideSections = () => {
  * @returns {void}
  */
 export const removeSection = (e) => {
-  const asideSection = Array.from(document.querySelectorAll(".section-aside"));
-  const mainSection = e.target.closest(".section-main");
+  const asideSection = Array.from(
+    document.querySelectorAll('[data-name="aside"]')
+  );
+  const mainSection = e.target.closest('[data-name="main"]');
   const mainID = mainSection.id;
 
   removeSectionHandler(asideSection, mainSection);

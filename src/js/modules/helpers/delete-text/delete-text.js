@@ -23,14 +23,14 @@ const replaceValuesInInputs = (actionInputs, valueToDelete) => {
  * @returns {void}
  */
 export const deleteText = (e) => {
-  const section = e.target.closest(".section-main");
+  const section = e.target.closest('[data-name="main"]');
   if (!section) return;
 
-  const inputValue = section.querySelector(".input-function");
+  const inputValue = section.querySelector('[data-name="input-in-functions"]');
   let valueToDelete = inputValue.value;
 
   const actionInputs = Array.from(
-    section.querySelectorAll(".input-product[data-action]")
+    section.querySelectorAll('[data-name="name"]')
   );
 
   replaceValuesInInputs(actionInputs, valueToDelete);

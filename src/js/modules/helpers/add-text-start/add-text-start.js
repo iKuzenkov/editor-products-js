@@ -17,14 +17,14 @@ const replaceValuesInInputs = (actionInputs, valueToAdd) =>
  * @returns {void}
  */
 export const addTextStart = (e) => {
-  const section = e.target.closest(".section-main");
+  const section = e.target.closest('[data-name="main"]');
   if (!section) return;
 
-  const inputValue = section.querySelector(".input-function");
+  const inputValue = section.querySelector('[data-name="input-in-functions"]');
   const valueToAdd = inputValue.value.trim();
 
   const actionInputs = Array.from(
-    section.querySelectorAll(".input-product[data-action]")
+    section.querySelectorAll('[data-name="name"]')
   );
 
   replaceValuesInInputs(actionInputs, valueToAdd);

@@ -14,6 +14,7 @@ const dynamicElements = (functionSpace) => {
         type: "text",
         name: "in-section",
         placeholder: "Value, for replace",
+        "data-input-replace": "replace",
       },
     },
     functionSpace
@@ -27,6 +28,7 @@ const dynamicElements = (functionSpace) => {
         id: 7,
         type: "button",
         title: "Replace a value",
+        "data-button-replace": "replace",
       },
     },
     functionSpace
@@ -40,14 +42,18 @@ const dynamicElements = (functionSpace) => {
  * @returns {Void}
  */
 export const helperElements = (e) => {
-  const section = e.target.closest(".section-main");
+  const section = e.target.closest('[data-name="main"]');
   if (!section) return;
 
-  const functionSpace = section.querySelector(".product-functions");
+  const functionSpace = section.querySelector(
+    '[data-functions="panel-functions"]'
+  );
   if (!functionSpace) return;
 
-  const inputReplace = section.querySelector(".input-replace");
-  const buttonReplace = section.querySelector(".button-replace");
+  const inputReplace = section.querySelector('[data-input-replace="replace"]');
+  const buttonReplace = section.querySelector(
+    '[data-button-replace="replace"]'
+  );
   if (buttonReplace && inputReplace) return;
 
   dynamicElements(functionSpace);
@@ -83,18 +89,22 @@ const deletedElementsAfterWork = (...elements) => {
  * @returns {void}
  */
 export const replaceText = (e) => {
-  const section = e.target.closest(".section-main");
+  const section = e.target.closest('[data-name="main"]');
   if (!section) return;
 
-  const inputValue = section.querySelector(".input-function");
-  const inputValueForReplace = section.querySelector(".input-replace");
-  const buttonReplace = section.querySelector(".button-replace");
+  const inputValue = section.querySelector('[data-name="input-in-functions"]');
+  const inputValueForReplace = section.querySelector(
+    '[data-input-replace="replace"]'
+  );
+  const buttonReplace = section.querySelector(
+    '[data-button-replace="replace"]'
+  );
 
   let valueToSetUp = inputValue.value;
   let valueToReplace = inputValueForReplace.value;
 
   const actionInputs = Array.from(
-    section.querySelectorAll(".input-product[data-action]")
+    section.querySelectorAll('[data-name="name"]')
   );
 
   replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);

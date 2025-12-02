@@ -49,6 +49,7 @@ export const settingProduct = () => {
         placeholder: "Enter name",
         type: "text",
         name: "product-name",
+        "data-name": "name-in-modal",
       },
     },
     containerFields
@@ -64,6 +65,7 @@ export const settingProduct = () => {
         cols: "30",
         maxlength: "300",
         name: "product-description",
+        "data-description": "description-in-modal",
       },
     },
     containerFields
@@ -75,6 +77,7 @@ export const settingProduct = () => {
       attrs: {
         placeholder: "$0.00",
         name: "product-price",
+        "data-price": "price-in-modal",
       },
     },
     containerFields
