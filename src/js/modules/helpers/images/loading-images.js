@@ -1,5 +1,5 @@
-import { createElement } from "../../patterns/create-elements";
 import { loadingImagesLS, removeImagesLS } from "./loading-images-ls";
+import { restoreImgElements } from "./restore-elements";
 
 /**
  * opening the window when clicking the img (choose img from local folder)
@@ -13,7 +13,7 @@ export const upLoadImages = (e) => {
     '[data-action="loading-image-product"]'
   );
   if (!fileInput) return;
-  fileInput?.click();
+  fileInput.click();
 };
 
 /**
@@ -42,37 +42,6 @@ export const loadingImages = (e) => {
 };
 
 /**
- * restoring elements after deletion, to be able to re-add the image
- * @param {HTMLDivElement} parentImage
- * @returns {void}
- */
-const repairTags = (parentImage) => {
-  createElement(
-    "input",
-    {
-      classList: ["input-img"],
-      attrs: {
-        type: "file",
-        name: "in-product",
-        accept: "image/*",
-        loading: "lazy",
-        alt: "product image",
-        "data-action": "loading-image-product",
-      },
-    },
-    parentImage
-  );
-  createElement(
-    "span",
-    {
-      classList: ["img-placeholder"],
-      text: "+",
-    },
-    parentImage
-  );
-};
-
-/**
  * removes a img element when double clicking the img-box
  * @param {Event} e - dblclick
  * @returns {void}
@@ -84,5 +53,5 @@ export const removeImages = (e) => {
   image.remove();
 
   removeImagesLS(product);
-  repairTags(parentImage);
+  restoreImgElements(parentImage);
 };
