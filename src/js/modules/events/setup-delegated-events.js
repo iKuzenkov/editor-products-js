@@ -1,3 +1,4 @@
+import { renderStore } from "./render-store";
 import { addSectionInAside } from "./add-section-in-aside";
 import { addSectionInMain } from "./add-section-in-main";
 import { addProductInSection } from "./add-product-in-section";
@@ -24,10 +25,16 @@ import {
 } from "../local-storage/update-name-ls";
 
 export const setupDelegatedEvents = () => {
+  const containerHeader = document.querySelector("#container-header");
+  if (!containerHeader) return console.error("No #container-header in DOM");
   const containerAside = document.querySelector("#container-aside");
   if (!containerAside) return console.error("No #container-aside in DOM");
   const containerMain = document.querySelector("#container-main");
   if (!containerMain) return console.error("No #container-main in DOM");
+
+  containerHeader.addEventListener("click", (e) => {
+    if (e.target.closest('[data-action="store"]')) renderStore(e);
+  });
 
   containerAside.addEventListener("click", (e) => {
     if (e.target.closest('[data-action="add-section"]')) addSectionInAside(e);

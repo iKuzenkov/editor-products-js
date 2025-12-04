@@ -15,6 +15,6 @@
   @include scrollbar;
 
   .external-button-aside {
-    @include external-button-aside-main;
+    @include external-buttons;
   }
 }

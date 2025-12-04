@@ -1,16 +1,13 @@
 @use "../variables/variables" as *;
 @use "../mixins/mixins" as *;
 
-.button-container {
+#container-header {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 0.3rem;
-
-  .close-modal,
-  .save-modal {
-    @include external-buttons;
-    cursor: pointer;
-  }
+  width: 10%;
+  padding: $section-padding;
+  border-radius: $section-border-radius;
+  background-color: $background-section-products;
 }

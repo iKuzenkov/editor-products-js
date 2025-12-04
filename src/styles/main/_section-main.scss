@@ -40,7 +40,7 @@
   }
 
   .button-replace {
-    @include external-button-aside-main;
+    @include external-buttons;
     cursor: pointer;
   }
 }
