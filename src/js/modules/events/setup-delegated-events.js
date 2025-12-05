@@ -1,4 +1,4 @@
-import { renderStore } from "./render-store";
+import { renderStore } from "./render-store/render-store";
 import { addSectionInAside } from "./add-section-in-aside";
 import { addSectionInMain } from "./add-section-in-main";
 import { addProductInSection } from "./add-product-in-section";

@@ -1,0 +1,26 @@
+@use "../../variables/variables" as *;
+
+#grid-layout-store {
+  display: grid;
+  grid-template-areas:
+    "left-aside main right-aside"
+    "left-aside main right-aside"
+    "left-aside main right-aside";
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+#left-aside {
+  grid-area: left-aside;
+  background: $background-white;
+}
+
+#container-store {
+  grid-area: main;
+  background: none;
+}
+
+#right-aside {
+  grid-area: right-aside;
+  background: $background-white;
+}
