@@ -4,11 +4,8 @@
 @use "./globals/globals";
 @use "./layout/layout";
 @use "./modal/modal";
+@use "./store-modal/modal-store";
 @use "./header/header";
 @use "./aside/aside";
 @use "./main/main";
 @use "./footer/footer";
-@use "./render-store/layout/layout-store";
-@use "./render-store/header/header-store";
-@use "./render-store/main/main-store";
-@use "./render-store/footer/footer-store";

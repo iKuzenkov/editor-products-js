@@ -2,16 +2,17 @@ $primary-background: #000000;
 $background-header-footer: #4e4c4c;
 $background-container: #2e2e2e;
 $background-container-section: #4e4c4c;
+$background-container-section-modal: #5e5b5b;
 $background-section-products: #999b99;
 $background-white: #ffffff;
 
 $container-aside-main-margin: 0;
-$container-aside-main-padding-top: 0.5rem;
+$container-aside-main-padding-top: 8px;
 $container-aside-main-border-radius: 0;
 
-$section-margin: 0.3rem;
-$section-padding: 0.3rem;
-$section-border-radius: 0.5rem;
+$section-margin: 4.8px;
+$section-padding: 4.8px;
+$section-border-radius: 8px;
 
 $external-button-background: linear-gradient(
   90deg,
@@ -21,10 +22,10 @@ $external-button-background: linear-gradient(
 );
 $external-button-hover-background: #10630c;
 
-$inner-button-margin: 0.3rem;
-$inner-button-padding: 0.1rem;
+$inner-button-margin: 4.8px;
+$inner-button-padding: 1.6px;
 $inner-external-button-border-none: none;
-$inner-external-button-border-radius: 0.5rem;
+$inner-external-button-border-radius: 8px;
 $inner-button-background: #90fc90;
 $inner-button-hover-background: #a5d86a;
 

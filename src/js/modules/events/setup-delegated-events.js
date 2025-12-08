@@ -1,4 +1,4 @@
-import { renderStore } from "./render-store/render-store";
+import { storeModal } from "../ui/store modal/store-modal";
 import { addSectionInAside } from "./add-section-in-aside";
 import { addSectionInMain } from "./add-section-in-main";
 import { addProductInSection } from "./add-product-in-section";
@@ -33,7 +33,7 @@ export const setupDelegatedEvents = () => {
   if (!containerMain) return console.error("No #container-main in DOM");
 
   containerHeader.addEventListener("click", (e) => {
-    if (e.target.closest('[data-action="store"]')) renderStore(e);
+    if (e.target.closest('[data-action="store"]')) storeModal(e);
   });
 
   containerAside.addEventListener("click", (e) => {

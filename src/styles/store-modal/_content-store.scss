@@ -1,0 +1,20 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.modal-content-store {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: $background-container-section;
+  width: 70%;
+  height: max-content;
+  gap: 0.3rem;
+  z-index: 2;
+  @include section-margins;
+  @include scrollbar;
+
+  &:hover {
+    outline: $outline-section-aside-main;
+  }
+}

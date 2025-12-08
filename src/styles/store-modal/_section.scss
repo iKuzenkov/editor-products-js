@@ -1,0 +1,21 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.section-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  gap: 0.5rem;
+  padding: 10px;
+  border-radius: $section-border-radius;
+  background: $background-container-section-modal;
+
+  .header-modal {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+}
