@@ -1,4 +1,4 @@
-import { autofill } from "../ui/autofill data/autofill";
+import { getData } from "../ui/autofill data/autofill";
 import { storeModal } from "../ui/store modal/store-modal";
 import { addSectionInAside } from "./add-section-in-aside";
 import { addSectionInMain } from "./add-section-in-main";
@@ -35,7 +35,7 @@ export const setupDelegatedEvents = () => {
 
   containerHeader.addEventListener("click", (e) => {
     if (e.target.closest('[data-action="store"]')) storeModal(e);
-    if (e.target.closest('[data-action="autofill"]')) autofill(e);
+    if (e.target.closest('[data-action="autofill"]')) getData(e);
   });
 
   containerAside.addEventListener("click", (e) => {
