@@ -6,7 +6,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 10%;
+  width: max-content;
+  gap: 0.5rem;
   padding: $section-padding;
   border-radius: $section-border-radius;
   background-color: $background-section-products;

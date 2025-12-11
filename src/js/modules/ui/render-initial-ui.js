@@ -15,6 +15,17 @@ export const renderInitialUI = () => {
     },
     containerHeader
   );
+
+  createElement(
+    "button",
+    {
+      classList: ["external-button-header"],
+      text: "Auto Test",
+      attrs: { title: "Autofill data in editor", "data-action": "autofill" },
+    },
+    containerHeader
+  );
+
   createElement(
     "button",
     {
