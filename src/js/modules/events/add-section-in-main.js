@@ -197,6 +197,7 @@ export const addSectionInMain = (e) => {
         type: "text",
         name: "in-section",
         placeholder: "Enter description",
+        "data-input": "description",
         "data-description": "description",
       },
     },

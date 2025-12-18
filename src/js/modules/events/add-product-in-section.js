@@ -105,6 +105,7 @@ export const addProductInSection = (e) => {
         placeholder: "Enter name",
         "data-action": dataAction,
         "data-name": "name",
+        "data-product": "name",
       },
     },
     div
@@ -119,6 +120,7 @@ export const addProductInSection = (e) => {
         name: "in-product",
         placeholder: "Enter description",
         "data-description": "description",
+        "data-product": "description",
       },
     },
     div
@@ -133,6 +135,7 @@ export const addProductInSection = (e) => {
         name: "in-product",
         placeholder: "$0.00",
         "data-price": "price",
+        "data-product": "price",
       },
     },
     div
