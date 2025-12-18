@@ -33,6 +33,7 @@ export const storeModal = (e) => {
     "div",
     {
       classList: ["modal-general-container-store"],
+      text: "Products.",
       attrs: { "data-container": "container" },
     },
     modalContent

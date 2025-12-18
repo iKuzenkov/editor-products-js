@@ -29,6 +29,19 @@ export const renderInitialUI = () => {
   createElement(
     "button",
     {
+      classList: ["external-button-header"],
+      text: "Clear Data",
+      attrs: {
+        title: "clear localStorage, and UI",
+        "data-action": "clear-data",
+      },
+    },
+    containerHeader
+  );
+
+  createElement(
+    "button",
+    {
       classList: ["external-button-aside"],
       text: "Add Section",
       attrs: { title: "Add Section", "data-action": "add-section" },
