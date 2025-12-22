@@ -1,4 +1,4 @@
-import { createElement } from "../interaction helpers/create-elements";
+import { createElement } from "../interaction-helpers/create-elements";
 
 export const renderInitialUI = () => {
   const containerHeader = document.querySelector("#container-header");

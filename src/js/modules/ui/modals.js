@@ -1,4 +1,4 @@
-import { createElement } from "../interaction helpers/create-elements";
+import { createElement } from "../interaction-helpers/create-elements";
 
 export const settingProduct = () => {
   const modal = createElement(

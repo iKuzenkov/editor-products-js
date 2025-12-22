@@ -1,4 +1,4 @@
-import { createElement } from "../../interaction helpers/create-elements";
+import { createElement } from "../../interaction-helpers/create-elements";
 
 /**
  * Getting the section data, and rendering.

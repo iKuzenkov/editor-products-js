@@ -1,4 +1,4 @@
-import { createElement } from "../../interaction helpers/create-elements";
+import { createElement } from "../../interaction-helpers/create-elements";
 
 /**
  * Restoring elements after deletion, to be able to re-add the image.

@@ -1,5 +1,5 @@
 import { getSectionDataFromLS } from "./get-section-data-ls";
-import { createElement } from "../../interaction helpers/create-elements";
+import { createElement } from "../../interaction-helpers/create-elements";
 
 /**
  * Creating modal window.

@@ -1,5 +1,5 @@
-import { createElement } from "../../interaction helpers/create-elements";
-import { generateRandomId } from "../../interaction helpers/random-id";
+import { createElement } from "../../interaction-helpers/create-elements";
+import { generateRandomId } from "../../interaction-helpers/random-id";
 import { saveToMainLS } from "../../local-storage/local-storage";
 
 export const addSectionInMain = (e) => {

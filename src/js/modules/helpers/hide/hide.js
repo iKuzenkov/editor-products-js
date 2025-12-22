@@ -1,4 +1,4 @@
-import { hideElements } from "../../interaction helpers/hide-elements";
+import { hideElements } from "../../interaction-helpers/hide-elements";
 
 /**
  * hideElements()- send the arguments to the pattern

@@ -1,4 +1,4 @@
-import { createElement } from "../interaction helpers/create-elements";
+import { createElement } from "../interaction-helpers/create-elements";
 
 export const renderAsideData = ({ aside_data_action, id, name, number }) => {
   const containerAside = document.querySelector("#container-aside");

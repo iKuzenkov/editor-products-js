@@ -1,4 +1,4 @@
-import { api } from "../../interaction helpers/api";
+import { api } from "../../interaction-helpers/api";
 import { dataInDOM } from "./get-data";
 
 /**
