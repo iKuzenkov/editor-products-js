@@ -1,9 +1,9 @@
 import { clearData } from "../ui/clear data/clear-ls";
 import { getData } from "../ui/autofill data/autofill";
 import { storeModal } from "../ui/store modal/store-modal";
-import { addSectionInAside } from "./add-section-in-aside";
-import { addSectionInMain } from "./add-section-in-main";
-import { addProductInSection } from "./add-product-in-section";
+import { addSectionInAside } from "./main-ui/add-section-in-aside";
+import { addSectionInMain } from "./main-ui/add-section-in-main";
+import { addProductInSection } from "./main-ui/add-product-in-section";
 import { addTextStart } from "../helpers/add-text-start/add-text-start";
 import { addTextEnd } from "../helpers/add-text-end/add-text-end";
 import { deleteText } from "../helpers/delete-text/delete-text";

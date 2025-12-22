@@ -1,6 +1,6 @@
-import { createElement } from "../patterns/create-elements";
-import { generateRandomId } from "../patterns/random-id";
-import { saveToAsideLS } from "../local-storage/local-storage";
+import { createElement } from "../../interaction helpers/create-elements";
+import { generateRandomId } from "../../interaction helpers/random-id";
+import { saveToAsideLS } from "../../local-storage/local-storage";
 
 export const addSectionInAside = (e) => {
   const containerAside = document.querySelector("#container-aside");

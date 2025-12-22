@@ -1,6 +1,6 @@
-import { createElement } from "../patterns/create-elements";
-import { generateRandomId } from "../patterns/random-id";
-import { saveToMainLS } from "../local-storage/local-storage";
+import { createElement } from "../../interaction helpers/create-elements";
+import { generateRandomId } from "../../interaction helpers/random-id";
+import { saveToMainLS } from "../../local-storage/local-storage";
 
 export const addSectionInMain = (e) => {
   const section = e.target.closest('[data-name="aside"]');

@@ -1,4 +1,4 @@
-import { createElement } from "../../patterns/create-elements";
+import { createElement } from "../../interaction helpers/create-elements";
 import { clearInputValue } from "../utils/clearElements";
 
 /**
