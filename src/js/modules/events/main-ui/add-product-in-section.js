@@ -7,7 +7,7 @@ export const addProductInSection = (e) => {
   if (!sectionMain) return;
 
   const dataAction = sectionMain.dataset.action;
-  const productID = generateRandomId(8, "id", 36);
+  const productID = generateRandomId(8, 36);
   const sectionProducts = sectionMain.querySelector(
     '[data-name="all-products"]'
   );

@@ -1,7 +1,6 @@
 /**
  * class switch on an element
  * @param {HTMLDivElement} child - child element class
- * @returns {void}
  */
 
 const hideHandler = (child) => child.classList.toggle("hide");

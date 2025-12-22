@@ -6,7 +6,7 @@ export const addSectionInMain = (e) => {
   const section = e.target.closest('[data-name="aside"]');
   if (!section) return;
 
-  const sectionID = generateRandomId(8, "id", 36);
+  const sectionID = generateRandomId(8, 36);
   const dataAction = section.dataset.action;
   const numberSection = section.querySelector("span").textContent;
 

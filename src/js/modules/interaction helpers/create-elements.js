@@ -3,7 +3,7 @@
  * @param {HTMLElement} tag - tag name
  * @param {Object} options - object includes attrb, properties (depends on the parameters passed)
  * @param {HTMLElement} parent - space to add
- * @returns {void}
+ * @returns - element
  */
 
 export const createElement = (tag, options = {}, parent) => {
