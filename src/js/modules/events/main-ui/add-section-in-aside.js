@@ -11,7 +11,7 @@ export const addSectionInAside = (e) => {
   );
   const numberSection = sectionAside.length + 1;
 
-  const dataAction = generateRandomId(8, 32);
+  const dataAction = generateRandomId(8, 36);
   const asideID = generateRandomId(8, 36);
 
   const MAX_SECTIONS_ASIDE = 20;
