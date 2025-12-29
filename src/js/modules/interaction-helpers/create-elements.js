@@ -1,16 +1,21 @@
 /**
+ * Checking if an element exists.
+ * @param {HTMLElement} parent - space to add
+ */
+const isValidData = (parent) => {
+  if (!parent) throw new Error("Parent container not found");
+};
+
+/**
  * creates elements, accepts arguments (tag, attrs, parent)
  * @param {HTMLElement} tag - tag name
  * @param {Object} options - object includes attrb, properties (depends on the parameters passed)
  * @param {HTMLElement} parent - space to add
- * @returns - element
+ * @returns {HTMLElement}
  */
 
 export const createElement = (tag, options = {}, parent) => {
-  if (!parent) {
-    console.log("Container not found: ", tag);
-    return null;
-  }
+  isValidData(parent);
   const el = document.createElement(tag);
   if (options.classList) el.classList.add(...options.classList);
   if (options.text) el.textContent = options.text;
