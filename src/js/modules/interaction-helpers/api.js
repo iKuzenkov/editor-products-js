@@ -1,16 +1,20 @@
 /**
- * The function uses double parsing, since the API service returns text data (when using .json()).
+ * Checking the server response.
+ * @param {response} - server respone data.
+ */
+const isResponseStatus = (response) => {
+  if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
+};
+
+/**
+ * The function uses double parsing, since the API service (jsonhosting.com) returns json String (when using .json()).
  * @param {} URL - Adress for request.
  * @returns {Object} - Received data.
  */
 export const api = async (URL) => {
-  try {
-    const respons = await fetch(URL);
-    if (!respons.ok) throw new Error(respons.status);
-    const text = await respons.json();
-    const data = JSON.parse(text);
-    return data;
-  } catch (err) {
-    console.error(err);
-  }
+  const response = await fetch(URL);
+  isResponseStatus(response);
+  const jsonString = await response.json();
+  const data = JSON.parse(jsonString);
+  return data;
 };
