@@ -134,7 +134,7 @@ export const addSectionInMain = (e) => {
       attrs: {
         id: 8,
         type: "button",
-        title: "Hide",
+        title: "hide",
         "data-action": dataAction,
       },
     },

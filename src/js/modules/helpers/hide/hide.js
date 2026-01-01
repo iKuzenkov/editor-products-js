@@ -1,7 +1,6 @@
 import { hideElements } from "../../interaction-helpers/hide-elements";
 
 /**
- * hideElements()- send the arguments to the pattern
  * @param {Event} e - button click
  * @returns {void}
  */
