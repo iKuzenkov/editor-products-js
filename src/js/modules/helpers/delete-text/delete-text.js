@@ -30,7 +30,7 @@ export const deleteText = (e) => {
   let valueToDelete = inputValue.value;
 
   const actionInputs = Array.from(
-    section.querySelectorAll('[data-name="name"]')
+    section.querySelectorAll('[data-product="name"]')
   );
 
   replaceValuesInInputs(actionInputs, valueToDelete);

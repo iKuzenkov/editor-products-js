@@ -104,7 +104,7 @@ export const replaceText = (e) => {
   let valueToReplace = inputValueForReplace.value;
 
   const actionInputs = Array.from(
-    section.querySelectorAll('[data-name="name"]')
+    section.querySelectorAll('[data-product="name"]')
   );
 
   replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);

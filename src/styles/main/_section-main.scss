@@ -17,7 +17,6 @@
 
   .section-main-number {
     position: relative;
-    right: 0.1%;
     @include number-section(1.5px solid #2929c9, 20%, #4c8dac);
   }
 

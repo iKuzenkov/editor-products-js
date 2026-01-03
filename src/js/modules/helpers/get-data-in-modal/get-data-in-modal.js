@@ -16,7 +16,7 @@ const pairs = [
  * @returns {void}
  */
 export const getDataInModal = (e) => {
-  const product = e.target.closest(".product");
+  const product = e.target.closest('[data-name="product"]');
   if (!product) return;
 
   pairs.forEach(([from, to]) => {

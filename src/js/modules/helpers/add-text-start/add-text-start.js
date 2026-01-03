@@ -24,7 +24,7 @@ export const addTextStart = (e) => {
   const valueToAdd = inputValue.value.trim();
 
   const actionInputs = Array.from(
-    section.querySelectorAll('[data-name="name"]')
+    section.querySelectorAll('[data-product="name"]')
   );
 
   replaceValuesInInputs(actionInputs, valueToAdd);

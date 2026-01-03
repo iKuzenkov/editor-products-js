@@ -41,7 +41,7 @@ export const highlightText = (e) => {
   const text = inputValue.value.trim();
   if (text === "") return;
 
-  const inputs = Array.from(section.querySelectorAll('[data-name="name"]'));
+  const inputs = Array.from(section.querySelectorAll('[data-product="name"]'));
 
   replaceValuesInInputs(inputs, text);
   clearInputValue(inputValue);
