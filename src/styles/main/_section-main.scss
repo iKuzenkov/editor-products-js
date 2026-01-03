@@ -21,6 +21,13 @@
     @include number-section(1.5px solid #2929c9, 20%, #4c8dac);
   }
 
+  .product-functions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .input-function,
   .input-replace {
     @include section-margins;

@@ -7,6 +7,7 @@
   align-items: center;
   @include section-margins;
   width: 100%;
+  gap: 1px;
   background: $background-container-section;
   cursor: pointer;
 
@@ -15,8 +16,8 @@
   }
 
   .input-section {
-    @include section-margins;
-    width: 100%;
+    padding: $section-padding;
+    border-radius: $section-border-radius;
     border: none;
     cursor: text;
 
@@ -32,11 +33,11 @@
   }
 
   .input-section:nth-child(1) {
-    width: 15px;
+    width: 14px;
   }
 
   .input-section:nth-child(2) {
-    width: 40%;
+    width: calc(40% - 14px);
   }
 
   .input-section:nth-child(3) {

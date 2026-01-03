@@ -123,3 +123,9 @@
     }
   }
 }
+@media (max-width: 676px) {
+  .product {
+    flex-direction: column;
+    width: 99%;
+  }
+}

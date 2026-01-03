@@ -1,9 +1,12 @@
 /**
- * Clicking on delete buttons (delete all UI).
+ * Removing UI elements.
  */
 const clearUI = () => {
-  const deleteButtons = document.querySelectorAll('[id="6"]');
-  deleteButtons.forEach((el) => el.click());
+  const asideBlock = document.querySelectorAll('[data-name="aside"]');
+  asideBlock.forEach((el) => el.remove());
+
+  const mainSections = document.querySelectorAll('[data-name="main"]');
+  mainSections.forEach((el) => el.remove());
 };
 
 /**

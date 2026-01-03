@@ -3,6 +3,7 @@
 .section-products {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 1rem;
   width: 100%;
   border-radius: $section-border-radius;

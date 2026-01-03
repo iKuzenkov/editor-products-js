@@ -1,3 +1,4 @@
+import { clearData } from "../clear data/clear-ls";
 import { api } from "../../interaction-helpers/api";
 import { dataInDOM } from "./get-data";
 
@@ -7,8 +8,7 @@ import { dataInDOM } from "./get-data";
  * @returns {void}
  */
 export const getData = async (e) => {
-  const dataExist = document.querySelector('[data-action="add-section-main"]');
-  if (dataExist) return;
+  clearData();
 
   const data = await api("https://jsonhosting.com/api/json/8299afe0/raw");
   dataInDOM(data);
