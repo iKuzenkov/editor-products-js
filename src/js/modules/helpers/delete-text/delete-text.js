@@ -3,15 +3,13 @@ import { clearInputValue } from "../utils/clearElements";
 /**
  * Removes a value from .input-function
  * across all .input-product[data-action] inside the current section
- * @param {HTMLInputElement[]} actionInputs
+ * @param {HTMLInputElement[]} inputElements
  * @param {string} valueToDelete
  * @returns {void}
  */
-const replaceValuesInInputs = (actionInputs, valueToDelete) => {
-  actionInputs.forEach((el) =>
-    el.value.includes(valueToDelete)
-      ? (el.value = el.value.replaceAll(valueToDelete, ""))
-      : null
+const replaceValuesInInputs = (inputElements, valueToDelete) => {
+  inputElements.forEach(
+    (el) => (el.value = el.value.replaceAll(valueToDelete, ""))
   );
 };
 
@@ -29,10 +27,10 @@ export const deleteText = (e) => {
   const inputValue = section.querySelector('[data-name="input-in-functions"]');
   let valueToDelete = inputValue.value;
 
-  const actionInputs = Array.from(
+  const inputElements = Array.from(
     section.querySelectorAll('[data-product="name"]')
   );
 
-  replaceValuesInInputs(actionInputs, valueToDelete);
+  replaceValuesInInputs(inputElements, valueToDelete);
   clearInputValue(inputValue);
 };

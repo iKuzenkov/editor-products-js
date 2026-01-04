@@ -3,11 +3,9 @@ import {
   loadMainFromLS,
   loadProductFromLS,
 } from "./local-storage";
-import {
-  renderAsideData,
-  renderMainData,
-  renderProductData,
-} from "./render-data";
+import { renderAsideData } from "./render-data/render-aside-data";
+import { renderMainData } from "./render-data/render-main-data";
+import { renderProductData } from "./render-data/render-product-data";
 
 export const renderAsideLocalStorage = () => {
   const data = loadAsideFromLS();

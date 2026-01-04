@@ -17,4 +17,10 @@
   .external-button-aside {
     @include external-buttons;
   }
+
+  .quantity-sections {
+    margin: $section-margin;
+    border-radius: $section-border-radius;
+    background: $background-section-products;
+  }
 }

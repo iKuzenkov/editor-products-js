@@ -6,6 +6,10 @@ export const addSectionInAside = (e) => {
   const containerAside = document.querySelector("#container-aside");
   if (!containerAside) return console.error("No #container-aside in DOM");
 
+  const quantitySection = containerAside.querySelector(
+    '[data-action="quantity"]'
+  );
+
   const sectionAside = Array.from(
     containerAside.querySelectorAll('[data-name="aside"]')
   );
@@ -16,6 +20,8 @@ export const addSectionInAside = (e) => {
 
   const MAX_SECTIONS_ASIDE = 20;
   if (sectionAside.length >= MAX_SECTIONS_ASIDE) return;
+
+  quantitySection.textContent = `${numberSection}/20`;
 
   const div = createElement(
     "div",

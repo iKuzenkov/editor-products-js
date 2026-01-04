@@ -48,4 +48,14 @@ export const renderInitialUI = () => {
     },
     containerAside
   );
+
+  createElement(
+    "div",
+    {
+      classList: ["quantity-sections"],
+      text: "0/20",
+      attrs: { title: "quantity", "data-action": "quantity" },
+    },
+    containerAside
+  );
 };
