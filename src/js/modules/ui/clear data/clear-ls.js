@@ -2,7 +2,9 @@
  * Removing UI elements.
  */
 const clearUI = () => {
-  const quantityAside = document.querySelector('[data-action="quantity"]');
+  const quantityAside = document.querySelector(
+    '[data-action="quantity-aside"]'
+  );
   quantityAside.textContent = "0/20";
 
   const asideBlock = document.querySelectorAll('[data-name="aside"]');

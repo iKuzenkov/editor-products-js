@@ -5,7 +5,7 @@ export const renderAsideData = ({ aside_data_action, id, name, number }) => {
   if (!containerAside) return console.error("No #container-aside in DOM");
 
   const quantityAside = containerAside.querySelector(
-    '[data-action="quantity"]'
+    '[data-action="quantity-aside"]'
   );
   quantityAside.textContent = `${number}/20`;
 

@@ -29,6 +29,18 @@ const updateProductNumber = (sectionMain) => {
   updateProductNumberLS(sectionDataAction, newNumberProducts);
 };
 
+const refreshQuantityProducts = (sectionMain) => {
+  const quantityOutput = sectionMain.querySelector(
+    '[data-action="quantity-products"]'
+  );
+  const allProducts = Array.from(
+    sectionMain.querySelectorAll('[data-name="product"]')
+  );
+
+  const quantityProducts = allProducts.length;
+  quantityOutput.textContent = `${quantityProducts}/20`;
+};
+
 /**
  * Removes a product element when clicking the "❌" button, inside it
  * @param {Event} - button click
@@ -47,4 +59,5 @@ export const removeProduct = (e) => {
   deleteProduct(product);
   updateProductLS(id);
   updateProductNumber(sectionMain);
+  refreshQuantityProducts(sectionMain);
 };

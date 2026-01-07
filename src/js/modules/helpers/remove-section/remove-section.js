@@ -61,6 +61,18 @@ const updateNumberAsideSections = () => {
   updateNumberMainSections(asideSection);
 };
 
+const refreshQuantityAsideSections = () => {
+  const asideSection = Array.from(
+    document.querySelectorAll('[data-name="aside"]')
+  );
+  const quantityOutput = document.querySelector(
+    '[data-action="quantity-aside"]'
+  );
+
+  const quantitySections = asideSection.length;
+  quantityOutput.textContent = `${quantitySections}/20`;
+};
+
 /**
  * Getting container aside and main sections
  * @param {Event} e - button click
@@ -70,6 +82,7 @@ export const removeSection = (e) => {
   const asideSection = Array.from(
     document.querySelectorAll('[data-name="aside"]')
   );
+
   const mainSection = e.target.closest('[data-name="main"]');
   const mainID = mainSection.id;
 
@@ -78,4 +91,5 @@ export const removeSection = (e) => {
   updateMainLS(mainID);
   updateAsideLS(mainSection);
   updateNumberAsideSections();
+  refreshQuantityAsideSections();
 };

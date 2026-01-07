@@ -54,7 +54,7 @@ export const renderInitialUI = () => {
     {
       classList: ["quantity-sections"],
       text: "0/20",
-      attrs: { title: "quantity", "data-action": "quantity" },
+      attrs: { title: "quantity", "data-action": "quantity-aside" },
     },
     containerAside
   );

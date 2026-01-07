@@ -6,7 +6,9 @@ export const addProductInSection = (e) => {
   const sectionMain = e.target.closest('[data-name="main"]');
   if (!sectionMain) return;
 
-  const quantity = sectionMain.querySelector('[data-action="quantity"]');
+  const quantity = sectionMain.querySelector(
+    '[data-action="quantity-products"]'
+  );
 
   const dataAction = sectionMain.dataset.action;
   const productID = generateRandomId(8, 36);

@@ -7,7 +7,7 @@ export const addSectionInAside = (e) => {
   if (!containerAside) return console.error("No #container-aside in DOM");
 
   const quantitySection = containerAside.querySelector(
-    '[data-action="quantity"]'
+    '[data-action="quantity-aside"]'
   );
 
   const sectionAside = containerAside.querySelectorAll('[data-name="aside"]');
