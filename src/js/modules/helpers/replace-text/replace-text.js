@@ -1,5 +1,6 @@
 import { createElement } from "../../interaction-helpers/create-elements";
 import { clearInputValue } from "../utils/clearElements";
+import { saveData } from "../utils/save-state-function-ls";
 
 /**
  * @param {HTMLElement} functionSpace - container for input + button
@@ -63,14 +64,21 @@ export const helperElements = (e) => {
  * @param {HTMLInputElement[]} actionInputs - target input elements
  * @param {string} valueToSetUp - new value for setup to inputs
  * @param {string} valueToReplace - old value which will be replaced
+ * @param {string} dataActionSection
  * @returns {void}
  */
-const replaceValuesInInputs = (actionInputs, valueToSetUp, valueToReplace) => {
-  actionInputs.forEach((el) =>
+const replaceValuesInInputs = (
+  actionInputs,
+  valueToSetUp,
+  valueToReplace,
+  dataActionSection
+) => {
+  const updatedNames = actionInputs.map((el) =>
     el.value.includes(valueToReplace)
       ? (el.value = el.value.replace(valueToReplace, valueToSetUp))
       : null
   );
+  saveData(updatedNames, dataActionSection, "data_product");
 };
 
 /**
@@ -92,6 +100,8 @@ export const replaceText = (e) => {
   const section = e.target.closest('[data-name="main"]');
   if (!section) return;
 
+  const dataActionSection = section.dataset.action;
+
   const inputValue = section.querySelector('[data-name="input-in-functions"]');
   const inputValueForReplace = section.querySelector(
     '[data-input-replace="replace"]'
@@ -107,7 +117,12 @@ export const replaceText = (e) => {
     section.querySelectorAll('[data-product="name"]')
   );
 
-  replaceValuesInInputs(actionInputs, valueToSetUp, valueToReplace);
+  replaceValuesInInputs(
+    actionInputs,
+    valueToSetUp,
+    valueToReplace,
+    dataActionSection
+  );
   clearInputValue(inputValue);
   deletedElementsAfterWork(inputValueForReplace, buttonReplace);
 };
