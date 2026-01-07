@@ -1,5 +1,9 @@
 import { createElement } from "../../interaction-helpers/create-elements";
 
+/**
+ * Renders main section and calculates products count from LocalStorage
+ * @returns {void}
+ */
 export const renderMainData = ({
   section_data_action,
   id,
@@ -9,6 +13,12 @@ export const renderMainData = ({
 }) => {
   const containerMain = document.querySelector("#container-main");
   if (!containerMain) return console.error("No #container-main in DOM");
+
+  const data = JSON.parse(localStorage.getItem("data_product") || "[]");
+  const products = data.filter(
+    (product) => product.product_data_action === section_data_action
+  );
+  const quantityProducts = products.length;
 
   const div = createElement(
     "div",
@@ -28,6 +38,15 @@ export const renderMainData = ({
       },
     },
     div
+  );
+  createElement(
+    "span",
+    {
+      classList: ["quantity-sections"],
+      text: `${quantityProducts}/20`,
+      attrs: { title: "quantity", "data-action": "quantity" },
+    },
+    logicButtonHandler
   );
   createElement(
     "span",

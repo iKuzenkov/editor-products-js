@@ -6,6 +6,8 @@ export const addProductInSection = (e) => {
   const sectionMain = e.target.closest('[data-name="main"]');
   if (!sectionMain) return;
 
+  const quantity = sectionMain.querySelector('[data-action="quantity"]');
+
   const dataAction = sectionMain.dataset.action;
   const productID = generateRandomId(8, 36);
   const sectionProducts = sectionMain.querySelector(
@@ -19,6 +21,8 @@ export const addProductInSection = (e) => {
 
   const MAX_PRODUCTS_PER_SECTION = 20;
   if (innerProducts.length >= MAX_PRODUCTS_PER_SECTION) return;
+
+  quantity.textContent = `${numberProduct}/20`;
 
   const div = createElement(
     "div",

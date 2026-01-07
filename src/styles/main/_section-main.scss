@@ -25,28 +25,33 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-  }
 
-  .input-function,
-  .input-replace {
-    @include section-margins;
-    width: 25%;
-    border: none;
-    cursor: text;
-
-    &:hover {
-      background: $input-hover;
+    .quantity-sections {
+      border-radius: $section-border-radius;
+      background: $background-section-products;
     }
 
-    &:focus {
-      outline: none;
-      background: $input-focus;
-      box-shadow: $input-box-shadow;
-    }
-  }
+    .input-function,
+    .input-replace {
+      @include section-margins;
+      width: 25%;
+      border: none;
+      cursor: text;
 
-  .button-replace {
-    @include external-buttons;
-    cursor: pointer;
+      &:hover {
+        background: $input-hover;
+      }
+
+      &:focus {
+        outline: none;
+        background: $input-focus;
+        box-shadow: $input-box-shadow;
+      }
+    }
+
+    .button-replace {
+      @include external-buttons;
+      cursor: pointer;
+    }
   }
 }

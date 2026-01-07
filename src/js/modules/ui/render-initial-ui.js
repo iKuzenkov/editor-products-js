@@ -50,7 +50,7 @@ export const renderInitialUI = () => {
   );
 
   createElement(
-    "div",
+    "span",
     {
       classList: ["quantity-sections"],
       text: "0/20",

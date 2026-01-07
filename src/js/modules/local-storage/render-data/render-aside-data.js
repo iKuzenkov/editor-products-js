@@ -4,6 +4,11 @@ export const renderAsideData = ({ aside_data_action, id, name, number }) => {
   const containerAside = document.querySelector("#container-aside");
   if (!containerAside) return console.error("No #container-aside in DOM");
 
+  const quantityAside = containerAside.querySelector(
+    '[data-action="quantity"]'
+  );
+  quantityAside.textContent = `${number}/20`;
+
   const div = createElement(
     "div",
     {

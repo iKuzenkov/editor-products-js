@@ -13,6 +13,7 @@ export const renderProductData = ({
     `[data-name="main"][data-action="${product_data_action}"]`
   );
   if (!sectionMain) return;
+
   const sectionProducts = sectionMain.querySelector(
     '[data-name="all-products"]'
   );

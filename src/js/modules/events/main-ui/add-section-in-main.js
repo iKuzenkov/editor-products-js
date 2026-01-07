@@ -36,6 +36,15 @@ export const addSectionInMain = (e) => {
   createElement(
     "span",
     {
+      classList: ["quantity-sections"],
+      text: "0/20",
+      attrs: { title: "quantity", "data-action": "quantity" },
+    },
+    logicButtonHandler
+  );
+  createElement(
+    "span",
+    {
       classList: ["section-main-number"],
       text: numberSection,
       attrs: { "data-main-number": "number" },

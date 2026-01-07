@@ -10,9 +10,7 @@ export const addSectionInAside = (e) => {
     '[data-action="quantity"]'
   );
 
-  const sectionAside = Array.from(
-    containerAside.querySelectorAll('[data-name="aside"]')
-  );
+  const sectionAside = containerAside.querySelectorAll('[data-name="aside"]');
   const numberSection = sectionAside.length + 1;
 
   const dataAction = generateRandomId(8, 36);
