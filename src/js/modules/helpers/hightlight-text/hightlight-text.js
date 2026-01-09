@@ -1,4 +1,4 @@
-import { clearInputValue } from "../utils/clearElements";
+import { clearInputValue } from "../utils/clear-elements";
 
 let timeoutId;
 

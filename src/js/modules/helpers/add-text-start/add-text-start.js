@@ -1,4 +1,4 @@
-import { clearInputValue } from "../utils/clearElements";
+import { clearInputValue } from "../utils/clear-elements";
 import { saveData } from "../utils/save-state-function-ls";
 
 /**
