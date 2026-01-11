@@ -1,3 +1,7 @@
+/**
+ * on input event, save data to storage
+ */
+
 export const updateAsideName = (dataAction, newName) => {
   let data = JSON.parse(localStorage.getItem("data_aside") || "[]");
   data = data.map((item) =>

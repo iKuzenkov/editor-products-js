@@ -1,5 +1,5 @@
 /**
- * Saving the name of products after page reload
+ * saving the name of products after page reload
  * @param {Array[]} updatedNames
  * @param {string} dataActionSection
  * @param {string} lsKey

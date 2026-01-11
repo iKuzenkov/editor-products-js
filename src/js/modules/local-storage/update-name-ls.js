@@ -4,6 +4,10 @@ import {
   updateProductName,
 } from "./update-name";
 
+/**
+ * getting data on input event
+ */
+
 export const updateNameAsideInLS = (e) => {
   const section = e.target.closest('[data-name="aside"]');
   const dataAction = section.dataset.action;

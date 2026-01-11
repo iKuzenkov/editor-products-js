@@ -1,3 +1,7 @@
+/**
+ * functions for saving and loading data
+ */
+
 export const saveToAsideLS = (item) => {
   let data = JSON.parse(localStorage.getItem("data_aside") || "[]");
   data.push(item);

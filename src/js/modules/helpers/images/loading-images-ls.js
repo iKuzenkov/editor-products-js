@@ -1,5 +1,5 @@
 /**
- * Save the image in LocalStorage
+ * save the image in LocalStorage
  * @param {HTMLDivElement} product
  * @param {FileReader} base64
  * @return {void}
@@ -13,7 +13,7 @@ export const loadingImagesLS = (product, base64) => {
 };
 
 /**
- * Save the updated state in LocalStorage
+ * save the updated state in LocalStorage
  * @param {HTMLDivElement} product
  * @return {void}
  */

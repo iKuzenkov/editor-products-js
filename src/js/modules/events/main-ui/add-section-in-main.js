@@ -25,6 +25,7 @@ export const addSectionInMain = (e) => {
     },
     containerMain
   );
+
   const logicButtonHandler = createElement(
     "div",
     {
@@ -33,6 +34,7 @@ export const addSectionInMain = (e) => {
     },
     sectionTag
   );
+
   createElement(
     "span",
     {
@@ -42,6 +44,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "span",
     {
@@ -51,6 +54,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -65,6 +69,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -79,6 +84,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -93,6 +99,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -107,6 +114,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -121,6 +129,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -135,6 +144,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -149,6 +159,7 @@ export const addSectionInMain = (e) => {
     },
     logicButtonHandler
   );
+
   createElement(
     "input",
     {
@@ -198,6 +209,7 @@ export const addSectionInMain = (e) => {
     },
     sectionHeader
   );
+
   createElement(
     "input",
     {
@@ -212,6 +224,7 @@ export const addSectionInMain = (e) => {
     },
     sectionHeader
   );
+
   createElement(
     "button",
     {
@@ -221,6 +234,7 @@ export const addSectionInMain = (e) => {
     },
     sectionHeader
   );
+
   createElement(
     "div",
     {
@@ -237,5 +251,6 @@ export const addSectionInMain = (e) => {
     description: "",
     number: numberSection,
   };
+
   saveToMainLS(data);
 };

@@ -1,9 +1,9 @@
 import { createElement } from "../../interaction-helpers/create-elements";
 
 /**
- * Getting the section data, and rendering.
- * Below in function - getting product data, from this section [LS]. Filter by data-action.
- * @param {Object{}} sectionData - Received from getSectionDataFromLS function
+ * getting the section data, and rendering.
+ * below in function - getting product data, from this section [LS]. Filter by data-action.
+ * @param {Object{}} sectionData - received from getSectionDataFromLS function
  * @returns {void}
  */
 export const renderSectionData = (sectionData) => {
@@ -64,7 +64,7 @@ export const renderSectionData = (sectionData) => {
 };
 
 /**
- * Getting the product data, and rendering.
+ * getting the product data, and rendering.
  * @param {Object{}} productData
  * @param {HTMLDivElement} container
  * @returns {void}

@@ -1,7 +1,7 @@
 import { entryData } from "./entry-data";
 
 /**
- * Getting values ​​into arrays.
+ * getting values ​​into arrays
  * @param {Object} salads
  * @param {Object} sides
  * @param {Object} coffee
@@ -55,7 +55,7 @@ const generalData = (salads, sides, coffee) => {
 };
 
 /**
- * Data destructuring.
+ * data destructuring
  * @param {Object} data
  */
 export const destructuringData = (data) => {

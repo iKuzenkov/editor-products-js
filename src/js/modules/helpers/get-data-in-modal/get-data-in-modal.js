@@ -1,5 +1,5 @@
 /**
- * Array of selector (index 0 - from, 1 - to)
+ * array of selector (index 0 - from, 1 - to)
  */
 const pairs = [
   ["[data-name='name']", "[data-name='name-in-modal']"],
@@ -11,7 +11,7 @@ const pairs = [
 ];
 
 /**
- * Getting data from the product, and assigning it to a modal window.
+ * getting data from the product, and assigning it to a modal window
  * @param {Event} e - button click
  * @returns {void}
  */

@@ -42,6 +42,7 @@ export const renderAsideData = ({ aside_data_action, id, name, number }) => {
     },
     div
   );
+
   createElement(
     "button",
     {

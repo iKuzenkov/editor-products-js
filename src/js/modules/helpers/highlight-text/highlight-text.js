@@ -16,7 +16,7 @@ const removeBorderAfterDelay = (inputs, delay) => {
 };
 
 /**
- * setup border-bottom for input[data-action], if have value from .input-function
+ * setup border-bottom for input[data-action], if have value from [data-name="input-in-functions"]
  * @param {HTMLInputElement[]} inputs
  * @param {string} text
  */
@@ -28,8 +28,8 @@ const replaceValuesInInputs = (inputs, text) => {
 };
 
 /**
- * Getting DOM elements
- * After working the cleaning input value
+ * getting DOM elements
+ * after working the cleaning input value
  * @param {Event} e - button click
  * @returns {void}
  */

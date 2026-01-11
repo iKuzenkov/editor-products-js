@@ -2,7 +2,7 @@ import { getSectionDataFromLS } from "./get-section-data-ls";
 import { createElement } from "../../interaction-helpers/create-elements";
 
 /**
- * Creating modal window.
+ * creating modal window
  * @param {Event} e - button click
  * @returns {void}
  */

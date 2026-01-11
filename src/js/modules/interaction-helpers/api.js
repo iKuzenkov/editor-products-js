@@ -1,13 +1,13 @@
 /**
- * Checking the server response.
- * @param {response} - server respone data.
+ * checking the server response
+ * @param {response} - server respone data
  */
 const isResponseStatus = (response) => {
   if (!response.ok) throw new Error(`HTTP error: ${response.status}`);
 };
 
 /**
- * The function uses double parsing, since the API service (jsonhosting.com) returns json String (when using .json()).
+ * the function uses double parsing, since the API service (jsonhosting.com) returns json String (when using .json())
  * @param {} URL - Adress for request.
  * @returns {Object} - Received data.
  */

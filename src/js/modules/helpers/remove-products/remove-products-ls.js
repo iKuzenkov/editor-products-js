@@ -1,5 +1,5 @@
 /**
- * Updates the array, removes the object from LS
+ * updates the array, removes the object from LS
  * @param {id} productID
  * @returns {void}
  */
@@ -10,7 +10,7 @@ export const updateProductLS = (id) => {
 };
 
 /**
- * Saving to local storage.
+ * saving to local storage
  * @param {randomDataAction} dataAction
  * @param {[]} newNumberProducts
  */

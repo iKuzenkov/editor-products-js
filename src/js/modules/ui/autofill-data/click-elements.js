@@ -19,7 +19,7 @@ const addProduct = () => {
 };
 
 /**
- * Calling functions to add UI.
+ * сalling functions to add UI.
  * @returns {void}
  */
 export const clickElements = () => {

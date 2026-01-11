@@ -7,8 +7,8 @@ import {
 } from "./remove-section-ls";
 
 /**
- * Strict comparison by data-action
- * Removing both containers
+ * strict comparison by data-action
+ * removing both containers
  * @param {HTMLDivElement[]} aside
  * @param {HTMLDivElement} main
  * @returns {void}
@@ -21,7 +21,7 @@ const removeSectionHandler = (aside, main) => {
 };
 
 /**
- * Sections are numbered from main elements (creating a Section)
+ * sections are numbered from main elements (creating a Section)
  * @param {[]} - asideSection
  * @returns {void}
  */
@@ -47,7 +47,7 @@ const updateNumberMainSections = (asideSection) => {
 };
 
 /**
- * Recalculation of section numbers after deletion (aside block)
+ * recalculation of section numbers after deletion (aside block)
  */
 const updateNumberAsideSections = () => {
   const asideSection = Array.from(
@@ -74,7 +74,7 @@ const refreshQuantityAsideSections = () => {
 };
 
 /**
- * Getting container aside and main sections
+ * getting container aside and main sections
  * @param {Event} e - button click
  * @returns {void}
  */

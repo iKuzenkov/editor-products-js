@@ -1,7 +1,7 @@
 const ALLOWED_RADIX = [16, 36];
 
 /**
- * Input data validation.
+ * input data validation
  * @param {Number} length
  * @param {Number} radix
  */

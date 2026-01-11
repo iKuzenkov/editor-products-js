@@ -1,7 +1,7 @@
 import { createElement } from "../../interaction-helpers/create-elements";
 
 /**
- * Restoring elements after deletion, to be able to re-add the image.
+ * restoring elements after deletion, to be able to re-add the image.
  * @param {HTMLDivElement} parentImage
  * @returns {void}
  */

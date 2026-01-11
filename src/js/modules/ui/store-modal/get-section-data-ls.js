@@ -1,8 +1,8 @@
 import { renderSectionData } from "./render-data";
 
 /**
- * Getting array with created sections, each section is the object.
- * Method forEach call callback function for each section.
+ * getting array with created sections, each section is the object.
+ * method forEach call callback function for each section.
  *  @returns {void}
  */
 export const getSectionDataFromLS = () => {

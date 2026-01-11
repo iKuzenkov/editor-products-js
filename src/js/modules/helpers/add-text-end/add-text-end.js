@@ -2,7 +2,7 @@ import { clearInputValue } from "../utils/clear-elements";
 import { saveData } from "../utils/save-state-function-ls";
 
 /**
- * Adds a value in end the input from [data-name="input-in-functions"]
+ * adds a value in end the input from [data-name="input-in-functions"]
  * across all [data-product="name"] inside the current section
  * @param {HTMLInputELement[]} actionInputs
  * @param {string} valueToAdd
@@ -17,8 +17,8 @@ const replaceValuesInInputs = (actionInputs, valueToAdd, dataActionSection) => {
 };
 
 /**
- * Getting DOM elements
- * After working the cleaning input value
+ * getting DOM elements
+ * after working the cleaning input value
  * @param {Event} e - button click event
  * @returns {void}
  */

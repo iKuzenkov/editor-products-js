@@ -1,5 +1,5 @@
 /**
- * Removing UI elements.
+ * removing UI elements
  */
 const clearUI = () => {
   const quantityAside = document.querySelector(
@@ -15,12 +15,12 @@ const clearUI = () => {
 };
 
 /**
- * localStorage - return in initial state.
+ * localStorage - return in initial state
  */
 const clearLocalStorage = () => localStorage.clear();
 
 /**
- * Calling functions to clear data.
+ * calling functions to clear data
  * @param {Event} e
  */
 export const clearData = (e) => {

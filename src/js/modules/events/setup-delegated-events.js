@@ -1,6 +1,6 @@
-import { clearData } from "../ui/clear data/clear-ls";
-import { getData } from "../ui/autofill data/autofill";
-import { storeModal } from "../ui/store modal/store-modal";
+import { clearData } from "../ui/clear-data/clear-ls";
+import { getData } from "../ui/autofill-data/autofill";
+import { storeModal } from "../ui/store-modal/store-modal";
 import { addSectionInAside } from "./main-ui/add-section-in-aside";
 import { addSectionInMain } from "./main-ui/add-section-in-main";
 import { addProductInSection } from "./main-ui/add-product-in-section";
@@ -9,7 +9,7 @@ import { addTextEnd } from "../helpers/add-text-end/add-text-end";
 import { deleteText } from "../helpers/delete-text/delete-text";
 import { helperElements } from "../helpers/replace-text/replace-text";
 import { replaceText } from "../helpers/replace-text/replace-text";
-import { highlightText } from "../helpers/hightlight-text/hightlight-text";
+import { highlightText } from "../helpers/highlight-text/highlight-text";
 import { removeSection } from "../helpers/remove-section/remove-section";
 import { removeProduct } from "../helpers/remove-products/remove-product";
 import { hideShow } from "../helpers/hide/hide";

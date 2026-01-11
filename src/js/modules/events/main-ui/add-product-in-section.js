@@ -146,6 +146,7 @@ export const addProductInSection = (e) => {
     },
     div
   );
+
   createElement(
     "button",
     {
@@ -155,6 +156,7 @@ export const addProductInSection = (e) => {
     },
     div
   );
+
   createElement(
     "button",
     {
@@ -169,6 +171,7 @@ export const addProductInSection = (e) => {
     },
     div
   );
+
   const data = {
     product_data_action: dataAction,
     id: productID,
@@ -177,5 +180,6 @@ export const addProductInSection = (e) => {
     price: "",
     numberProduct,
   };
+
   saveToProductLS(data);
 };

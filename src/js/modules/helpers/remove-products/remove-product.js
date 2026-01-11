@@ -1,14 +1,14 @@
 import { updateProductLS, updateProductNumberLS } from "./remove-products-ls";
 
 /**
- * Removes the element from DOM
+ * removes the element from DOM
  * @param {HTMLDivElement} product
  * @returns {void}
  */
 const deleteProduct = (product) => product.remove();
 
 /**
- * Recalculating product numbers after deleting an item.
+ * recalculating product numbers after deleting an item.
  * @param {HTMLDivElement} sectionMain
  * @returns {void}
  */
@@ -42,7 +42,7 @@ const refreshQuantityProducts = (sectionMain) => {
 };
 
 /**
- * Removes a product element when clicking the "❌" button, inside it
+ * removes a product element when clicking the "❌" button, inside it
  * @param {Event} - button click
  * @returns {void}
  */

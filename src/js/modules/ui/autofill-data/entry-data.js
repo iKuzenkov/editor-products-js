@@ -5,7 +5,7 @@ import {
 } from "./save-ls";
 
 /**
- * Object destructuring. Assigning values ​​to elements.
+ * object destructuring. Assigning values ​​to elements.
  * @param {Object} params
  */
 const assigningValues = (params) => {
@@ -30,7 +30,7 @@ const assigningValues = (params) => {
 };
 
 /**
- * Getting elements, created object.
+ * getting elements, created object.
  * @param {Object} section
  * @param {Object} product
  * @param {HTMLDivElement} containerAside
@@ -78,7 +78,7 @@ const getElements = (section, product, containerAside, containerMain) => {
 };
 
 /**
- * Getting elements, object destructuring, saving state.
+ * getting elements, object destructuring, saving state.
  * @param {Object} generalData
  */
 export const entryData = (generalData) => {

@@ -1,5 +1,5 @@
 /**
- * Updates the array, removes object from LS
+ * updates the array, removes object from LS
  * @param {HTMLDivElement} main
  */
 export const updateProductLS = (mainSection) => {
@@ -11,7 +11,7 @@ export const updateProductLS = (mainSection) => {
 };
 
 /**
- * Updates the array, removes object from LS
+ * updates the array, removes object from LS
  * @param {HTMLDivElement} main
  */
 export const updateAsideLS = (mainSection) => {
@@ -23,7 +23,7 @@ export const updateAsideLS = (mainSection) => {
 };
 
 /**
- * Updates the array, removes object from LS
+ * updates the array, removes object from LS
  * @param {id} - main section id
  */
 export const updateMainLS = (mainID) => {
@@ -33,7 +33,7 @@ export const updateMainLS = (mainID) => {
 };
 
 /**
- * Rendering of the new (last state) section numbers after refreshing the browser page.
+ * rendering of the new (last state) section numbers after refreshing the browser page
  * @returns {void}
  */
 export const savingStateNumbersAsideLS = () => {
@@ -55,7 +55,7 @@ export const savingStateNumbersAsideLS = () => {
 };
 
 /**
- * Rendering of the new (last state) section numbers after refreshing the browser page.
+ * rendering of the new (last state) section numbers after refreshing the browser page
  * @returns {void}
  */
 export const savingStateNumbersMainLS = () => {

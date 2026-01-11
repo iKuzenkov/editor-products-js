@@ -1,5 +1,5 @@
 /**
- * Checking if an element exists.
+ * checking if an element exists
  * @param {HTMLElement} parent - space to add
  */
 const isValidData = (parent) => {

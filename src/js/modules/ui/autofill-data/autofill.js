@@ -1,9 +1,9 @@
-import { clearData } from "../clear data/clear-ls";
+import { clearData } from "../clear-data/clear-ls";
 import { api } from "../../interaction-helpers/api";
 import { dataInDOM } from "./get-data";
 
 /**
- * Calling a function that returns the received data from the passed address.
+ * сalling a function that returns the received data from the passed address
  * @param {Event} e - button click
  * @returns {void}
  */

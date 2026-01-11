@@ -28,6 +28,7 @@ export const renderMainData = ({
     },
     containerMain
   );
+
   const logicButtonHandler = createElement(
     "div",
     {
@@ -39,6 +40,7 @@ export const renderMainData = ({
     },
     div
   );
+
   createElement(
     "span",
     {
@@ -48,6 +50,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "span",
     {
@@ -57,6 +60,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -71,6 +75,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -85,6 +90,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -99,6 +105,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -113,6 +120,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -127,6 +135,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -141,6 +150,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "button",
     {
@@ -155,6 +165,7 @@ export const renderMainData = ({
     },
     logicButtonHandler
   );
+
   createElement(
     "input",
     {
@@ -177,6 +188,7 @@ export const renderMainData = ({
     },
     div
   );
+
   createElement(
     "input",
     {
@@ -189,6 +201,7 @@ export const renderMainData = ({
     },
     sectionHeader
   );
+
   createElement(
     "input",
     {
@@ -204,6 +217,7 @@ export const renderMainData = ({
     },
     sectionHeader
   );
+
   createElement(
     "input",
     {
@@ -218,6 +232,7 @@ export const renderMainData = ({
     },
     sectionHeader
   );
+
   createElement(
     "button",
     {
@@ -227,6 +242,7 @@ export const renderMainData = ({
     },
     sectionHeader
   );
+
   createElement(
     "div",
     {

@@ -53,6 +53,7 @@ export const addSectionInAside = (e) => {
     },
     div
   );
+
   createElement(
     "button",
     {
@@ -72,5 +73,6 @@ export const addSectionInAside = (e) => {
     name: "",
     number: numberSection,
   };
+
   saveToAsideLS(data);
 };

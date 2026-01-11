@@ -38,7 +38,7 @@ const dynamicElements = (functionSpace) => {
 
 /**
  * adds dynamic elements input + button
- * buttonReplace && inputReplace - protection against re-addition
+ * ButtonReplace && inputReplace - protection against re-addition
  * @param {Event} e - button click
  * @returns {Void}
  */
@@ -90,9 +90,9 @@ const deletedElementsAfterWork = (...elements) => {
 };
 
 /**
- * replaces a text value (from .input-replace) with another value (from .input-function)
- * across all (.input-product[data-action]) inside the current section
- * After working cleaning and removed the helper elements
+ * replaces a text value (from .input-replace) with another value (from [data-name="input-in-functions"])
+ * across all ([data-product="name"]) inside the current section
+ * after working cleaning and removed the helper elements
  * @param {Event} e - button click
  * @returns {void}
  */
