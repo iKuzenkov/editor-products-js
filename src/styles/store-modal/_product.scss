@@ -1,0 +1,50 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.product-section-modal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 10px;
+
+  .product-modal {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    width: 25%;
+    gap: 0.5rem;
+    border: 1px solid #5dc55d;
+    border-radius: $section-border-radius;
+    padding: $section-padding;
+
+    &:hover {
+      border: none;
+      outline: $outline-product-in-main;
+
+      .price-product-modal {
+        color: #f3dc11;
+      }
+    }
+
+    .image-modal {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    .name-product-modal {
+      font-weight: 600;
+    }
+
+    .description-product-modal {
+      font-style: italic;
+    }
+
+    .price-product-modal {
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.options-modal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 1rem;
+  border-radius: $section-border-radius;
+  gap: 0.3rem;
+  background: $background-section-products;
+}

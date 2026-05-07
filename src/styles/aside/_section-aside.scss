@@ -1,0 +1,44 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.section-aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: max-content;
+  min-height: 3rem;
+  @include section-margins;
+  background: $background-container-section;
+  cursor: pointer;
+
+  &:hover {
+    outline: $outline-section-aside-main;
+  }
+
+  .section-aside-number {
+    margin: 0.2rem;
+    @include number-section(1.5px solid #2929c9, 20%, #4c8dac);
+  }
+
+  .input-section {
+    width: 80%;
+    border: none;
+    border-radius: $section-border-radius;
+    cursor: text;
+
+    &:hover {
+      background: $input-hover;
+    }
+
+    &:focus {
+      outline: none;
+      background: $input-focus;
+      box-shadow: $input-box-shadow;
+    }
+  }
+
+  .inner-button {
+    @include inner-button;
+    cursor: pointer;
+  }
+}

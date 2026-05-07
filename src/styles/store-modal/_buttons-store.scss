@@ -1,0 +1,15 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.button-container-store {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+
+  .close-modal-store {
+    @include external-buttons;
+    cursor: pointer;
+  }
+}

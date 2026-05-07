@@ -1,0 +1,69 @@
+@use "../variables/variables" as *;
+
+@mixin container-aside-main-margins {
+  margin: $container-aside-main-margin;
+  padding-top: $container-aside-main-padding-top;
+  border-radius: $container-aside-main-border-radius;
+}
+
+@mixin section-margins {
+  margin: $section-margin;
+  padding: $section-padding;
+  border-radius: $section-border-radius;
+}
+
+@mixin scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}
+
+@mixin external-buttons {
+  border: $inner-external-button-border-none;
+  border-radius: $inner-external-button-border-radius;
+  background: $external-button-background;
+
+  &:hover {
+    background: $external-button-hover-background;
+  }
+}
+
+@mixin inner-button {
+  margin: $inner-button-margin;
+  padding: $inner-button-padding;
+  border: $inner-external-button-border-none;
+  border-radius: $inner-external-button-border-radius;
+  background: $inner-button-background;
+
+  &:hover {
+    background: $inner-button-hover-background;
+  }
+}
+
+@mixin img($width, $height) {
+  width: $width;
+  height: $height;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+@mixin number-section($border, $border-radius, $bg) {
+  border: $border;
+  border-radius: $border-radius;
+  background: $bg;
+}

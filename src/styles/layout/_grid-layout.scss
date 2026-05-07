@@ -1,0 +1,26 @@
+@use "../variables/variables" as *;
+
+#grid-layout {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "aside main main"
+    "footer footer footer";
+  grid-template-rows: 1fr 8fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr;
+}
+
+#header {
+  grid-area: header;
+  background: $background-header-footer;
+}
+#aside {
+  grid-area: aside;
+}
+#main {
+  grid-area: main;
+}
+#footer {
+  grid-area: footer;
+  background: $background-header-footer;
+}

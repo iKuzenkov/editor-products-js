@@ -1,0 +1,7 @@
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
+
+.external-button-header {
+  @include external-buttons;
+  cursor: pointer;
+}
