@@ -46,7 +46,7 @@ export const renderMainData = ({
     {
       classList: ["quantity-sections"],
       text: `${quantityProducts}/20`,
-      attrs: { title: "quantity", "data-action": "quantity" },
+      attrs: { title: "quantity", "data-action": "quantity-products" },
     },
     logicButtonHandler
   );
