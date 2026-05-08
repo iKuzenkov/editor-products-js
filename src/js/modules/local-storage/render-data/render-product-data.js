@@ -102,7 +102,7 @@ export const renderProductData = ({
         value: name,
         placeholder: "Enter name",
         "data-action": product_data_action,
-        "data-name": "name",
+        "data-product": "name",
       },
     },
     div
