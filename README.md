@@ -78,6 +78,7 @@ docker run -p 8080:80 1ikuzenkov1/editor-products-js
 ```
 Open in browser: 
 http://localhost:8080
+
 ---
 
 ## Video Overview
