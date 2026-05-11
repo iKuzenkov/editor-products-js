@@ -29,7 +29,7 @@ export const updateNameProductInLS = (e) => {
   const product = e.target.closest('[data-name="product"]');
   if (!product) return;
   const productID = product.id;
-  const nameValue = product.querySelector('[data-name="name"]').value;
+  const nameValue = product.querySelector('[data-product="name"]').value;
   const descriptionValue = product.querySelector(
     '[data-description="description"]'
   ).value;

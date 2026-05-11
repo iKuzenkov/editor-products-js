@@ -2,7 +2,7 @@
  * array of selector (index 0 - from, 1 - to)
  */
 const pairs = [
-  ["[data-name='name']", "[data-name='name-in-modal']"],
+  ["[data-product='name']", "[data-name='name-in-modal']"],
   [
     "[data-description='description']",
     "[data-description='description-in-modal']",
