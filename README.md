@@ -33,6 +33,33 @@ Hosting:
 
 ---
 
+## Technologies Used
+
+### Frontend
+
+- HTML
+- SCSS
+- JavaScript
+
+### Storage
+
+- localStorage
+
+### Testing
+
+- Jest
+
+### Build Tools
+
+- Vite
+
+### Deployment
+
+- Vercel
+- Docker
+
+---
+
 ## Docker
 
 The project can also be launched inside a Docker container.
@@ -43,6 +70,14 @@ Docker Hub:
 
 The Docker container provides a fast local setup and isolated testing environment.
 
+### Run container
+
+```bash
+docker pull 1ikuzenkov1/editor-products-js
+docker run -p 8080:80 1ikuzenkov1/editor-products-js
+```
+Open in browser: 
+http://localhost:8080
 ---
 
 ## Video Overview
@@ -365,35 +400,6 @@ Flexbox is used for:
 - alignment
 - axis positioning
 - UI element distribution
-
----
-
-## Technologies Used
-
-### Frontend
-
-- HTML
-- SCSS
-- JavaScript
-
-### Storage
-
-- localStorage
-
-### Testing
-
-- Jest
-
-### Build Tools
-
-- Vite
-
-### Deployment
-
-- Vercel
-- Docker
-
----
 
 ## Jest Tests
 
