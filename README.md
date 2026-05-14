@@ -85,7 +85,7 @@ http://localhost:8080
 
 YouTube (Ukrainian language):
 
-- https://www.youtube.com/watch?v=ji4QoGJxyeY
+- https://youtu.be/ji4QoGJxyeY
 
 The video includes:
 
